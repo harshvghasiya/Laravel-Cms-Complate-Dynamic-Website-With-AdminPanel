@@ -105,7 +105,7 @@ Route::any('/admin/taglist',[App\Http\Controllers\TagController::class,'show'])-
 Route::any('/admin/del_tag',[App\Http\Controllers\TagController::class,'destroy'])->name('del_tag');
 Route::any('/admin/status_tag',[App\Http\Controllers\TagController::class,'status_tag'])->name('status_tag');
 Route::any('/admin/edit_tag/{id}',[App\Http\Controllers\TagController::class,'edit'])->name('edit_tag');
-Route::any('/admin/upd_tag',[App\Http\Controllers\TagController::class,'update'])->name('upd_tag');
+Route::any('/admin/upd_tag',[App\Http\Controllers\TagController::class,'store'])->name('upd_tag');
 Route::any('/admin/tag_status_all',[App\Http\Controllers\TagController::class,'status_all'])->name('tag_status_all');
 Route::any('/admin/tag_del_all',[App\Http\Controllers\TagController::class,'del_all'])->name('tag_del_all');
 

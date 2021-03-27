@@ -113,7 +113,7 @@
                             {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
                        </div>
                         <p class="help-block">
-                            <img id="output" src="{{asset("/storage/authorimage/$edit->image")}}" width="150px" ; height="150px" ; />
+                            <img id="output" src="{{asset("public/storage/authorimage/$edit->image")}}" width="150px" ; height="150px" ; />
                         </p>
                          
                          
@@ -123,7 +123,7 @@
                       <label for="exampleInputFile1">Cover Image</label>
                        {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
                         <p class="help-block">
-                            <img id="output" src="{{asset("/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
+                            <img id="output" src="{{asset("public/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
                         </p>
                           </div>
                       @endif

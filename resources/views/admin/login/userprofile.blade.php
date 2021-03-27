@@ -2,17 +2,7 @@
 @section('title','User Profile')
 @section('container')
 
-	@php
-		$account_private_status_id=$key->acount_privacy;
-		if($account_private_status_id==1){
-		$account_private_status='Private Account';
-		// $account_prrivate_route="{{route('follow_user')}}";
 
-		}else{
-	    $account_private_status='Not Private Account';
-	    // $account_prrivate_route="{{route('follow_user')}}";
-	    }
-	@endphp
 			<div class="page-content">
 				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 				<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -95,8 +85,7 @@
 						
 							<div id="static2" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
 								<div class="modal-body">
-									
-						         {{\App\userfollow::FollowerList(Auth::guard('adminlogin')->user()->id)}}			   
+								   
 										
 								</div>
 								<div class="modal-footer">
@@ -198,10 +187,9 @@
 													</div>
 										    @if(Auth::guard('adminlogin')->user()->email ==$key->email)
 										        <div class="margiv-top-10">
-														<button type="submit" class="btn green-haze">
+												<button type="submit" class="btn green-haze">
 														Save Changes </button>
-														<a href="javascript:;" class="btn default">
-														Cancel </a>
+														
 											    </div>
 											 
 											@endif

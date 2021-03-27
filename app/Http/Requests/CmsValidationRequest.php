@@ -30,7 +30,7 @@ class CmsValidationRequest extends FormRequest
             // 'seo_description.required' => "Please Add SEO Description.",
             // 'long_description.required' => "Please Add Long Description.",
             // 'short_description.required' => "Please Add Short Description.",
-            'image.required' => "Image Is required.",
+            
             'image.mimes' => "Image Is MustBe Jpeg,Jpg,Png.",
             'module.required' => "Select Module Catagory",
             
@@ -64,7 +64,7 @@ class CmsValidationRequest extends FormRequest
 
             'secondary_title' => 'required', 
            
-            'image'=>'required|mimes:jpeg,jpg,png',
+            'image'=>'mimes:jpeg,jpg,png',
         
 
         ];

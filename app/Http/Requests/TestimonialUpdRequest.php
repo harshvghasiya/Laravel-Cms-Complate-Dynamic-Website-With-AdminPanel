@@ -25,7 +25,7 @@ class TestimonialUpdRequest extends FormRequest
             'role.required' => "Please Add Role.",
             'about.required' => "Please Add About.",
             'status.required' => "Please Add status.",
-            'image.required'=>'please Add Image',
+         
             'image.mimes'=>'Please Select Valid Image'
              
         ];
@@ -47,7 +47,7 @@ class TestimonialUpdRequest extends FormRequest
             'role' => 'required',
             'about' => 'required',
             'status' => 'required',
-            'image'=>'required|mimes:jpeg,png,jpg'
+            'image'=>'mimes:jpeg,png,jpg'
             
 
         ];

@@ -22,7 +22,7 @@ class BlogValidationRequest extends FormRequest
         return [
             'title.required' => "Please Add Blog Title.",
             'description.required' => "Please Add Blog Description.",
-            'image.required' => "Image Not Be Null.",
+          
             'image.mimes' => "Image Type Is Invalid.",
             
             
@@ -38,12 +38,11 @@ class BlogValidationRequest extends FormRequest
     public function rules(Request $request)
 
     {
-     
-        
+      
           return [
             'title' => 'required',
             'description'=>'required',
-            'image'=>'required|mimes:jpeg,jpg,png',
+            'image'=>'mimes:jpeg,jpg,png',
 
         ];
 

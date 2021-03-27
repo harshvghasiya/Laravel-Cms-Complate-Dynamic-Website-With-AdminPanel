@@ -23,8 +23,7 @@ class SocialmediaValidationRequest extends FormRequest
             'title.required' => "Please Add Title.",
              'url.required'=>'Please Add URL',
              'url.url'=>'Enter Valid URL',
-             'icon.required'=>'Enter Icon',
-              'icon.mimes'=>'Icon Mustbe a Jpeg Png Or Jpg'   
+              'icon.mimes'=>'Icon Mustbe a Jpeg,Png,Jpg'   
             
 
         ];
@@ -44,7 +43,7 @@ class SocialmediaValidationRequest extends FormRequest
           return [
             'title' => 'required',
             'url'=>'required|url',
-            'icon'=>'required|mimes:jpeg,png,jpg'
+            'icon'=>'mimes:jpeg,png,jpg'
             
 
         ];

@@ -21,7 +21,6 @@ class BannerValidationRequest extends FormRequest
     {
         return [
             'name.required' => "Please Add Blog Name.",
-            'image.required' => "Image Not Be Null.",
             'image.mimes' => "Image Type Is Invalid.",
             'url.url'=>'Not Valid URL'
             
@@ -43,7 +42,7 @@ class BannerValidationRequest extends FormRequest
           return [
             'name' => 'required',
             'url' =>  'url',
-            'image'=>'required|mimes:jpeg,jpg,png',
+            'image'=>'mimes:jpeg,jpg,png',
 
         ];
 

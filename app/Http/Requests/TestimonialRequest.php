@@ -22,7 +22,7 @@ class TestimonialRequest extends FormRequest
             'name.check_testimonial_already_exit'=>'This Name Already Exist',
             'about.required' => "Please Add  about.",
             'role.required' => "Please Add  role.",
-            'image.required' => "Image Not Be Null.",
+           
             'image.mimes' => "Image Type Is Invalid.",
             
             
@@ -41,7 +41,7 @@ class TestimonialRequest extends FormRequest
             'name'=>'required|CheckTestimonialAlreadyExit',
             'role'=>'required',
             'about'=>'required',
-            'image'=>'required|mimes:jpg,jpeg,png'
+            'image'=>'mimes:jpg,jpeg,png'
         ];
     }
 }
