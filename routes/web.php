@@ -238,7 +238,7 @@ Route::any('/tag/{tag}', function ($tag) {
      		    }
      	    }
      	}
-     	// dd($tag_blog);
+     	
      	return view('front.tag.index',compact('tag_blog','tag'));
     }
    

@@ -1,7 +1,7 @@
  @php
 $author_desc=\App\setting::find(1);
-$socialmedia=\App\social_media::where('status','Active')->get();
-// dd($author_desc);
+$socialmedia=\App\SocialMedia::where('status','Active')->get();
+
 @endphp
   <!-- ======= Footer ======= -->
   <footer id="footer">

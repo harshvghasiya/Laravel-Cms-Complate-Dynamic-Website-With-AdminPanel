@@ -67,7 +67,7 @@ function Cms_Image_Path()
   return 'public/cmsimage';
 }
 
- function Social_Media_Image_Path()
+ function SocialMedia_Image_Path()
 {
    return 'public/socialmediaicon';
 }

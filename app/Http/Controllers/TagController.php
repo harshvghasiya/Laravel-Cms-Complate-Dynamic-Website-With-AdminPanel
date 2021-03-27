@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TagValidationRequest;
 use App\Tag;
-use App\blog_tag;
+use App\BlogTag;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +13,7 @@ class TagController extends Controller
     function __construct()
     { 
         $this->Model=new Tag;
-        $apm_id=blog_tag::apm_id;
+        $apm_id=BlogTag::apm_id;
         $this->middleware('access:'.$apm_id.''); 
     }
 

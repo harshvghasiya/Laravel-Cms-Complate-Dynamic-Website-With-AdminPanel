@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\blog_tag;
+use App\BlogTag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
@@ -12,7 +12,7 @@ class Tag extends Model
 {
     public function tag_rel()
     {
-    	return $this->hasMany(blog_tag::class,'tag_id','id');
+    	return $this->hasMany(BlogTag::class,'tag_id','id');
     }
     public function created_email()
     {
@@ -129,7 +129,7 @@ class Tag extends Model
 
                 $id=$request->input('del_id');
                 foreach ($id as $key) {
-                    $sql=blog_tag::where('tag_id',$key)->first();
+                    $sql=BlogTag::where('tag_id',$key)->first();
                     if ($sql != null) {
                         return 'no';
                     }else{

@@ -6,7 +6,7 @@ use App\Tag;
 use App\blog;
 use Illuminate\Database\Eloquent\Model;
 
-class blog_tag extends Model
+class BlogTag extends Model
 {
     const apm_id ='7';
 

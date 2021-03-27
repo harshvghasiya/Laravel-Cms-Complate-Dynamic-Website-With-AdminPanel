@@ -95,7 +95,7 @@
                 </li>
                
  
-                    @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\social_media::apm_id))
+                    @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\SocialMedia::apm_id))
                         <li>
                             <a href="{{route('someListMain')}}">
                                 <i class="fa fa-share-alt-square"></i>
@@ -123,7 +123,7 @@
                     @endif
 
 
-                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\blog_catagory::apm_id))
+                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\BlogCatagory::apm_id))
                         <li>
                             <a href="{{route('catagoryListMain')}}">
                                 <i class="icon-speech"></i>
@@ -132,7 +132,7 @@
                     @endif
 
 
-                    @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\blog_tag::apm_id))
+                    @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\BlogTag::apm_id))
                         <li>
                             <a href="{{route('tagListMain')}}">
                                 <i class="icon-link"></i>

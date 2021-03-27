@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;    
 use Crypt;
 
-class social_media extends Model
+class SocialMedia extends Model
 {
     const apm_id ='15';
 
@@ -29,14 +29,14 @@ class social_media extends Model
     {
     	 $id=$request->input('id');
        if ($id != null) {
-           $res= social_media::find($id);
+           $res= SocialMedia::find($id);
        }else{
-         $res= new social_media;
+         $res= new SocialMedia;
        }
 
         $image=$request->file('icon');
         if ($image != null) {
-          $image_name=UploadImage($image,Social_Media_Image_Path());
+          $image_name=UploadImage($image,SocialMedia_Image_Path());
           $res->icon=$image_name;
        }
        
@@ -53,7 +53,7 @@ class social_media extends Model
 
     public function datableSocialMedia()
     {
-    	  $sql=social_media::with(['created_email']);
+    	  $sql=SocialMedia::with(['created_email']);
           return Datatables::of($sql)
                 ->editColumn('status',   function($data){
                         if($data->status == "Active"){
@@ -92,7 +92,7 @@ class social_media extends Model
     {
     	if(Allacceess(Auth::guard('adminlogin')->user()->id,'add_some')){
             $ids=Crypt::decrypt($id);
-            $edit=social_media::find($ids);
+            $edit=SocialMedia::find($ids);
             return view('admin.social_media.addedit',compact('edit'));
         }else{
            flashMessage('danger','Access Denied');
@@ -105,7 +105,7 @@ class social_media extends Model
     	if(Allacceess(Auth::guard('adminlogin')->user()->id,'status_some')){
            $status=$request->input('status');
             $status_id=$request->input('status_id');
-            $res=social_media::find($status_id);
+            $res=SocialMedia::find($status_id);
             if ($status=='Active') {
                 $res->status='InActive';
                 $res->save();
@@ -125,7 +125,7 @@ class social_media extends Model
                
                 foreach ($status_id as $value) {
           
-                $res=social_media::find($value);
+                $res=SocialMedia::find($value);
                 if ($res->status=='Active') {
                     $res->status='InActive';
                     $res->save();
@@ -145,7 +145,7 @@ class social_media extends Model
     	if(Allacceess(Auth::guard('adminlogin')->user()->id,'delete_some')){ 
             $id=$request->input('del_id');
             $del_id=Crypt::decrypt($id);
-            social_media::destroy($del_id);
+            SocialMedia::destroy($del_id);
         }else{
              return 'accessdenied';
         }
@@ -156,7 +156,7 @@ class social_media extends Model
     	if(Allacceess(Auth::guard('adminlogin')->user()->id,'del_all_some')){
             $id=$request->input('del_id');
            foreach ($id as $key) {
-             social_media::destroy($key);
+             SocialMedia::destroy($key);
            }
         }else{
             return 'accessdenied';

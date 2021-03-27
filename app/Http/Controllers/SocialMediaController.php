@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SocialmediaValidationRequest;
-use App\social_media;
+use App\SocialMedia;
 use Illuminate\Http\Request;
               
 
@@ -12,8 +12,8 @@ class SocialMediaController extends Controller
 {
     function __construct()
     { 
-        $this->Model= new social_media;
-        $apm_id=social_media::apm_id;
+        $this->Model= new SocialMedia;
+        $apm_id=SocialMedia::apm_id;
         $this->middleware('access:'.$apm_id.''); 
     }
    
@@ -32,12 +32,12 @@ class SocialMediaController extends Controller
       return $this->Model->datableSocialMedia();
     }
 
-    public function show(social_media $social_media)
+    public function show(SocialMedia $SocialMedia)
     {
         return view('admin.social_media.socialmedialist');
     }
 
-    public function edit(social_media $social_media,$id)
+    public function edit(SocialMedia $SocialMedia,$id)
     { 
        return $this->Model->editSocialMedia($id);
 
@@ -52,12 +52,12 @@ class SocialMediaController extends Controller
         return $this->Model->statusAllSocialMedia($request);    
     }
 
-    public function destroy(social_media $social_media,Request $request)
+    public function destroy(SocialMedia $SocialMedia,Request $request)
     {
        return $this->Model->deleteSocialMedia($request);
     }
 
-   public function del_all(social_media $social_media,Request $request)
+   public function del_all(SocialMedia $SocialMedia,Request $request)
     {
         return $this->Model->deleteAllSocialMedia($request);
     }

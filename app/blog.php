@@ -2,12 +2,11 @@
 
 namespace App;
 use App\AdminLogin;
-use App\blog_catagory;
-use App\blog_tag;
+use App\BlogCatagory;
+use App\BlogTag;
 use App\catagory;
 use Illuminate\Database\Eloquent\Model;
 use Crypt;
-
 use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
 
@@ -20,11 +19,11 @@ class blog extends Model
 
     public function blog_id()
     {
-    	return $this->hasmany(blog_catagory::class,'blogs_id','id');
+    	return $this->hasmany(BlogCatagory::class,'blogs_id','id');
     }
     public function blog_tag()
     {
-        return $this->hasmany(blog_tag::class,'blog_id','id');
+        return $this->hasmany(BlogTag::class,'blog_id','id');
     }
 
      public function created_email()
@@ -39,7 +38,7 @@ class blog extends Model
 
     public static function getBlogCatagory($id)
       {
-        $blogCategory=blog_catagory::with(['catagory'])->where('blogs_id',$id)->get();
+        $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$id)->get();
         foreach ($blogCategory as $key => $value) {
             $y[]= $value->catagory->catagory;
         }
@@ -96,7 +95,7 @@ class blog extends Model
 
         $catagory=$input['catagory'];
         foreach ($catagory as $result) {
-             $cat=new blog_catagory;
+             $cat=new BlogCatagory;
              $cat->catagory_id=$result;
              $cat->blogs_id=$res->id;
              $cat->save();
@@ -104,7 +103,7 @@ class blog extends Model
 
         $tag=$input['tag'];
         foreach ($tag as $result) {
-             $teg=new blog_tag;
+             $teg=new BlogTag;
              $teg->tag_id=$result;
              $teg->blog_id=$res->id;
              $teg->save();
@@ -164,10 +163,10 @@ class blog extends Model
             $ids=Crypt::decrypt($id);
             $edit=blog::with(['blog_id','blog_tag'])->find($ids);
 
-            $check_catagory=blog_catagory::where('blogs_id',$ids)->pluck('catagory_id')->toArray();
+            $check_catagory=BlogCatagory::where('blogs_id',$ids)->pluck('catagory_id')->toArray();
             $catagory_list=catagory::where('status','Active')->get();
 
-            $check_tag=blog_tag::where('blog_id',$ids)->pluck('tag_id')->toArray();
+            $check_tag=BlogTag::where('blog_id',$ids)->pluck('tag_id')->toArray();
             $tag_list=Tag::where('status','Active')->get();
           
 
@@ -204,8 +203,8 @@ class blog extends Model
         if ($catagory != null) {
 
           foreach ($catagory as $key) {
-                $ids=blog_catagory::where('blogs_id',$id)->where('catagory_id',$key)->first();
-                $del=blog_catagory::where('blogs_id',$id)->pluck('id')->toArray();
+                $ids=BlogCatagory::where('blogs_id',$id)->where('catagory_id',$key)->first();
+                $del=BlogCatagory::where('blogs_id',$id)->pluck('id')->toArray();
                 
                 if ($ids != null){
 
@@ -213,12 +212,12 @@ class blog extends Model
                   if (in_array($ids->id,$del)) {
                         foreach ($del as $k) {
                           if ($k != $ids->id) {
-                            blog_catagory::destroy($k);
+                            BlogCatagory::destroy($k);
                             }
                         }
                     }
                 }else{
-                    $resu=new blog_catagory;
+                    $resu=new BlogCatagory;
                     $resu->blogs_id=$id;
                     $resu->catagory_id=$key;
                     $resu->save(); 
@@ -229,20 +228,20 @@ class blog extends Model
 
         if ($tag != null) {     
             foreach ($tag as $key) {
-                $ids=blog_tag::where('blog_id',$id)->where('tag_id',$key)->first();
-                $del=blog_tag::where('blog_id',$id)->pluck('id')->toArray();
+                $ids=BlogTag::where('blog_id',$id)->where('tag_id',$key)->first();
+                $del=BlogTag::where('blog_id',$id)->pluck('id')->toArray();
                 
                 if ($ids != null){
                   if (in_array($ids->id,$del)) {
                         foreach ($del as $k) {
                           if ($k != $ids->id) {
 
-                            blog_tag::destroy($k);
+                            BlogTag::destroy($k);
                             }
                         }
                     }
                 }else{
-                    $resu=new blog_tag;
+                    $resu=new BlogTag;
                     $resu->blog_id=$id;
                     $resu->tag_id=$key;
                     $resu->save();
@@ -308,7 +307,7 @@ class blog extends Model
             $id=$request->input('del_id');
             $del_id=Crypt::decrypt($id);
             blog::destroy('id',$del_id);
-                // flashMessage('success','Delete Successfully');
+               
         }else{
             return 'accessdenied';
         }

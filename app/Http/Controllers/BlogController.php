@@ -6,8 +6,6 @@ use App\Http\Requests\BlogUpdValidationRequest;
 use App\Http\Requests\BlogValidationRequest;
 use App\Tag;
 use App\blog;
-use App\blog_catagory;
-use App\blog_tag;
 use App\catagory;
 use Illuminate\Http\Request;
 

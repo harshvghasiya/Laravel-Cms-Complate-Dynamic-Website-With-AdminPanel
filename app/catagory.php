@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-use App\blog_catagory;
+use App\BlogCatagory;
 use Illuminate\Database\Eloquent\Model;
 use Crypt;
 use Illuminate\Support\Facades\Auth;
@@ -15,12 +15,12 @@ class catagory extends Model
     
       public function blog_catagory()
     {
-    	return $this->hasmany(blog_catagory::class,'catagory_id','id');
+    	return $this->hasmany(BlogCatagory::class,'catagory_id','id');
     }
 
     public static function CatagoryCount($id)
     {
-    	$sql=blog_catagory::where('catagory_id',$id)->count();
+    	$sql=BlogCatagory::where('catagory_id',$id)->count();
     	return $sql;
     }
 
@@ -28,7 +28,7 @@ class catagory extends Model
       public static function getPostCatagory($id)
       {
 
-        $blogCategory=blog_catagory::with(['catagory'])->where('blogs_id',$id)->get();
+        $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$id)->get();
         foreach ($blogCategory as $key => $value) {
             $y[]= $value->catagory->catagory;
         }
@@ -183,7 +183,7 @@ class catagory extends Model
                 $id=$request->input('del_id');
                 $del_id=Crypt::decrypt($id);
                 
-                $sql=blog_catagory::where('catagory_id',$del_id)->first();
+                $sql=BlogCatagory::where('catagory_id',$del_id)->first();
                 if ($sql != null) {
                     return 'no';
                 }else{
@@ -201,7 +201,7 @@ class catagory extends Model
 
                 $id=$request->input('del_id');
                 foreach ($id as $key) {
-                    $sql=blog_catagory::where('catagory_id',$key)->first();
+                    $sql=BlogCatagory::where('catagory_id',$key)->first();
                     if ($sql != null) {
                         return 'no';
                     }else{

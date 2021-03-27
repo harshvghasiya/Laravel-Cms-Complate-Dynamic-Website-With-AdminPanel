@@ -5,7 +5,7 @@ use App\blog;
 use App\catagory;
 use Illuminate\Database\Eloquent\Model;
 
-class blog_catagory extends Model
+class BlogCatagory extends Model
 {
     
     const apm_id ='6';

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CatagoryUpdValidationRequest;
 use App\Http\Requests\CatagoryValidationRequest;
-use App\blog_catagory;
+use App\BlogCatagory;
 use App\catagory;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class CatagoryController extends Controller
       function __construct()
     { 
         $this->Model=new catagory;
-        $apm_id=blog_catagory::apm_id;
+        $apm_id=BlogCatagory::apm_id;
         $this->middleware('access:'.$apm_id.''); 
     }
    
