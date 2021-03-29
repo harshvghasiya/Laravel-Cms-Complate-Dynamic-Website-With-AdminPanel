@@ -1,11 +1,9 @@
 @php 
 $catagory=\App\catagory::with(['blog_catagory'])->where('status','Active')->get();
-// dd($catagory);
+
 $tag=\App\Tag::where('status','Active')->select('tag')->distinct()->get();
 
-// dd($tag);
 $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
-// dd($tag);
 @endphp
  <div class="col-lg-4">
 
@@ -22,7 +20,7 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
               <h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
                 <ul>
-                  {{-- {{dd($catagory)}} --}}
+                  
                   @if(!$catagory->isEmpty())
                   @foreach($catagory as $result)
                    @if(!$result->blog_catagory->isEmpty())

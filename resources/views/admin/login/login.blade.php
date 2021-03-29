@@ -1,18 +1,5 @@
 <!DOCTYPE html>
-<!-- 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
-Version: 3.3.0
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
+
 <html lang="en">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
@@ -91,46 +78,12 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="form-actions">
                   <button type="submit" class="btn blue">Submit</button>
                 </div>
-                    {!! Form::close() !!}
-	{{-- <form class="login-form FromSubmit" id="LoginForm"  action="{{ route('userlogin') }}" method="post">
-		@csrf
-		<h3 class="form-title">Sign In</h3>
-		<div class="alert alert-danger display-hide">
-			<button class="close" data-close="alert"></button>
-			<span>
-			Enter any username and password. </span>
-		</div>
-		<div class="form-group">
-	 <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-			<label class="control-label visible-ie8 visible-ie9">Username</label>
-			<input class="form-control form-control-solid placeholder-no-fix @error('email') is-invalid @enderror"  type="email" autocomplete="off" placeholder="email" name="email"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Password</label>
-			<input class="form-control form-control-solid placeholder-no-fix @error('password') is-invalid @enderror" type="password" autocomplete="off" placeholder="Password" name="password"/>
-		</div>
-		<div class="form-actions">
-			<button type="submit" class="btn btn-success uppercase"> Login</button>
-			<label class="rememberme check">
-			
-		</div>
-	
-	</form> --}}
-	<!-- END LOGIN FORM -->
-	<!-- BEGIN FORGOT PASSWORD FORM -->
-	
-	<!-- END FORGOT PASSWORD FORM -->
-	<!-- BEGIN REGISTRATION FORM -->
-	
-	<!-- END REGISTRATION FORM -->
+   
 </div>
 <div class="copyright">
 	 2021© Harsh Vaghasiya. Admin Dashboard.
 </div>
-<!-- END LOGIN -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
+
 
 <![endif]-->
 <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>

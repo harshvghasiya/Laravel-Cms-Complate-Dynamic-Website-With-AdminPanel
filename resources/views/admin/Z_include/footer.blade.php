@@ -1,8 +1,7 @@
     <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
     <!-- BEGIN CORE PLUGINS -->
     <!--[if lt IE 9]>
-<script src="{{ asset('public/admin_asset/assets/global/plugins/respond.min.js') }}"></script>
-<script src="{{ asset('public/admin_asset/assets/global/plugins/excanvas.min.js') }}"></script> 
+
 <![endif]-->
 
 <script src="{{ asset('public/admin_asset/assets/global/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript">
