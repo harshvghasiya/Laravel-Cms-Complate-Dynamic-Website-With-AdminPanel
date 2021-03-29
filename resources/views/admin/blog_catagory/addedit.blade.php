@@ -97,7 +97,7 @@
                 </div>
                 <div class="form-actions">
                   <button type="submit" class="btn blue">Submit</button>
-                    <a href="{{url('/admin/bloglist')}}" type="button" class="btn default">Cancel</a>
+                    <a href="{{url('/admin/catagorylist')}}" type="button" class="btn default">Cancel</a>
                 </div>
                     {!! Form::close() !!}
         </div>

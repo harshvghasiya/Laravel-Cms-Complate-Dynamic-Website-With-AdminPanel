@@ -152,7 +152,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{ asset('public/admin_asset/assets/admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
 {{-- <script src="{{ asset('public/admin_asset/assets/admin/pages/scripts/login.js')}}" type="text/javascript"></script>
  --}}
- <script src="{{ asset('public/admin_asset/common.js')}}" type="text/javascript"></script>
+ <script src="{{ asset('public/admin_asset/logincommon.js')}}" type="text/javascript"></script>
  @include('admin.Z_include.flashmsg')
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>

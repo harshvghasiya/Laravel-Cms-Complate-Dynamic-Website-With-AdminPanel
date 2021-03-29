@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Apm_user;
 use App\apmodule;
 use Illuminate\Http\Request;
+use App\Http\Requests\ApmoduleValidationRequest;
 
 class ApmoduleController extends Controller
 {
@@ -20,7 +21,7 @@ class ApmoduleController extends Controller
        return $this->Model->createApmodule();
     }
 
-    public function store_update(Request $request)
+    public function store_update(ApmoduleValidationRequest $request)
     {
         return $this->Model->saveApmodule($request);
     }

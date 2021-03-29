@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','cms List')
+@section('title','Cms List')
 @section('container')
 <div class="page-content upd_append">
     @if(Session::has('msg'))

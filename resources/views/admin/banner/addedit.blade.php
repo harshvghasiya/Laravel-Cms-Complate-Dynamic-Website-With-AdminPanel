@@ -144,7 +144,7 @@
 
                 <div class="form-actions">
                   <button type="submit" class="btn blue">Submit</button>
-                    <a href="{{url('admin//bannerlist')}}" type="button" class="btn default">Cancel</a>
+                    <a href="{{url('admin/bannerlist')}}" type="button" class="btn default">Cancel</a>
                 </div>
                     {!! Form::close() !!}
         </div>

@@ -13,7 +13,13 @@ class ApmoduleValidationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
+    }
+    public function messages()
+    {
+        return [
+            'name.required'=> 'Name not be null.',
+        ];
     }
 
     /**
@@ -24,7 +30,7 @@ class ApmoduleValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
         ];
     }
 }

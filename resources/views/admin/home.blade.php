@@ -73,7 +73,7 @@
 
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\social_media::apm_id))
+@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\SocialMedia::apm_id))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('someListMain')}}">
@@ -204,7 +204,7 @@
 @endif
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\blog_tag::apm_id))
+@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\BlogTag::apm_id))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('tagListMain')}}">
