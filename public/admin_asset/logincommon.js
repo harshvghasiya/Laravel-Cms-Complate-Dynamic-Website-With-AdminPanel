@@ -70,43 +70,4 @@ function showErrorMessages(formId, errorResponse) {
                   });
  }
 
-$(document).on('click', '#del_all', function(event) {
-  event.preventDefault();
-  var del_id=[];
-  $('.check:checked').each(function(i) {
-    del_id[i]=$(this).val();
-  });
-   var op=$(this);
-  var route=$(this).data('route');
-  if (del_id.length != 0) {
-    $confirm=confirm('Are You Sure??');
-
-    if ($confirm) {
-
-  $.ajax({
-    url: route,
-     headers: {
-     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-       },
-    type: 'POST',
-    data: {del_id: del_id},
-    success:function(data){
-      if (data == 'no') {
-         flashMessage('danger', 'You Cant Delete This Item'); 
-        }else if (data == 'accessdenied') {
-        flashMessage('danger', 'Access Denied'); 
-        } else {
-       $('.check:checked').closest('tr').fadeOut('slow');
-       flashMessage('success','Data Deleted Successfully');
-        
-      }
-    }
-  });
-
-}
-
-  }else {
-    alert('Select Atlest One Item To Delete');
-  }
-});
 
