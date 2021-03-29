@@ -213,5 +213,24 @@ class catagory extends Model
         }
     }
 
+    // Front Catagory Index
+
+    public function frontCatagoryIndex($catagory)
+    {
+            $sql=\App\catagory::with(['blog_catagory'])->where('catagory',$catagory)->get();
+            foreach ($sql as $key => $value) { 
+                foreach ($value->blog_catagory as $key) {
+                    $catagory_blog[]=\App\blog::where('status','Active')->where('id',$key->blogs_id)->get();
+                }
+            }
+            if ($catagory_blog != NULL) {
+                return view('front.catagory.index',compact('catagory_blog','catagory'));  
+            }
+            else
+            {
+                return 'No Catagory';
+            }
+    }
+
      
 }

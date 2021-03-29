@@ -3,10 +3,11 @@
 namespace App;
 
 use App\BlogTag;
+use App\blog;
+use Crypt;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
-use Crypt;
 
 class Tag extends Model
 {
@@ -161,6 +162,24 @@ class Tag extends Model
         }else{
             return 'accessdenied';
         }
+    }
+
+
+    public function frontTagIndex($tag)
+    {
+        $sql=\App\Tag::with(['tag_rel'])->where('tag',$tag)->get();
+        if ($sql != Null) {
+            foreach ($sql as $key => $value) {
+                if($value->tag_rel != null){
+                    foreach ($value->tag_rel as $key) {
+                        $tag_blog[]=\App\blog::where('status','Active')->where('id',$key->blog_id)->get();
+                    }
+                }
+            }
+            
+            return view('front.tag.index',compact('tag_blog','tag'));
+        }
+   
     }
 
   

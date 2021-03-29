@@ -209,40 +209,9 @@ Route::any('/blog',[App\Http\Controllers\FrontBlogController::class,'index'])->n
 Route::any('/post/{title}',[App\Http\Controllers\FrontBlogController::class,'show'])->name('blog_detail');
 Route::get('/search-post',[App\Http\Controllers\FrontBlogController::class,'search'])->name('search');
 
-Route::any('/catagory/{catagory}', function ($catagory) {
-      $sql=\App\catagory::with(['blog_catagory'])->where('catagory',$catagory)->get();
-      foreach ($sql as $key => $value) {
-      	
-      	foreach ($value->blog_catagory as $key) {
-      		$catagory_blog[]=\App\blog::where('status','Active')->where('id',$key->blogs_id)->get();
-      	}
+Route::any('/catagory/{catagory}',[App\Http\Controllers\CatagoryController::class,'Front_Catagory_Index'])->name('catagory_detail_show');
 
-      }
-     if ($catagory_blog != NULL) {
-        return view('front.catagory.index',compact('catagory_blog','catagory'));  
-      }
-      else
-      {
-      	return 'No Catagory';
-      }
-})->name('catagory_detail_show');
-
-
-Route::any('/tag/{tag}', function ($tag) {
-      $sql=\App\Tag::with(['tag_rel'])->where('tag',$tag)->get();
-    if ($sql != Null) {
-     	foreach ($sql as $key => $value) {
-     		if($value->tag_rel != null){
-     			foreach ($value->tag_rel as $key) {
-     				$tag_blog[]=\App\blog::where('status','Active')->where('id',$key->blog_id)->get();
-     		    }
-     	    }
-     	}
-     	
-     	return view('front.tag.index',compact('tag_blog','tag'));
-    }
-   
-})->name('tag_detail_show');
+Route::any('/tag/{tag}',[App\Http\Controllers\TagController::class,'Front_Tag_Index'])->name('tag_detail_show');
 
 //user Login In Web
 Route::any('/userregister',[App\Http\Controllers\Auth\RegisterController::class,'register'])->name('front_user_register');

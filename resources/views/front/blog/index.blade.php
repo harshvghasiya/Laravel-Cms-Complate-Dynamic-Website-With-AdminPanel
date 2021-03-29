@@ -60,55 +60,47 @@ $author_desc=\App\setting::find(1);
           
      
      
-            <div class="blog-pagination">
-                   @if ($all->hasPages())
-    <ul class="justify-content-center paginate">
-        {{-- Previous Page Link --}}
-        @if ($all->onFirstPage())
+          <div class="blog-pagination">
+           @if ($all->hasPages())
+           <ul class="justify-content-center paginate">
+            {{-- Previous Page Link --}}
+            @if ($all->onFirstPage())
             <li class="disabled"><i class="icofont-rounded-left"></i></li>
-        @else
+            @else
             <li><a href="{{ $all->previousPageUrl() }}" rel="prev"><i class="icofont-rounded-left"></i></a></li>
-        @endif
-
-        @if($all->currentPage() > 3)
-            <li class="hidden-xs"><a href="{{ $all->url(1) }}">1</a></li>
-        @endif
-        @if($all->currentPage() > 4)
-            <li><span>...</span></li>
-        @endif
-        @foreach(range(1, $all->lastPage()) as $i)
-            @if($i >= $all->currentPage() - 2 && $i <= $all->currentPage() + 2)
-                @if ($i == $all->currentPage())
-                    <li class="active"><a href="javascript:void()" >{{ $i }}</a></li>
-                @else
-                    <li><a href="{{ $all->url($i) }}" class="page">{{ $i }}</a></li>
-                @endif
             @endif
-        @endforeach
-        @if($all->currentPage() < $all->lastPage() - 3)
+
+            @if($all->currentPage() > 3)
+            <li class="hidden-xs"><a href="{{ $all->url(1) }}">1</a></li>
+            @endif
+            @if($all->currentPage() > 4)
             <li><span>...</span></li>
-        @endif
-        @if($all->currentPage() < $all->lastPage() - 2)
+            @endif
+            @foreach(range(1, $all->lastPage()) as $i)
+            @if($i >= $all->currentPage() - 2 && $i <= $all->currentPage() + 2)
+            @if ($i == $all->currentPage())
+            <li class="active"><a href="javascript:void()" >{{ $i }}</a></li>
+            @else
+            <li><a href="{{ $all->url($i) }}" class="page">{{ $i }}</a></li>
+            @endif
+            @endif
+            @endforeach
+            @if($all->currentPage() < $all->lastPage() - 3)
+            <li><span>...</span></li>
+            @endif
+            @if($all->currentPage() < $all->lastPage() - 2)
             <li class="hidden-xs"><a href="{{ $all->url($all->lastPage()) }}">{{ $all->lastPage() }}</a></li>
-        @endif
+            @endif
 
-        {{-- Next Page Link --}}
-        @if ($all->hasMorePages())
+            {{-- Next Page Link --}}
+            @if ($all->hasMorePages())
             <li><a href="{{ $all->nextPageUrl() }}" rel="next"><i class="icofont-rounded-right"></i></a></a></li>
-        @else
+            @else
             <li class="disabled"><i class="icofont-rounded-right"></i></li>
-        @endif
-    </ul>
-@endif
-
-              {{-- <ul class="justify-content-center">
-                <li class="disabled"><a href="{{ $all->previousPageUrl() }}"><i class="icofont-rounded-left"></i></a></li>
-                <li><a href="">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
-              </ul> --}}
-            </div>
+            @endif
+          </ul>
+          @endif
+        </div>
 
           </div><!-- End blog entries list -->
 

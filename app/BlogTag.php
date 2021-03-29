@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogTag extends Model
 {
+	
     const apm_id ='7';
 
     public function tag_rel()

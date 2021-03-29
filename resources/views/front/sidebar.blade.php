@@ -1,7 +1,7 @@
 @php 
 $catagory=\App\catagory::with(['blog_catagory'])->where('status','Active')->get();
 
-$tag=\App\Tag::where('status','Active')->select('tag')->distinct()->get();
+$tag=\App\Tag::with(['tag_rel'])->where('status','Active')->get();
 
 $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
 @endphp
@@ -47,9 +47,11 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
               <div class="sidebar-item tags">
                 <ul>
                   @if(!$tag->isEmpty())
-                  @foreach($tag as $result)
-                  <li><a href="{{route('tag_detail_show',[$result->tag])}}">{{$result->tag}}</a></li>
-                  @endforeach
+                    @foreach($tag as $result)
+                      @if(!$result->tag_rel->isEmpty())
+                       <li><a href="{{route('tag_detail_show',[$result->tag])}}">{{$result->tag}}</a></li>
+                      @endif
+                    @endforeach
                   @endif
                 </ul>
               </div><!-- End sidebar tags-->

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\BlogTag;
 use App\Http\Requests\TagValidationRequest;
 use App\Tag;
-use App\BlogTag;
+
 use Illuminate\Http\Request;
 
 
@@ -62,5 +63,10 @@ class TagController extends Controller
     public function status_all(Request $request)
     {
        return $this->Model->statusAllTag($request);
+    }
+
+    public function Front_Tag_Index($tag)
+    {
+        return $this->Model->frontTagIndex($tag);
     }
 }

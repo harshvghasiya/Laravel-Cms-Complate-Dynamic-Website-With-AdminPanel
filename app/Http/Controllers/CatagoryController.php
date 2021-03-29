@@ -68,4 +68,9 @@ class CatagoryController extends Controller
     {
        return $this->Model->deleteAllCatagory($request);
     }
+
+    public function Front_Catagory_Index($catagory)
+    {
+        return $this->Model->frontCatagoryIndex($catagory);
+    }
 }
