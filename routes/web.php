@@ -205,9 +205,9 @@ Route::any('/admin/userfollow',[App\Http\Controllers\UserfollowController::class
 Route::get('/', function () {
     return view('front.main.main');
 })->name('home');
-Route::any('/blog',[App\Http\Controllers\FrontBlogController::class,'index'])->name('front_blog');
-Route::any('/post/{title}',[App\Http\Controllers\FrontBlogController::class,'show'])->name('blog_detail');
-Route::get('/search-post',[App\Http\Controllers\FrontBlogController::class,'search'])->name('search');
+Route::any('/blog',[App\Http\Controllers\BlogController::class,'indexFrontBlog'])->name('front_blog');
+Route::any('/post/{title}',[App\Http\Controllers\BlogController::class,'showFrontBlog'])->name('blog_detail');
+Route::get('/search-post',[App\Http\Controllers\BlogController::class,'search'])->name('search');
 
 Route::any('/catagory/{catagory}',[App\Http\Controllers\CatagoryController::class,'Front_Catagory_Index'])->name('catagory_detail_show');
 

@@ -60,6 +60,8 @@ type="text/javascript">
 <script src="{{ asset('public/admin_asset/assets/admin/pages/scripts/ui-extended-modals.js')}}"></script>
 <script src="{{ asset('public/admin_asset/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js')}}" type="text/javascript"></script>
 <script src="{{ asset('public/admin_asset/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js')}}" type="text/javascript"></script>
+<script src="{{ asset('public/admin_asset/assets/imageupload/js/jquery.filer.min.js')}}"></script>
+<script src="{{ asset('public/admin_asset/assets/imageupload/js/jquery.filer.js')}}"></script>
 
 
 

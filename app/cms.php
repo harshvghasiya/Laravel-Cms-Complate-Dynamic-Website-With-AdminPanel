@@ -13,7 +13,7 @@ class cms extends Model
   const apm_id ='8';
   const CONST_OUR_TOP_WEB_DEVELOPMENT_SOLUTION = '6';
 
-         public function module()
+    public function module()
     {
     	return $this->belongsTo(module::class,'module_id','id');
     }
@@ -272,6 +272,19 @@ class cms extends Model
         }else{
             return 'accessdenied';
         }
+    }
+
+    public function getCmsImageUrl()
+    {
+        $imgname=$this->image;
+        $imagePath=Cms_Image_Exist().'/'.$imgname;
+        $imageUrl=Cms_Image_Url().'/'.$imgname;
+
+        if (file_exists($imagePath)) {
+             return $imageUrl;
+        }else{
+            return No_Image_Url();
+        } 
     }
 
 

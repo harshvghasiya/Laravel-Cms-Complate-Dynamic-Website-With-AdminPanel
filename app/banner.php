@@ -20,6 +20,8 @@ class banner extends Model
     	return $this->belongsTo(AdminLogin::class,'created_by','id');
     }
 
+   
+
     // Datatable
     public function BannerDatable()
     {
@@ -189,6 +191,22 @@ class banner extends Model
         }else{
             return 'accessdenied';
         }
+    }
+
+    // Banner Image Url
+
+    public function getBannerImageUrl()
+    {
+       $imgname=$this->image;
+
+       $imagePath=Banner_Image_Check_Exist_Path().'/'.$imgname;
+       $imageUrl=Banner_Image_Upload_Url().'/'.$imgname;
+       if (file_exists($imagePath)) {
+           return $imageUrl;
+
+       }else{
+           return No_Image_Url();
+       }
     }
 
 

@@ -3,7 +3,6 @@ $author_desc=\App\setting::find(1);
 $socialmedia=\App\SocialMedia::where('status','Active')->get();
 
 @endphp
-  <!-- ======= Footer ======= -->
   <footer id="footer">
 
     <div class="footer-top">
@@ -46,9 +45,10 @@ $socialmedia=\App\SocialMedia::where('status','Active')->get();
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="{{route('newsletter_store')}}" method="post">
+            <form action="{{route('newsletter_store')}}" class="newsletter" method="post">
               @csrf
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email" class="email" aria-invalid="false" >
+              <input type="submit" value="Subscribe" >
             </form>
           </div>
 
@@ -63,11 +63,7 @@ $socialmedia=\App\SocialMedia::where('status','Active')->get();
           &copy; Copyright <strong><span>Harsh Vaghasiya</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
-          
+    
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -78,4 +74,25 @@ $socialmedia=\App\SocialMedia::where('status','Active')->get();
         @endif
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+@section('script')
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".newsletter").validate({
+        rules: { 
+           email: { required: true,email:true },
+        },
+        messages:{
+           email: { required: 'Please enter email',email:'Please enter valid Email' },
+        },
+        highlight: function (element) {
+                $(element).parent().addClass('text-danger')
+            },
+        unhighlight: function (element) {
+                $(element).parent().removeClass('text-danger')
+            }
+
+    });
+});
+</script>
+@endsection

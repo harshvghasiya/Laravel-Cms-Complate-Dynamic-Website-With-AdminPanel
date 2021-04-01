@@ -14,9 +14,7 @@ $qna=\App\qna::where('status','Active')->get();
 @section('title','Home')
 @section('container')
 
-  <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
         <div class="col-xl-6">
@@ -26,26 +24,22 @@ $qna=\App\qna::where('status','Active')->get();
         </div>
       </div>
     </div>
-
-  </section><!-- End Hero -->
+  </section>
   <main id="main">
 
-    <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
         <div class="owl-carousel clients-carousel">
           @if(!$banner->isEmpty())
           @foreach($banner as $result)
-           <img src="{{ url('public/storage/bannerimage/'.$result->image ) }}" alt="">
+           <img src="{{$result->getBannerImageUrl()}}" alt="Banner">
           @endforeach
           @endif
           
-         
         </div>
       </div>
-    </section><!-- End Clients Section -->
+    </section>
 
-    <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -83,16 +77,13 @@ $qna=\App\qna::where('status','Active')->get();
                   <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
                 </div>
               </div>
-            </div><!-- End .content-->
+            </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-    <!-- ======= Counts Section ======= -->
-   
-    <!-- ======= Tabs Section ======= -->
     <section id="tabs" class="tabs">
       <div class="section-title">
     <h2  data-aos="fade-up">OUR TOP WEB DEVELOPMENT SOLUTIONS</h2>
@@ -100,56 +91,53 @@ $qna=\App\qna::where('status','Active')->get();
       <div class="container" data-aos="fade-up">
  
         <ul class="nav nav-tabs row d-flex">
-          <?php 
-          if(!$our_top_web_solution->isEmpty()){
-           $x=1;
-          foreach($our_top_web_solution as $key){
+          
+          @if(!$our_top_web_solution->isEmpty())
+           @php $x=1 @endphp
+          @foreach($our_top_web_solution as $key)
 
-          echo  '<li class="nav-item col-3">
-            <a class="nav-link  show" data-bs-toggle="tab" data-bs-target="#tab-'.$x.'">
+          <li class="nav-item col-3">
+            <a class="nav-link  show" data-bs-toggle="tab" data-bs-target="#tab-{{$x}}">
               <i class="ri-gps-line"></i>
-              <h4 class="d-none d-lg-block">'.$key->name.'</h4>
+              <h4 class="d-none d-lg-block">{{$key->name}}</h4>
             </a>
-          </li>';
-          $x=$x+1;
-          }
-          }
-          ?>
+          </li>
+          @php $x=$x+1 @endphp
+          @endforeach
+          @endif
+        
         </ul>
 
         <div class="tab-content">
 
-          <?php
-          if(!$our_top_web_solution->isEmpty()){
-           $x=1;
-          foreach($our_top_web_solution as $key){
-           echo '<div class="tab-pane  show" id="tab-'.$x.'">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                <h3>'.$key->name.'</h3>
-                <p class="font-italic">
-                  '.$key->seo_description.'
-                </p>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                <img src="'.asset("/public/storage/cmsimage/$key->image") .'" alt="" class="img-fluid">
+          
+        @if(!$our_top_web_solution->isEmpty())
+          @php $x=1 @endphp
+          @foreach($our_top_web_solution as $key)
+            <div class="tab-pane  show" id="tab-{{$x}}">
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                  <h3>{{$key->name}}</h3>
+                  <p class="font-italic">
+                    {{$key->seo_description}}
+                  </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                  <img src="{{$key->getCmsImageUrl()}}" alt="" class="img-fluid">
+                </div>
               </div>
             </div>
-          </div>';
- $x=$x+1;
-          }
+            @php $x=$x+1 @endphp
+          @endforeach
+        @endif
 
-        } 
-
-          ?>
+          
          
          
         </div>
 
       </div>
-    </section><!-- End Tabs Section -->
-
-    <!-- ======= Services Section ======= -->
+    </section>
     <section id="services" class="services section-bg ">
       <div class="container" data-aos="fade-up">
 
@@ -213,12 +201,12 @@ $qna=\App\qna::where('status','Active')->get();
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-{{$key->name}}">
             <div class="portfolio-wrap">
-              <img src="{{ asset("/public/storage/portfolioimage/$key->image") }}" class="img-fluid" alt="">
+              <img src="{{$key->getPortfolioImageUrl()}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>{{$key->name}}</h4>
                
                 <div class="portfolio-links">
-                  <a href="{{ asset("/public/storage/portfolioimage/$key->image") }}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="{{ $key->getPortfolioImageUrl() }}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                   
                 </div>
               </div>
@@ -226,15 +214,11 @@ $qna=\App\qna::where('status','Active')->get();
           </div>
           @endforeach
           @endif
-
-         
-
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
 
-    <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
@@ -247,7 +231,7 @@ $qna=\App\qna::where('status','Active')->get();
            @foreach($testimonials as $result)
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{ asset("public/storage/testimonialimage/$result->image" ) }}" class="testimonial-img" alt="">
+              <img src="{{$result->getTestimonialImageUrl()}}" class="testimonial-img" alt="">
               <h3>{{$result->name}}</h3>
               <h4>{{$result->role}}</h4>
               <p>
@@ -264,11 +248,8 @@ $qna=\App\qna::where('status','Active')->get();
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
 
-    <!-- ======= Pricing Section ======= -->
-   
-    <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq">
       <div class="container" data-aos="fade-up">
 
@@ -294,12 +275,8 @@ $qna=\App\qna::where('status','Active')->get();
         </ul>
 
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section>
 
-    <!-- ======= Team Section ======= -->
-
-
-    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -324,14 +301,18 @@ $qna=\App\qna::where('status','Active')->get();
                 <div class="info-box mt-4">
                   <i class="bx bx-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>{{$author_desc->first_email}}<br>{{$author_desc->second_email}}</p>
+                  <p><a href="mailto:{{$author_desc->first_email}}">{{$author_desc->first_email}}</a>
+                    <br>
+                    <a href="mailto:{{$author_desc->second_email}}">{{$author_desc->second_email}}</a>
+                    
+                  </p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-phone-call"></i>
                   <h3>Call Us</h3>
-                  <p>+91 {{$author_desc->first_mobile}}{{-- <br>+91 {{$author_desc->first_mobile}} --}}</p>
+                  <p><a href="tel:+91{{$author_desc->first_mobile}}">+91 {{$author_desc->first_mobile}}</a></p>
                 </div>
               </div>
             </div>
@@ -339,10 +320,10 @@ $qna=\App\qna::where('status','Active')->get();
           </div>
 
           <div class="col-lg-6">
-             {!! Form::open(['route' => 'contactus',
-                            
-                          'class'=>'php-email-form',
-                          'role'=>'form']) !!}
+             {!! Form::open(['route' => 'contactus',      
+                             'class'=>'php-email-form',
+                             'id'=>'Contactus',
+                             ]) !!}
               <div class="row">
                 <div class="col form-group">
                    {{ Form::text('name',old('name') ,['class' => 'form-control','id'=>'name','placeholder'=>'Your Name',
@@ -351,7 +332,7 @@ $qna=\App\qna::where('status','Active')->get();
                   <div class="validate"></div>
                 </div>
                 <div class="col form-group">
-                   {{ Form::text('email',old('email') ,['class' => 'form-control','id'=>'email','placeholder'=>'Your  Email','data-rule'=>'minlen:2', 'data-msg'=>"Please enter a Valid Email" ]) }} 
+                   {{ Form::text('email',old('email') ,['class' => 'form-control email','id'=>'email','placeholder'=>'Your  Email','data-rule'=>'email', 'data-msg'=>"Please enter a Valid Email" ]) }} 
                  
                   <div class="validate"></div>
                 </div>
@@ -371,18 +352,15 @@ $qna=\App\qna::where('status','Active')->get();
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               @if(isset(Auth::user()->id))
-              <button type="submit" id="sub">Send Message</button>
+              <button type="submit" >Send Message</button>
               @else
               <h3 class="text-center text-secondary">Login First For Leave Message</h3>
               @endif
-
              {!! Form::close() !!}
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
 @endsection

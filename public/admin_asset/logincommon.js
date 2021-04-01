@@ -29,8 +29,9 @@ $('form.FromSubmit').submit(function (event) {
                   
                     $('#'+formId+' button[type="submit"]').text(buttonText);
                     $('#'+formId+' button[type="submit"]').removeAttr('disabled','disabled');
-                  
+                  if (redirectURL != null) {
                     window.location=redirectURL;
+                    }
                 }
             },
             error: function (jqXhr) {
@@ -66,7 +67,8 @@ function showErrorMessages(formId, errorResponse) {
 
                 $.bootstrapGrowl(messages, {
                       type: $type,
-                      delay: 5000
+                      delay: 5000,
+                     
                   });
  }
 

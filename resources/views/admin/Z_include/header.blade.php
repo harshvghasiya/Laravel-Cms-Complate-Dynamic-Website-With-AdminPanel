@@ -60,5 +60,8 @@
     <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript">
     </script>
     <!-- jQuery -->
-    <script src="{{ asset('public/admin_asset/assets/admin/layout4/scripts/jquery.bootstrap-growl.min.js') }}" type="text/javascript"></script>   
+    <script src="{{ asset('public/admin_asset/assets/admin/layout4/scripts/jquery.bootstrap-growl.min.js') }}" type="text/javascript"></script> 
+    <link href="{{ asset('public/admin_asset/assets/imageupload/css/themes/jquery.filer-dragdropbox-theme.css')}}" type="text/css" rel="stylesheet" />  
+   <link href="{{ asset('public/admin_asset/assets/imageupload/css/jquery.filer.css') }}" type="text/css" rel="stylesheet" />
+
 </head>

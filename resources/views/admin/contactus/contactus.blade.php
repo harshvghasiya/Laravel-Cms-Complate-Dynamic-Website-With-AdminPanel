@@ -109,31 +109,5 @@ $(document).ready(function() {
 });
 
 </script>
-<script type="text/javascript">
-
-
-
-  $(document).on('click', '#del_contact', function(event) {
-    event.preventDefault();
-    var del_id=$(this).data('del_id');
-    var ele=this;
-    $.ajax({
-      url: '{{route('del_contact')}}',
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                 },
-      type: 'POST',
-      
-      data: {del_id: del_id},
-      success:function(data){
-        $(ele).closest('tr').fadeOut('slow');
-      }
-    }); 
-  });
-
-
- 
-
-</script>
 
 @endsection

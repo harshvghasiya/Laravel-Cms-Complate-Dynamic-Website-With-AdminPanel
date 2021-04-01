@@ -4,155 +4,189 @@
 
 @section('container')
 <div class="page-content">
-    <!-- BEGIN PAGE HEAD -->
-    <div class="page-head">
-        <!-- BEGIN PAGE TITLE -->
-  
-
-      <div class="page-title">
-            <h1>Settings </h1>
-        </div>
-
-     
-       
-        <!-- END PAGE TITLE -->
-
+  <div class="portlet box green">
+    <div class="portlet-title">
+      <div class="caption">
+        <i class="fa fa-gift"></i>Settings
+      </div>
+      <div class="tools">
+        <a href="javascript:;" class="collapse">
+        </a>
+        <a href="#portlet-config" data-toggle="modal" class="config">
+        </a>
+        <a href="javascript:;" class="reload">
+        </a>
+        <a href="javascript:;" class="remove">
+        </a>
+      </div>
     </div>
-
-
-    <!-- BEGIN SAMPLE FORM PORTLET-->
-    <div class="portlet box blue">
-        <div class="portlet-title">
-             
-            <div class="caption">
-                <i class="fa fa-gift"></i> Settings
-            </div>
-            
-            
-            <div class="tools">
-                <a href="" class="collapse">
-                </a>
-                <a href="#portlet-config" data-toggle="modal" class="config">
-                </a>
-                <a href="" class="reload">
-                </a>
-                <a href="" class="remove">
-                </a>
-            </div>
-        </div>
-        <div class="portlet-body form">
-           {{Form::model($edit, ['route' => ['upd_setting', $edit],
-                                   'id' =>'settingValidation',
-                          'class'=>'FromSubmit',
-                          'method'=>'put',
-                          'redirect_url' =>route('setting_create')])}}
-             {{ Form::text('id',old('id') ,['class' => 'form-control hidden'])
-             }}   
-
-                <div class="form-body">
-                  <h3>Basic Info</h3><hr>
-                  <div class="row">
-                    
+    <div class="portlet-body form">
+      <!-- BEGIN FORM-->
+      {{Form::model($edit, ['route' => ['upd_setting', $edit],
+                           'id' =>'settingValidation',
+                           'class'=>'FromSubmit form-horizontal',
+                           'method'=>'put',
+                           'redirect_url' =>route('setting_create')])}}
+      {{ Form::text('id',old('id') ,['class' => 'form-control hidden'])}}   
+        <div class="form-body">
+          <h3 class="form-section">Basic Info</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Website URl</label>
+                <div class="col-md-9">
+                  {{ Form::text('web_url',old('web_url') ,['class' => 'form-control']) }} 
                  
-                <div class="form-group col-md-6">
-                    <label class="control-label">Website URl</label>
-                {{ Form::text('web_url',old('web_url') ,['class' => 'form-control'])
-                 }}                    
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label">Author Name</label>
-                {{ Form::text('author_name',old('author_name') ,['class' => 'form-control'])
-                 }}                    
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label">First Email</label>
-                {{ Form::text('first_email',old('first_email') ,['class' => 'form-control'])
-                 }}                    
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label">Second Email</label>
-                {{ Form::text('second_email',old('second_email') ,['class' => 'form-control'])
-                 }}                    
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label">First Mobile</label>
-                {{ Form::text('first_mobile',old('first_mobile') ,['class' => 'form-control'])
-                 }}                    
-                </div>
-                <div class="form-group col-md-6">
-                    <label class="control-label"> Second Mobile</label>
-                {{ Form::text('second_mobile',old('second_mobile') ,['class' => 'form-control'])
-                 }}                    
-                </div>
-
-              </div>
-              <h3>Description Detatil</h3><hr>
-              <div class="row">
-                  <div class="form-group col-md-6">
-                    <label class="control-label"> Author Description Footer</label>
-                {{ Form::textarea('author_decription_footer',old('author_decription_footer') ,['id'=>'author_decription_footer','class' => 'form-control','row'=>'1'])
-                 }}                    
-                </div>
-
-                  <div class="form-group col-md-6">
-                    <label class="control-label"> Author Description Sidebar</label>
-                {{ Form::textarea('author_decription_sidebar',old('author_decription_sidebar') ,['id'=>'author_decription_sidebar','class' => 'form-control','row'=>'1'])
-                 }}                    
-                </div>
-                 <div class="form-group col-md-6">
-                    <label class="control-label"> Address</label>
-                {{ Form::textarea('address',old('address') ,['id'=>'address', 'class' => 'form-control','row'=>'3'])
-                 }}                    
                 </div>
               </div>
-              <h3 class="form-section">Author Image</h3>
-                @if(isset($edit))
-                     
-                       <div class="form-group">
-                            <label for="exampleInputFile1">Cover Image</label>
-                            {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
-                       </div>
-                        <p class="help-block">
-                            <img id="output" src="{{asset("public/storage/authorimage/$edit->image")}}" width="150px" ; height="150px" ; />
-                        </p>
-                         
-                         
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Author Name</label>
+                <div class="col-md-9">
+                  {{ Form::text('author_name',old('author_name') ,['class' => 'form-control']) }} 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <!--/row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">First Email</label>
+                <div class="col-md-9">
+                    {{ Form::text('first_email',old('first_email') ,['class' => 'form-control'])}}
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Second Email</label>
+                <div class="col-md-9">
+                   {{ Form::text('second_email',old('second_email') ,['class' => 'form-control']) }}  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <!--/row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">First Mobile</label>
+                <div class="col-md-9">
+                 {{ Form::text('first_mobile',old('first_mobile') ,['class' => 'form-control']) }}  
+                </div>
+              </div>
+            </div>
+           
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Second Mobile</label>
+                <div class="col-md-9">
+                  {{ Form::text('second_mobile',old('second_mobile') ,['class' => 'form-control']) }} 
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          <h3 class="form-section">Description Detail</h3>
+          <!--/row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Author Description Footer</label>
+                <div class="col-md-9">
+                   {{ Form::textarea('author_decription_footer',old('author_decription_footer') ,['id'=>'author_decription_footer','class' => 'form-control','row'=>'1']) }} 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Author Description Sidebar</label>
+                <div class="col-md-9">
+                    {{ Form::textarea('author_decription_sidebar',old('author_decription_sidebar') ,['id'=>'author_decription_sidebar','class' => 'form-control','row'=>'1']) }} 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Address</label>
+                <div class="col-md-9">
+                  {{ Form::textarea('address',old('address') ,['id'=>'address', 'class' => 'form-control','row'=>'3']) }} 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/row-->
+          <h3 class="form-section">Upload Image</h3>
 
-                      @else
-                       <div class="form-group">
-                      <label for="exampleInputFile1">Cover Image</label>
-                       {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
-                        <p class="help-block">
-                            <img id="output" src="{{asset("public/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
-                        </p>
-                          </div>
-                      @endif
-                     
-                  
-                    <script>
-                        var loadFile = function(event) {
-                            var output = document.getElementById('output');
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                            console.log(output.src);
-                            output.onload = function() {
-                                URL.revokeObjectURL(output.src) // free memory
-                            }
-                        };
-                        </script>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Logo Image</label>
+                <div class="col-md-9">
+                  {{Form::file('logo_image',['class'=>'','onchange'=>"loadFile3(event)",'id'=>'filer_input2','data-jfiler-showThumbs'=>'true'])}}     
+                  <div class="help-block col-sm-6">
+                    <img id="output3" src="{{asset("public/storage/authorimage/$edit->logo_image")}}" width="200px" ; height="200px" ; />
+                  </div>
+               </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Favicon Image</label>
+                <div class="col-md-9">
+                  {{Form::file('favicon',['class'=>'','onchange'=>"loadFile2(event)",'id'=>'filer_input3','data-jfiler-showThumbs'=>'true'])}}     
+                  <div class="help-block col-sm-6">
+                    <img id="output2" src="{{asset("public/storage/authorimage/$edit->favicon")}}" width="200px" ; height="200px" ; />
+                  </div>
+               </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-md-3">Aurthor Image</label>
+                <div class="col-md-9">
+                  {{Form::file('image',['class'=>'','onchange'=>"loadFile1(event)",'id'=>'filer_input','data-jfiler-showThumbs'=>'true'])}}     
+                  <div class="help-block col-sm-6">
+                    <img id="output1" src="{{asset("public/storage/authorimage/$edit->image")}}" width="200px" ; height="200px" ; />
+                  </div>
                 </div>
-                <div class="form-actions">
-                  <button type="submit" class="btn blue">Submit</button>
-                    <a href="{{url('/admin')}}" type="button" class="btn default">Cancel</a>
-                </div>
-                    {!! Form::close() !!}
+              </div>
+            </div>           
+          </div>
+
         </div>
+        <div class="form-actions">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-offset-3 col-md-9">
+                  <button type="submit" class="btn green">Submit</button>
+                  <button type="button" class="btn default">Cancel</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- END FORM-->
     </div>
-    <!-- END SAMPLE FORM PORTLET-->
-
-
+  </div>
+ 
 </div>
-
-
 @endsection
 @section('script')
   <script>
@@ -173,5 +207,40 @@
         });
         CKEDITOR.config.allowedContent = true;
     </script>
+
+    <script>
+     var loadFile1 = function(event) {
+       var output = document.getElementById('output1');
+       output.src = URL.createObjectURL(event.target.files[0]);
+       output.onload = function() {
+         URL.revokeObjectURL(output.src) 
+       }
+     };
+   </script>   
+    <script>
+     var loadFile2= function(event) {
+       var output = document.getElementById('output2');
+       output.src = URL.createObjectURL(event.target.files[0]);
+       output.onload = function() {
+         URL.revokeObjectURL(output.src) 
+       }
+     };
+   </script>  
+     <script>
+     var loadFile3 = function(event) {
+       var output = document.getElementById('output3');
+       output.src = URL.createObjectURL(event.target.files[0]);
+       output.onload = function() {
+         URL.revokeObjectURL(output.src) 
+       }
+     };
+   </script>
+   <script >
+     $('#filer_input').filer(); 
+     $('#filer_input2').filer(); 
+     $('#filer_input3').filer(); 
+     
+   </script>
+
 
 @endsection

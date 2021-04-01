@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\contactus;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactUsValidationRequest;
 
 
 class ContactusController extends Controller
@@ -15,7 +16,7 @@ class ContactusController extends Controller
         $this->middleware('access:'.$apm_id.''); 
     }
    
-    public function store(Request $request)
+    public function store(ContactUsValidationRequest $request)
     {
        return $this->Model->storeContactus($request);
     }

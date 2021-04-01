@@ -15,7 +15,7 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
                   <input type="text" name="search" value="{{$search_val ?? ''}}"  id="search_input" >
                   <button type="submit" id="search"><i class="icofont-search"></i></button>
                 </form>
-              </div><!-- End sidebar search formn-->
+              </div>
 
               <h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
@@ -29,19 +29,19 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
                   @endforeach
                   @endif
                 </ul>
-              </div><!-- End sidebar categories-->
+              </div>
 
               <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
                 @foreach($recent_post as $result)
                 <div class="post-item clearfix">
-                  <img src="{{url('public/storage/blogimage/'.$result->image)}}" alt="">
+                  <img src="{{ $result->getBlogImageUrl()}}" alt="">
                   <h4><a href="{{route('blog_detail',[Crypt::encrypt($result->id)])}}">{{$result->title}}</a></h4>
                   <time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time>
                 </div>
 
                 @endforeach                
-              </div><!-- End sidebar recent posts-->
+              </div>
 
               <h3 class="sidebar-title">Tags</h3>
               <div class="sidebar-item tags">
@@ -54,11 +54,11 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
                     @endforeach
                   @endif
                 </ul>
-              </div><!-- End sidebar tags-->
+              </div>
 
-            </div><!-- End sidebar -->
+            </div>
 
-          </div><!-- End blog sidebar -->
+          </div>
 @section('script')
 
 @endsection

@@ -22,12 +22,35 @@ class setting extends Model
 
     public function saveSetting($request)
     {
+
     	$id=$request->input('id');
         $res=setting::find($id);
     	$image=$request->file('image');
-    	if($image != null){
-        $image_name=UploadImage($image,Auther_Image_Path());
-        $res->image=$image_name;
+        $favicon=$request->file('favicon');
+
+        $logo_image=$request->file('logo_image');
+
+    	if($image != null)
+        {
+            foreach ($image as $author_image) {
+            $image_name=UploadImage($author_image,Auther_Image_Path());
+           }
+            $res->image=$image_name;
+        }
+
+        if($favicon != null)
+        {
+            foreach ($favicon as $favicon_image) {
+            $image_name=UploadImage($favicon_image,Auther_Image_Path());
+           }
+            $res->favicon=$image_name;
+        }
+        if($logo_image != null)
+        {
+            foreach ($logo_image as $logo) {
+            $image_name=UploadImage($logo,Auther_Image_Path());
+            }
+            $res->logo_image=$image_name;
         }
 
 

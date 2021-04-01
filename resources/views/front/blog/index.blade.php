@@ -30,7 +30,7 @@ $author_desc=\App\setting::find(1);
             <article class="entry">
 
               <div class="entry-img">
-                <img src="{{url('public/storage/blogimage/'.$result->image)}}" alt="" class="img-fluid">
+                <img src="{{$result->getBlogImageUrl()}}" alt="BlogImage" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -41,7 +41,7 @@ $author_desc=\App\setting::find(1);
                 <ul>
                   <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{$author_desc->author_name}}</a></li>
                   <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
+                 
                 </ul>
               </div>
 
@@ -54,8 +54,7 @@ $author_desc=\App\setting::find(1);
                 </div>
               </div>
 
-            </article><!-- End blog entry -->
-
+            </article>
           @endforeach
           
      
@@ -63,7 +62,7 @@ $author_desc=\App\setting::find(1);
           <div class="blog-pagination">
            @if ($all->hasPages())
            <ul class="justify-content-center paginate">
-            {{-- Previous Page Link --}}
+          
             @if ($all->onFirstPage())
             <li class="disabled"><i class="icofont-rounded-left"></i></li>
             @else
@@ -92,7 +91,7 @@ $author_desc=\App\setting::find(1);
             <li class="hidden-xs"><a href="{{ $all->url($all->lastPage()) }}">{{ $all->lastPage() }}</a></li>
             @endif
 
-            {{-- Next Page Link --}}
+           
             @if ($all->hasMorePages())
             <li><a href="{{ $all->nextPageUrl() }}" rel="next"><i class="icofont-rounded-right"></i></a></a></li>
             @else
@@ -102,16 +101,16 @@ $author_desc=\App\setting::find(1);
           @endif
         </div>
 
-          </div><!-- End blog entries list -->
+          </div>
 
         @include('front.sidebar')
 
         </div>
 
       </div>
-    </section><!-- End Blog Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
   @endsection
 @section('script')
 

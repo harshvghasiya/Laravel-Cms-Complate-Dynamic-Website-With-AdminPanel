@@ -66,16 +66,16 @@ class testimonial extends Model
                             return '<a class="btn btn-danger del_data" data-route="'.route('del_Testimonial').'" id="del_Testimonial" data-del_id='.Crypt::encrypt($data->id).'> <i class="fa fa-trash"></i> </a>  
                               <a  href="'.route('edit_Testimonial',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
-                 ->editColumn('image', function($data){
+                ->editColumn('image', function($data){
                             return '<img src="'.asset("/public/storage/testimonialimage/$data->image").'" width="80px";
                                         height="60px";>';
                         })
-                 ->editColumn('created_by', function($data){
+                ->editColumn('created_by', function($data){
                       if($data->created_email != null){
                             return '<a href="'.route('viewuser',Crypt::encrypt($data->created_email->email)).'" >'.$data->created_email->email.'</a>';
                       }
                         })
-                 ->editColumn('id', function($data){
+                ->editColumn('id', function($data){
                             return  '<input type="checkbox" class="check" value="'.$data->id.'" name="check">';
                         })
                  
@@ -182,6 +182,20 @@ class testimonial extends Model
             }
         }else{
             return 'accessdenied';
+        }
+    }
+
+    public function getTestimonialImageUrl()
+    {
+        $imgname= $this->image;
+
+        $imagePath=Testimonial_Image_Exist().'/'.$imgname;
+        $imageUrl=Testimonial_Image_Url().'/'.$imgname;
+
+        if (file_exists($imagePath)) {
+            return $imageUrl;
+        }else{
+            return No_Image_Url();
         }
     }
     

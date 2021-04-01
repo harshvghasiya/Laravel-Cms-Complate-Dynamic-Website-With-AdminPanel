@@ -166,6 +166,20 @@ class portfolio extends Model
     		return 'accessdenied';
     	}
     }
+
+    public function getPortfolioImageUrl()
+    {
+      $imgname=$this->image;
+
+      $imagePath=Portfolio_Image_Exist().'/'.$imgname;
+      $imageUrl=Portfolio_Image_Url().'/'.$imgname;
+
+      if (file_exists($imagePath)) {
+        return $imageUrl;
+      }else{
+        return No_Image_Url();
+      }    
+    }
    
     
 }

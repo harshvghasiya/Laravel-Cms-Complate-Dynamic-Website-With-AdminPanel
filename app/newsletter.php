@@ -18,6 +18,7 @@ class newsletter extends Model
        $res->email=$request->input('email');
        $res->status='Active';
        $res->save();
+       flashMessage('success','Your Msg Saved');
        return back();
     }
 

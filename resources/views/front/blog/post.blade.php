@@ -3,8 +3,8 @@
 @section('title',$all->title)
 @section('container')
   <main id="main" class="search_append">
-{{-- {{dd($all)}} --}}
-    <!-- ======= Breadcrumbs ======= -->
+
+   
     <section class="breadcrumbs">
       <div class="container">
 
@@ -16,9 +16,7 @@
         <h2>Blog </h2>
 
       </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Blog Single Section ======= -->
+    </section>
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -29,7 +27,7 @@
             <article class="entry entry-single">
 
               <div class="entry-img">
-                <img src="{{url('public/storage/blogimage/'.$all->image)}}" alt="" class="img-fluid">
+                <img src="{{ $all->getBlogImageUrl()}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -66,16 +64,7 @@
                        
                       </li>
                   </ul>
-                 {{--  @if(!$tag->isEmpty())
-                  <i class="icofont-tags"></i>
-                  <ul class="tags">
-                    
-                    @foreach($tag as $result)
-                     <li><a href="{{route('tag_detail_show',[$result->tag])}}">{{$result->tag}}</a></li>
-                    @endforeach
-                    
-                  </ul>
-                  @endif --}}
+                
                 </div>
 
                 <div class="float-right share">
@@ -84,7 +73,7 @@
 
               </div>
 
-            </article><!-- End blog entry -->
+            </article>
 
             <div class="blog-author clearfix">
               <img src="{{url('public/storage/authorimage/'.$author_desc->image)}}" width="120px" height="120px" class="rounded-circle float-left" alt="">
@@ -99,16 +88,16 @@
               <p>
                <?php echo $author_desc->author_decription_sidebar; ?>
               </p>
-            </div><!-- End blog author bio -->
+            </div>
 
        
-          </div><!-- End blog entries list -->
+          </div>
           @include('front.sidebar')
         
          
         </div>
 
       </div>
-    </section><!-- End Blog Single Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>

@@ -91,5 +91,66 @@ function Auther_Image_Path()
 {
   return 'public/authorimage';
 }
+
+function No_Image_Url()
+{
+  return url('public/storage/noimage.png');
+}
+
+// Banner Front Show Path And Url
+
+function Banner_Image_Check_Exist_Path()
+{
+  return 'public/storage/bannerimage';
+}
+
+function Banner_Image_Upload_Url()
+{
+  return url('public/storage/bannerimage');
+}
+
+// Cms Front Show Path And Url
+
+function Cms_Image_Exist()
+{
+  return 'public/storage/cmsimage';
+}
+
+function Cms_Image_Url()
+{
+  return url('public/storage/cmsimage');
+}
+
+// PortFolio Front Show Path And Url
+
+function Portfolio_Image_Exist()
+{
+   return 'public/storage/portfolioimage';
+}
+
+function Portfolio_Image_Url()
+{
+  return url('public/storage/portfolioimage');
+}
+
+function Testimonial_Image_Exist()
+{
+  return 'public/storage/testimonialimage';
+}
+
+function Testimonial_Image_Url()
+{
+  return url('public/storage/testimonialimage');
+}
+
+function BLog_Image_Exist()
+{
+  return 'public/storage/blogimage';
+}
+
+function Blog_Image_Url()
+{
+  return url('public/storage/blogimage');
+}
 	 
 ?>

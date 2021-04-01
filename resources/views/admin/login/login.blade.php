@@ -19,10 +19,10 @@
 <link href="{{ asset('public/admin_asset/assets/global/plugins/uniform/css/uniform.default.css')}}" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link href="{{ asset('public/admin_asset/assets/admin/pages/css/login.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('public/admin_asset/assets/admin/pages/css/login3.css')}}" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="{{ asset('public/admin_asset/assets/global/css/components.css')}}" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('public/admin_asset/assets/global/css/components-rounded.css')}}" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/admin_asset/assets/global/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/admin_asset/assets/admin/layout/css/layout.css')}}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('public/admin_asset/assets/admin/layout/css/themes/default.css')}}" rel="stylesheet" type="text/css" id="style_color"/>
@@ -53,30 +53,31 @@
                           'class'=>'FromSubmit login-form',
                           'redirect_url' =>route('admin')]) !!}
             <h3 class="form-title">Sign In</h3>
-                <div class="form-body">
+              <div class="form-body">
                
-                 <div class="form-group">
-                
-                {{ Form::text('email',old('email') ,['class' => 'form-control','placeholder'=>'Email','autofocus'=>'true'])
-                 }}      
-                </div>
                 <div class="form-group">
-                    <label class="control-label">Password</label>
-                {{ Form::text('password',old('password') ,['class' => 'form-control password','placeholder'=>'Password'])
-                 }}  
-
+                    <label class="control-label visible-ie8 visible-ie9">Username</label>
+                    <div class="input-icon">
+                      <i class="fa fa-user"></i>
+                      {{ Form::text('email',old('email') ,['class' => 'form-control placeholder-no-fix','placeholder'=>'Email','autofocus'=>'true']) }}    
+                  </div>  
+                 </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Password</label>
+                  <div class="input-icon">
+                     <i class="fa fa-lock"></i>
+                     {{ Form::text('password',old('password') ,['class' => 'form-control password placeholder-no-fix','placeholder'=>'Password'])
+                   }} 
+                  </div> 
                 </div>
                 <div class="form-group">
                 	{{ Form::checkbox('remember',false,['class' => 'form-control'])
                  }}
-                    <label class="control-label">Remember Me</label>
-                      
-                </div>
-
-                   
-                </div>
+                    <label class="control-label">Remember Me</label>      
+                </div>  
+              </div>
                 <div class="form-actions">
-                  <button type="submit" class="btn blue">Submit</button>
+                  <button type="submit" class="btn green-haze">Login</button>
                 </div>
    
 </div>

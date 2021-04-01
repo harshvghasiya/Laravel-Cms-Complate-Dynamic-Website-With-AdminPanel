@@ -70,4 +70,25 @@ class BlogController extends Controller
     {
         return $this->Model->deleteAllBlog($request);
     }
+
+    public function search(Request $request)
+    {
+      return $this->Model->searchBlog($request);                  
+    }
+
+    public function indexFrontBlog()
+    {
+       return $this->Model->indexFrontBlog();
+    }
+
+    public function showFrontBlog($title)
+    {   
+       return $this->Model->singleBlog($title);    
+    }
+
+    public function post_show(FrontBlog $FrontBlog)
+    {
+        $all=Blog::where('status','Active')->get();
+        return view('front.blog.index',compact('all'));
+    }
 }

@@ -2,10 +2,11 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Crypt;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 use Yajra\Datatables\Datatables;
 
 class contactus extends Model
@@ -14,7 +15,7 @@ class contactus extends Model
 
     public function storeContactus($request)
     {
-    	 if (isset(Auth::user()->id)) {
+    	if (isset(Auth::user()->id)) {
             $input=$request->all();
             $res=new contactus;
             $res->name=$input['name'];
@@ -37,7 +38,7 @@ class contactus extends Model
     	 return Datatables::of(contactus::query())
 
                 ->addColumn('handle', function($data){
-                            return '<a class="btn btn-danger" id="del_contact" data-del_id='.Crypt::encrypt($data->id).'> <i class="fa fa-trash"></i> </a>';
+                            return '<a class="btn btn-danger del_data" data-route="'.route('del_contact').'" data-del_id='.Crypt::encrypt($data->id).' id="del_contact" data-del_id='.Crypt::encrypt($data->id).'> <i class="fa fa-trash"></i> </a>';
                         })
                 ->editColumn('id', function($data){
                             return  '<input type="checkbox" class="check" value="'.$data->id.'" name="check">';
@@ -61,7 +62,8 @@ class contactus extends Model
     public function deleteAllContactUs($request)
     {
     	if (Allacceess(Auth::guard('adminlogin')->user()->id,'del_all_contact')) {     
-            $id=$request->input('del_id');
+            $ids=$request->input('del_id');
+            $id=Crypt::decrypt($ids);
            foreach ($id as $key) {
              contactus::destroy($key);
            }
