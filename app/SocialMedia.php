@@ -162,5 +162,19 @@ class SocialMedia extends Model
             return 'accessdenied';
         }
     }
+
+    public function getSocialMediaImageUrl()
+    {
+      $imgname=$this->icon;
+      $imagePath=Social_Media_Image_Check_Exist_Path().'/'.$imgname;
+      $imageUrl=Social_Media_Image_Upload_Url().'/'.$imgname;
+
+      if (file_exists($imagePath)) {
+        return $imageUrl;
+      }else{
+        return No_Image_Url(); 
+      }
+    }
+    
    
 }

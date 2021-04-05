@@ -152,5 +152,15 @@ function Blog_Image_Url()
 {
   return url('public/storage/blogimage');
 }
+
+function Social_Media_Image_Check_Exist_Path()
+{
+  return 'public/storage/socialmediaicon';
+}
+
+function Social_Media_Image_Upload_Url()
+{
+  return url('public/storage/socialmediaicon');
+}
 	 
 ?>
