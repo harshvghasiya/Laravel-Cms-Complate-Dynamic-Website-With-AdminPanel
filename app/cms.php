@@ -287,6 +287,12 @@ class cms extends Model
         } 
     }
 
+    public function getCmsPageContent($cms)
+    {
+      $cms_content=cms::where('name',$cms)->first();
+      return view('front.CmsContent.cms_content',compact('cms_content'));
+    }
+
 
 
    

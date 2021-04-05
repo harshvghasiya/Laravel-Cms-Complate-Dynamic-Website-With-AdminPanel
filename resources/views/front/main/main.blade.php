@@ -1,9 +1,7 @@
 @php
 $author_desc=\App\setting::find(1);
 $banner=\App\banner::where('status','Active')->where('name','client')->get();
-$our_top_web_solution=\App\cms::where('status','Active')->where('module_id',our_top_web_solution_module_id)->get();
-$services=\App\cms::where('status','Active')->where('module_id',services_module_id)->get();
-$about=\App\cms::where('status','Active')->where('module_id',about_module_id)->get();
+$cms=\App\cms::where('status','Active')->get();
 $portfolio=\App\portfolio::where('status','Active')->get();
 $portfolio_name=\App\portfolio::where('status','Active')->select('name')->distinct()->get();
 $testimonials=\App\testimonial::where('status','Active')->get();
@@ -42,45 +40,18 @@ $qna=\App\qna::where('status','Active')->get();
 
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
-
-        <div class="row no-gutters">
-          <div class="content col-xl-5 d-flex align-items-stretch">
-            <div class="content">
-              <h3>Voluptatem dignissimos provident quasi</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-              <a href="#" class="about-btn"><span>About us</span> <i class="bx bx-chevron-right"></i></a>
-            </div>
-          </div>
-          <div class="col-xl-7 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+            @foreach($cms as $key)
+              @if($key->module_id==about_module_id)
+                <div class="content">
+                  <h3>{{$key->secondary_title}}</h3>
+                  <p>
+                    {{$key->seo_description}}
+                  </p>
+                  <a href="{{$key->name}}" class="about-btn"><span>About us</span> <i class="bx bx-chevron-right"></i></a>
                 </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bx bx-images"></i>
-                  <h4>Labore consequatur</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                  <i class="bx bx-shield"></i>
-                  <h4>Beatae veritatis</h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+              @endif
+            @endforeach
+          
       </div>
     </section>
 
@@ -92,18 +63,19 @@ $qna=\App\qna::where('status','Active')->get();
  
         <ul class="nav nav-tabs row d-flex">
           
-          @if(!$our_top_web_solution->isEmpty())
+          @if(!$cms->isEmpty())
            @php $x=1 @endphp
-          @foreach($our_top_web_solution as $key)
-
-          <li class="nav-item col-3">
-            <a class="nav-link  show" data-bs-toggle="tab" data-bs-target="#tab-{{$x}}">
-              <i class="ri-gps-line"></i>
-              <h4 class="d-none d-lg-block">{{$key->name}}</h4>
-            </a>
-          </li>
-          @php $x=$x+1 @endphp
-          @endforeach
+            @foreach($cms as $key)
+              @if($key->module_id==our_top_web_solution_module_id)
+                <li class="nav-item col-3">
+                  <a class="nav-link  show" data-bs-toggle="tab" data-bs-target="#tab-{{$x}}">
+                    <i class="ri-gps-line"></i>
+                    <h4 class="d-none d-lg-block">{{$key->name}}</h4>
+                  </a>
+                </li>
+                @php $x=$x+1 @endphp
+              @endif
+            @endforeach
           @endif
         
         </ul>
@@ -111,23 +83,25 @@ $qna=\App\qna::where('status','Active')->get();
         <div class="tab-content">
 
           
-        @if(!$our_top_web_solution->isEmpty())
+        @if(!$cms->isEmpty())
           @php $x=1 @endphp
-          @foreach($our_top_web_solution as $key)
-            <div class="tab-pane  show" id="tab-{{$x}}">
-              <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                  <h3>{{$key->name}}</h3>
-                  <p class="font-italic">
-                    {{$key->seo_description}}
-                  </p>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                  <img src="{{$key->getCmsImageUrl()}}" alt="" class="img-fluid">
+          @foreach($cms as $key)
+            @if($key->module_id==our_top_web_solution_module_id)
+              <div class="tab-pane  show" id="tab-{{$x}}">
+                <div class="row">
+                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                    <h3>{{$key->name}}</h3>
+                    <p class="font-italic">
+                      {{$key->seo_description}}
+                    </p>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{{$key->getCmsImageUrl()}}" alt="" class="img-fluid">
+                  </div>
                 </div>
               </div>
-            </div>
-            @php $x=$x+1 @endphp
+              @php $x=$x+1 @endphp
+            @endif
           @endforeach
         @endif
 
@@ -138,6 +112,7 @@ $qna=\App\qna::where('status','Active')->get();
 
       </div>
     </section>
+
     <section id="services" class="services section-bg ">
       <div class="container" data-aos="fade-up">
 
@@ -150,18 +125,20 @@ $qna=\App\qna::where('status','Active')->get();
         <div class="row">
 
       
-          @if(!$services->isEmpty())
-          @foreach($services as $key)
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <i class="icofont-earth"></i>
-              <h4><a href="#">{{$key->name}}</a></h4>
-              <p>{{$key->seo_description}}..</p>
-            </div>
-          </div>
-          @endforeach
+          @if(!$cms->isEmpty())
+            @foreach($cms as $key)
+              @if($key->module_id == services_module_id)
+                <div class="col-md-6 mt-4 mt-md-0">
+                  <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                    <i class="icofont-earth"></i>
+                    <h4><a href="{{$key->name}}">{{$key->secondary_title}}</a></h4>
+                    <p>{{substr($key->seo_description,0,150)}}..</p>
+                  </div>
+                </div>
+              @endif
+            @endforeach
           @else
-          <h2 class="text-center text-dark">Service Page Not Avalible For Now</h2>
+            <h2 class="text-center text-dark">Service Page Not Avalible For Now</h2>
           @endif
         
         </div>

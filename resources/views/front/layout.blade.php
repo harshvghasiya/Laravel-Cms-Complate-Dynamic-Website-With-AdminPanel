@@ -1,3 +1,6 @@
+@php
+$quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_on_footer','Yes')->select('module_id')->distinct()->get();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +33,27 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{route('home')}}">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="{{route('front_blog')}}">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-         @if(!isset(Auth::user()->id))
-         <li><a href="" data-toggle="modal" data-target="#loginmodal" >Login</a></li>
-          <li><a href="" data-toggle="modal" data-target="#exampleModal" >Register</a></li>
-         @else
+          
+          @if(Request::path() == '/')
+              <li class="active"><a href="{{route('home')}}">Home</a></li>
+            @foreach($quicklink as $result)
+              <li><a href="#{{$result->module->slug}}">{{$result->module->name}}</a></li>
+            @endforeach
+             <li><a href="{{route('front_blog')}}">Blog</a></li>
+          @else
+              <li><a href="{{route('home')}}">Home</a></li>
+            @foreach($quicklink as $result)
+              <li><a href="{{route('home')}}#{{$result->module->slug}}">{{$result->module->name}}</a></li>
+            @endforeach
+             <li class="active"><a href="{{route('front_blog')}}">Blog</a></li>
+          @endif
+
+         
+
+          @if(!isset(Auth::user()->id))
+            <li><a href="" data-toggle="modal" data-target="#loginmodal" >Login</a></li>
+            <li><a href="" data-toggle="modal" data-target="#exampleModal" >Register</a></li>
+          @else
           <li class="drop-down"><a href="">{{Auth::user()->name}}</a>
             <ul>             
               <li><a href="{{route('front_logout')}}">Logout</a></li>

@@ -67,5 +67,10 @@ class CmsController extends Controller
     {
       return $this->Model->deleteAllCms($request);
     } 
+
+    public function cms_content($cms)
+    {
+      return $this->Model->getCmsPageContent($cms);
+    }
     
 }

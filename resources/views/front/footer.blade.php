@@ -1,7 +1,6 @@
- @php
-$author_desc=\App\setting::find(1);
+@php
 $socialmedia=\App\SocialMedia::where('status','Active')->get();
-
+$cms=\App\cms::where('status','Active')->get();
 @endphp
   <footer id="footer">
 
@@ -23,22 +22,32 @@ $socialmedia=\App\SocialMedia::where('status','Active')->get();
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              @if(Request::path() == '/')
+                <li><i class="bx bx-chevron-right"></i> <a href="{{route('home')}}">Home</a></li>
+                @foreach($quicklink as $result)
+
+                  <li><i class="bx bx-chevron-right"></i> <a href="#{{$result->module->slug}}">{{$result->module->name}}</a></li>    
+                @endforeach
+              @else
+               <li><i class="bx bx-chevron-right"></i> <a href="{{route('home')}}">Home</a></li>
+                @foreach($quicklink as $result)
+
+                  <li><i class="bx bx-chevron-right"></i> <a href="{{route('home')}}#{{$result->module->slug}}">{{$result->module->name}}</a></li>    
+                @endforeach
+              @endif
+
+              
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              @foreach($cms ?? '' as $result)
+                @if($result->module_id ==services_module_id)
+                <li><i class="bx bx-chevron-right"></i> <a href="{{$result->name}}">{{$result->name}}</a></li>
+                @endif
+              @endforeach
             </ul>
           </div>
 
@@ -60,7 +69,7 @@ $socialmedia=\App\SocialMedia::where('status','Active')->get();
 
       <div class="me-md-auto text-center text-md-left">
         <div class="copyright">
-          &copy; Copyright <strong><span>Harsh Vaghasiya</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>{{$author_desc->author_name}}</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
     

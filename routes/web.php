@@ -197,20 +197,17 @@ Route::any('/admin/userdelall',[App\Http\Controllers\AdminLoginController::class
 Route::any('/admin/viewuser/{viewuser}',[App\Http\Controllers\AdminLoginController::class, 'viewuser'])->name('viewuser');
 Route::any('/admin/userdatable',[App\Http\Controllers\AdminLoginController::class, 'user_datable'])->name('user_datable');
 
-
-Route::any('/admin/userfollow',[App\Http\Controllers\UserfollowController::class, 'store'])->name('follow_user');
-
 });
 // FRONT WEB ROute
 Route::get('/', function () {
     return view('front.main.main');
 })->name('home');
 Route::any('/blog',[App\Http\Controllers\BlogController::class,'indexFrontBlog'])->name('front_blog');
+Route::any('/{cms}',[App\Http\Controllers\CmsController::class,'cms_content']);
+
 Route::any('/post/{title}',[App\Http\Controllers\BlogController::class,'showFrontBlog'])->name('blog_detail');
 Route::get('/search-post',[App\Http\Controllers\BlogController::class,'search'])->name('search');
-
 Route::any('/catagory/{catagory}',[App\Http\Controllers\CatagoryController::class,'Front_Catagory_Index'])->name('catagory_detail_show');
-
 Route::any('/tag/{tag}',[App\Http\Controllers\TagController::class,'Front_Tag_Index'])->name('tag_detail_show');
 
 //user Login In Web

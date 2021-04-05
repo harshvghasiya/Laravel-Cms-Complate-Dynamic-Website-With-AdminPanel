@@ -34,7 +34,7 @@ $author_desc=\App\setting::find(1);
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">{{$result->title}}</a>
+                <a href="{{route('blog_detail',[Crypt::encrypt($result->id)])}}">{{$result->title}}</a>
               </h2>
 
               <div class="entry-meta">
