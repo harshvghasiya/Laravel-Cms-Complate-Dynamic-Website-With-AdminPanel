@@ -70,7 +70,7 @@ class SocialMedia extends Model
                               <a  href="'.route('edit_some',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
                  ->editColumn('icon', function($data){
-                            return '<img src="'.asset("/public/storage/socialmediaicon/$data->icon").'" width="80px";
+                            return '<img src="'.$data->getSocialMediaImageUrl().'" width="80px";
                                         height="60px";>';
                         })
                  ->editColumn('created_by', function($data){

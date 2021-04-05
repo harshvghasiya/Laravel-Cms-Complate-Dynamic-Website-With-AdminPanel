@@ -1,6 +1,7 @@
 @php
 $socialmedia=\App\SocialMedia::where('status','Active')->get();
 $cms=\App\cms::where('status','Active')->get();
+$author_desc=\App\setting::find(1);
 @endphp
   <footer id="footer">
 
