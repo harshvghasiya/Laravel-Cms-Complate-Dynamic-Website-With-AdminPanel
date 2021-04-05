@@ -16,5 +16,5 @@ class Apm_user extends Model
 		return $this->belongsTo(\App\AdminLogin::class,'user_id','id'); 
 	}
 
-	// const apm_id ='17';
+	
 }

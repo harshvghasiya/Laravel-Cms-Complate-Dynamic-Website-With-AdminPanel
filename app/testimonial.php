@@ -34,7 +34,7 @@ class testimonial extends Model
             $image_name=UploadImage($image,Testimonial_Image_Path());
             $res->image=$image_name;
         }
-
+        $res->created_by=Auth::guard('adminlogin')->user()->id;
         $res->name=$request->input('name');
         $res->role=$request->input('role');
         $res->about=$request->input('about');
@@ -67,7 +67,7 @@ class testimonial extends Model
                               <a  href="'.route('edit_Testimonial',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
                 ->editColumn('image', function($data){
-                            return '<img src="'.asset("/public/storage/testimonialimage/$data->image").'" width="80px";
+                            return '<img src="'.$data->getTestimonialImageUrl().'" width="80px";
                                         height="60px";>';
                         })
                 ->editColumn('created_by', function($data){

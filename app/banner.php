@@ -42,7 +42,7 @@ class banner extends Model
                               <a  href="'.route('edit_banner',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
                  ->editColumn('image', function($data){
-                            return '<img src="'.asset("/public/storage/bannerimage/$data->image").'" width="80px";
+                            return '<img src="'.$data->getBannerImageUrl().'" width="80px";
                                         height="60px";>';
                         })
                   ->editColumn('created_by', function($data){

@@ -73,11 +73,7 @@ class portfolio extends Model
                               <a  href="'.route('edit_port',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
                  ->editColumn('image', function($data){
-                           if ($data->image == 'noimage.png') {
-                         return '<img src="'.asset("/public/storage/blogimage/$data->image").'" width="80px";
-                                        height="60px";>';
-                           }
-                            return '<img src="'.asset("/public/storage/portfolioimage/$data->image").'" width="80px";
+                            return '<img src="'.$data->getPortfolioImageUrl().'" width="80px";
                                         height="60px";>';
                         }) 
                  ->editColumn('created_by', function($data){
