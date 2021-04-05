@@ -4,7 +4,7 @@
 
 
 			<div class="page-content">
-				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				
 				<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -20,25 +20,17 @@
 							<button type="button" class="btn default" data-dismiss="modal">Close</button>
 						</div>
 					</div>
-					<!-- /.modal-content -->
+					
 				</div>
-				<!-- /.modal-dialog -->
-			</div>
-			<!-- /.modal -->
-			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<!-- BEGIN PAGE HEADER-->
-			<!-- BEGIN PAGE HEAD -->
+				
+			</div>		
 			<div class="page-head">
-				<!-- BEGIN PAGE TITLE -->
 				<div class="page-title">
 					<h1>User Account <small>user account page sample</small></h1>
-				</div>
-				<!-- END PAGE TITLE -->
-				<!-- BEGIN PAGE TOOLBAR -->
+				
 				
 			</div>
-			<!-- END PAGE HEAD -->
-			<!-- BEGIN PAGE BREADCRUMB -->
+			
 			<ul class="page-breadcrumb breadcrumb">
 				<li>
 					<a href="index.html">Home</a>
@@ -52,26 +44,20 @@
 					<a href="#">User Account</a>
 				</li>
 			</ul>
-			<!-- END PAGE BREADCRUMB -->
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
+		
 			<div class="row">
 				<div class="col-md-12">
-					<!-- BEGIN PROFILE SIDEBAR -->
+					
 					<div class="profile-sidebar" style="width:250px;">
-						<!-- PORTLET MAIN -->
+						
 						<div class="portlet light profile-sidebar-portlet">
-							<!-- SIDEBAR USERPIC -->
+							
 							<div class="profile-userpic">
-								@if($key->image != null && $key->image != 'noimage.png')
-								<img src="{{ asset('/public/storage/userimage/'.$key->image.'')}}" class="img-responsive" alt="">
-								@else
 								
-							    <img  src="{{asset("/public/storage/blogimage/noimage.png")}}"  class="img-responsive" alt=""/>
-								@endif
+								<img src="{{$key->getAdminImageUrl()}}" class="img-responsive" alt="">
+								
 							</div>
-							<!-- END SIDEBAR USERPIC -->
-							<!-- SIDEBAR USER TITLE -->
+							
 							<div class="profile-usertitle">
 								<div class="profile-usertitle-name">
 									  {{$key->name}}
@@ -80,8 +66,7 @@
 									 Developer
 								</div>
 							</div>
-							<!-- END SIDEBAR USER TITLE -->
-							<!-- SIDEBAR BUTTONS -->
+							
 						
 							<div id="static2" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" data-attention-animation="false">
 								<div class="modal-body">
@@ -89,8 +74,7 @@
 										
 								</div>
 								<div class="modal-footer">
-									<button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
-									{{-- <button type="button" data-dismiss="modal" class="btn blue">Continue Task</button> --}}
+									<button type="button" data-dismiss="modal" class="btn btn-default">
 								</div>
 							</div>
 							@section('script')
@@ -104,8 +88,6 @@
 
 							@endsection
 
-							<!-- END SIDEBAR BUTTONS -->
-							<!-- SIDEBAR MENU -->
 							<div class="profile-usermenu">
 								<ul class="nav">
 									
@@ -113,18 +95,11 @@
 										<a href="">
 										<i class="icon-settings"></i>
 										Account Settings </a>
-									</li>
-									
-									
+									</li>								
 								</ul>
-							</div>
-							<!-- END MENU -->
-						</div>
-						<!-- END PORTLET MAIN -->
-					
-					</div>
-					<!-- END BEGIN PROFILE SIDEBAR -->
-					<!-- BEGIN PROFILE CONTENT -->
+							</div>							
+						</div>								
+					</div>		
 					<div class="profile-content">
 						<div class="row">
 							<div class="col-md-12">
@@ -149,7 +124,7 @@
 								
 									<div class="portlet-body">
 										<div class="tab-content">
-											<!-- PERSONAL INFO TAB -->
+											
 											<div class="tab-pane active" id="tab_1_1">
 											 {!! Form::open(['route' => 'upd_user',
                     								         'id' =>'adminValidation',
@@ -188,20 +163,13 @@
 										    @if(Auth::guard('adminlogin')->user()->email ==$key->email)
 										        <div class="margiv-top-10">
 												<button type="submit" class="btn green-haze">
-														Save Changes </button>
-														
-											    </div>
-											 
+														Save Changes </button>						
+												</div>											 
 											@endif
 													
 												 {!! Form::close() !!}
 											</div>
-											
-												
-											<!-- END PERSONAL INFO TAB -->
-											<!-- CHANGE AVATAR TAB -->
-											<div class="tab-pane" id="tab_1_2">
-												
+											<div class="tab-pane" id="tab_1_2">												
 													 {!! Form::open(['route' => 'upd_user_image',
                     								         'id' =>'adminValidation',
                   								   	         'class'=>'FromSubmit login-form',
@@ -256,8 +224,7 @@
 													@endif
 												{{Form::close()}}
 											</div>
-											<!-- END CHANGE AVATAR TAB -->
-											<!-- CHANGE PASSWORD TAB -->
+											
 										 @if(Auth::guard('adminlogin')->user()->email ==$key->email)
 											<div class="tab-pane" id="tab_1_3">
 												 {!! Form::open(['route' => 'change_password',
@@ -265,7 +232,7 @@
                   								   	         'class'=>'FromSubmit login-form',
                                                              'redirect_url' =>route('userListMain')]) !!}
 													<div class="form-group">
-														{{-- {{dd(Auth::check())}} --}}
+														
 														<label class="control-label">Current Password</label>
 														<input type="password" name="current_password" class="form-control"/>
 													</div>
@@ -284,11 +251,7 @@
 														Cancel </a>
 													</div>
 												{{Form::close()}}
-											</div>
-
-											<!-- END CHANGE PASSWORD TAB -->
-											<!-- PRIVACY SETTINGS TAB -->
-											
+											</div>											
 											<div class="tab-pane" id="tab_1_4">
 											 {!! Form::open(['route' => 'account_private',
                     								         'id' =>'adminValidation',
@@ -310,28 +273,23 @@
 															No </label>
 														</td>
 													</tr>
-													</table>
-													<!--end profile-settings-->
+													</table>	
 													<div class="margin-top-10">
 														<button type="submit" class="btn green-haze">
-														Save Changes </button>
-														
+														Save Changes </button>		
 													</div>
 												{{Form::close()}}
-											</div>
-											
-											@endif
-											<!-- END PRIVACY SETTINGS TAB -->
+											</div>	
+											@endif										
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- END PROFILE CONTENT -->
+					</div>		
 				</div>
 			</div>
-			<!-- END PAGE CONTENT-->
+			
 		</div>
 	
 @endsection

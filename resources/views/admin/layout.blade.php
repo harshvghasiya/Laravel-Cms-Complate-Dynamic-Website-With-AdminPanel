@@ -3,50 +3,39 @@
 
 @include('admin.Z_include.header');
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo">
-    
-    {{-- {{ flashMessage()}} --}}
-    <!-- BEGIN HEADER -->
     <div class="page-header navbar navbar-fixed-top">
-        <!-- BEGIN HEADER INNER -->
+      
         <div class="page-header-inner">
-            <!-- BEGIN LOGO -->
+           
             <div class="page-logo">
-                <a href="{{url('/')}}">
-                 <h3 alt="logo" class="logo-default">Admin Panle</h3>  {{--  <img src="{{ asset('admin_asset/assets/admin/layout4/img/logo-light.png') }}" alt="logo"
-                        class="logo-default" /> --}}
+                <a href="{{url('/admin')}}">
+                 <h3 alt="logo" class="logo-default">Admin Panle</h3> 
                 </a>
                 <div class="menu-toggler sidebar-toggler">
-                    <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                    
                 </div>
             </div>
-            <!-- END LOGO -->
-            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+           
             <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
                 data-target=".navbar-collapse">
             </a>
-            <!-- END RESPONSIVE MENU TOGGLER -->
-            <!-- BEGIN PAGE ACTIONS -->
-            <!-- DOC: Remove "hide" class to enable the page header actions -->
-         
-            <!-- END PAGE ACTIONS -->
-            <!-- BEGIN PAGE TOP -->
+           
             <div class="page-top">
-                <!-- BEGIN HEADER SEARCH BOX -->
-                <!-- BEGIN TOP NAVIGATION MENU -->
+                
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
                       
-                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        
                         <li class="dropdown dropdown-user dropdown-dark">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                 data-close-others="true">
                                 <span class="username username-hide-on-mobile">
                                      {{ Auth::guard('adminlogin')->user()->name }} </span>
-                                <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                                @if( Auth::guard('adminlogin')->user()->image != 'noimage.png')
+                               
+                                
                                 <img alt="UserImage" class="img-circle"
-                                    src="{{ asset("/public/storage/userimage/".Auth::guard('adminlogin')->user()->image) }}" />
-                                @endif
+                                    src="{{ Auth::guard('adminlogin')->user()->getAdminImageUrl() }}" />
+                                
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
                                 <li>
@@ -84,7 +73,7 @@
                 <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true"
                 data-slide-speed="200">
                 <li class="start active ">
-                    <a href="index.html">
+                    <a href="{{route('admin')}}">
                         <i class="icon-home"></i>
                         <span class="title">Dashboard</span>
                     </a>

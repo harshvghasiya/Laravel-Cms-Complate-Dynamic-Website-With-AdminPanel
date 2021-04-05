@@ -162,5 +162,15 @@ function Social_Media_Image_Upload_Url()
 {
   return url('public/storage/socialmediaicon');
 }
+
+function Admin_Login_Image_Check_Exist_Path()
+{
+  return 'public/storage/userimage';
+}
+
+function Admin_Login_Image_Url()
+{
+  return url('public/storage/userimage');
+}
 	 
 ?>

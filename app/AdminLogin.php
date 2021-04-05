@@ -359,4 +359,17 @@ class AdminLogin extends Authenticatable
         $msg ="saved success.";
         return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
     }
+
+    public function getAdminImageUrl()
+    {
+        $imgname=$this->image;
+        $imagePath=Admin_Login_Image_Check_Exist_Path().'/'.$imgname;
+        $imageUrl=Admin_Login_Image_Url().'/'.$imgname;
+        if (file_exists($imagePath)) {
+           return $imageUrl;
+
+       }else{
+           return No_Image_Url();
+       }
+    }
 }
