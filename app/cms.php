@@ -102,7 +102,7 @@ class cms extends Model
                               <a  href="'.route('edit_cms',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
                  ->editColumn('image', function($data){
-                            return '<img src="'.asset("/public/storage/cmsimage/$data->image").'" width="80px";
+                            return '<img src="'.$data->getCmsImageUrl().'" width="80px";
                                         height="60px";>';
                         }) 
                  ->editColumn('created_by', function($data){
