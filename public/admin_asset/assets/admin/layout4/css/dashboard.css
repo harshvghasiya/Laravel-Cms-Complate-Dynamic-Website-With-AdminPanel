@@ -1,0 +1,168 @@
+/***
+Dashboard Stats
+***/
+.dashboard-stat {
+  display: block;
+  margin-bottom: 25px;
+  overflow: hidden;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.dashboard-stat:before, .dashboard-stat:after {
+  content: " ";
+  display: table;
+}
+.dashboard-stat:after {
+  clear: both;
+}
+.portlet .dashboard-stat:last-child {
+  margin-bottom: 0;
+}
+.dashboard-stat .visual {
+  width: 80px;
+  height: 80px;
+  display: block;
+  float: left;
+  padding-top: 10px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  font-size: 35px;
+  line-height: 35px;
+}
+.dashboard-stat .visual > i {
+  margin-left: -35px;
+  font-size: 110px;
+  line-height: 110px;
+}
+.dashboard-stat .details {
+  position: absolute;
+  right: 15px;
+  padding-right: 15px;
+}
+.dashboard-stat .details .number {
+  padding-top: 25px;
+  text-align: right;
+  font-size: 34px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  margin-bottom: 0px;
+  font-weight: 300;
+}
+.dashboard-stat .details .desc {
+  text-align: right;
+  font-size: 16px;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+.dashboard-stat .more {
+  clear: both;
+  display: block;
+  padding: 6px 10px 6px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 11px;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+.dashboard-stat .more:hover {
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.dashboard-stat .more > i {
+  display: inline-block;
+  margin-top: 1px;
+  float: right;
+}
+
+.dashboard-stat-light {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.dashboard-stat-light .details {
+  margin-bottom: 5px;
+}
+.dashboard-stat-light .details .number {
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+
+/***
+Dashboard Stats 2
+***/
+.dashboard-stat2 {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 27px;
+  background: #fff;
+  padding: 15px 15px 30px 15px;
+  margin-bottom: 20px;
+}
+.dashboard-stat2 .display {
+  margin-bottom: 20px;
+}
+.dashboard-stat2 .display:before, .dashboard-stat2 .display:after {
+  content: " ";
+  display: table;
+}
+.dashboard-stat2 .display:after {
+  clear: both;
+}
+.dashboard-stat2 .display .number {
+  float: left;
+  display: inline-block;
+}
+.dashboard-stat2 .display .number h3 {
+  margin: 0 0 2px 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+.dashboard-stat2 .display .number h3 > small {
+  font-size: 23px;
+}
+.dashboard-stat2 .display .number small {
+  font-size: 14px;
+  color: #7FB0DA;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.dashboard-stat2 .display .icon {
+  display: inline-block;
+  float: right;
+  padding: 23px 13px 1px 77px;
+}
+.dashboard-stat2 .display .icon > i {
+  /*color: #cbd4e0;*/
+  font-size: 26px;
+}
+.dashboard-stat2 .progress-info {
+  clear: both;
+}
+.dashboard-stat2 .progress-info .progress {
+  margin: 0;
+  height: 4px;
+  clear: both;
+  display: block;
+}
+.dashboard-stat2 .progress-info .status {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #AAB5BC;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.dashboard-stat2 .progress-info .status .status-title {
+  float: left;
+  display: inline-block;
+}
+.dashboard-stat2 .progress-info .status .status-number {
+  float: right;
+  display: inline-block;
+}

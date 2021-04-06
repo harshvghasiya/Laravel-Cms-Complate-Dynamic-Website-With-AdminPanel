@@ -51,8 +51,8 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
          
 
           @if(!isset(Auth::user()->id))
-            <li><a href="" data-toggle="modal" data-target="#loginmodal" >Login</a></li>
-            <li><a href="" data-toggle="modal" data-target="#exampleModal" >Register</a></li>
+            <li><a href="javascript::void()" data-toggle="modal" data-target="#loginmodal" >Login</a></li>
+            <li><a href="javascript::void()" data-toggle="modal" data-target="#exampleModal" >Register</a></li>
           @else
           <li class="drop-down"><a href="">{{Auth::user()->name}}</a>
             <ul>             
@@ -90,7 +90,7 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" name="password" id="registerPassword" placeholder="Password">
           </div>
-          <button type="submit"  class="btn btn-dark">Submit</button>
+          <button type="submit"  class="btn btn-secondary">Submit</button>
         </div>
         <div class="modal-footer">      
         </div>
@@ -131,9 +131,9 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
   </div>
 </div>
 
-
-@include('front.footer')
 @include('admin.Z_include.flashmsg')
+@include('front.footer')
+
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <script src="{{ asset('public/front_asset/assets/vendor/jquery/jquery.min.js' ) }}"></script>
@@ -155,6 +155,5 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
   <script src="{{ asset('public/front_asset/assets/js/main.js' ) }}"></script>
   <script src="{{ asset('public/admin_asset/logincommon.js') }}"></script>
 </body>
-
-</html>
 @yield('script')
+</html>

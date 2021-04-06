@@ -203,8 +203,6 @@ Route::get('/', function () {
     return view('front.main.main');
 })->name('home');
 Route::any('/blog',[App\Http\Controllers\BlogController::class,'indexFrontBlog'])->name('front_blog');
-Route::any('/{cms}',[App\Http\Controllers\CmsController::class,'cms_content']);
-
 Route::any('/post/{title}',[App\Http\Controllers\BlogController::class,'showFrontBlog'])->name('blog_detail');
 Route::get('/search-post',[App\Http\Controllers\BlogController::class,'search'])->name('search');
 Route::any('/catagory/{catagory}',[App\Http\Controllers\CatagoryController::class,'Front_Catagory_Index'])->name('catagory_detail_show');
@@ -214,8 +212,11 @@ Route::any('/tag/{tag}',[App\Http\Controllers\TagController::class,'Front_Tag_In
 Route::any('/userregister',[App\Http\Controllers\Auth\RegisterController::class,'register'])->name('front_user_register');
 Route::any('/frontlogout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('front_logout');
 Route::any('/front_user_login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('front_user_login');
+
 Route::any('/forget_password',[App\Http\Controllers\Auth\ForgotPasswordController::class,'forget'])->name('user_forget_password');
-Route::any('/reset_password',[App\Http\Controllers\Auth\ResetPasswordController::class,'reset'])->name('reset_password');
+
+Route::any('/{cms}',[App\Http\Controllers\CmsController::class,'cms_content'])->name('cms_content');
+
 
 
 

@@ -29,7 +29,7 @@
         <div class="display">
           <div class="number">
             <div class="icon">
-              <i class="fa fa-list-alt" aria-hidden="true"></i> <small>Access Controller Modules </small>
+              <i class="fa fa-list-alt" aria-hidden="true"></i> <small>Access Modules </small>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@
         <div class="display">
           <div class="number">
             <div class="icon">
-              <i class="fa fa-gear" aria-hidden="true"></i> <small>Blog Tag List Main </small>
+              <i class="fa fa-gear" aria-hidden="true"></i> <small>Blog Tag</small>
             </div>
           </div>
         </div>

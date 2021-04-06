@@ -47,7 +47,7 @@ $qna=\App\qna::where('status','Active')->get();
                   <p>
                     {{$key->seo_description}}
                   </p>
-                  <a href="{{$key->name}}" class="about-btn"><span>About us</span> <i class="bx bx-chevron-right"></i></a>
+                  <a href="{{route('cms_content',$key->name)}}" class="about-btn"><span>About us</span> <i class="bx bx-chevron-right"></i></a>
                 </div>
               @endif
             @endforeach
@@ -131,7 +131,7 @@ $qna=\App\qna::where('status','Active')->get();
                 <div class="col-md-6 mt-4 mt-md-0">
                   <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                     <i class="icofont-earth"></i>
-                    <h4><a href="{{$key->name}}">{{$key->secondary_title}}</a></h4>
+                    <h4><a href="{{route('cms_content',$key->name)}}">{{$key->secondary_title}}</a></h4>
                     <p>{{substr($key->seo_description,0,150)}}..</p>
                   </div>
                 </div>

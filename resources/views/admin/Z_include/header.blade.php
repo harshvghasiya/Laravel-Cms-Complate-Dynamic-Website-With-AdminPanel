@@ -42,6 +42,7 @@
     rel="stylesheet" type="text/css" />
     <link href="{{ asset('public/admin_asset/assets/global/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/layout.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/dashboard.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/themes/light.css') }}" rel="stylesheet" type="text/css"
     id="style_color" />
     <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/custom.css') }}" rel="stylesheet" type="text/css" />
@@ -56,7 +57,7 @@
     <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery-migrate.min.js') }}" type="text/javascript">
     </script>
-    <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
     <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript">
     </script>
     <!-- jQuery -->

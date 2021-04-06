@@ -290,7 +290,9 @@ class cms extends Model
     public function getCmsPageContent($cms)
     {
       $cms_content=cms::where('name',$cms)->first();
+      if($cms_content != null){
       return view('front.CmsContent.cms_content',compact('cms_content'));
+    }
     }
 
 

@@ -73,7 +73,8 @@ function showErrorMessages(formId, errorResponse) {
 
                 $.bootstrapGrowl(messages, {
                       type: $type,
-                      delay: 5000
+                      delay: 5000,
+                      
                   });
  }
 
