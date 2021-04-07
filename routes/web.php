@@ -215,7 +215,7 @@ Route::any('/front_user_login',[App\Http\Controllers\Auth\LoginController::class
 
 Route::any('/forget_password',[App\Http\Controllers\Auth\ForgotPasswordController::class,'forget'])->name('user_forget_password');
 
-Route::any('/{cms}',[App\Http\Controllers\CmsController::class,'cms_content'])->name('cms_content');
+Route::any('{cms}',[App\Http\Controllers\CmsController::class,'cms_content'])->name('cms_content');
 
 
 

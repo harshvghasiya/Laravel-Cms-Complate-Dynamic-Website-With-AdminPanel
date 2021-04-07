@@ -46,7 +46,7 @@ $author_desc=\App\setting::find(1);
             <ul>
               @foreach($cms ?? '' as $result)
                 @if($result->module_id ==services_module_id)
-                <li><i class="bx bx-chevron-right"></i> <a href="{{$result->name}}">{{$result->name}}</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{{url($result->name)}}">{{$result->name}}</a></li>
                 @endif
               @endforeach
             </ul>
