@@ -26,6 +26,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
+        flashMessage('success','Logout SuccessFully');
         return redirect()->route('home');
     }
 }

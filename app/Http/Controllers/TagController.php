@@ -15,7 +15,7 @@ class TagController extends Controller
     { 
         $this->Model=new Tag;
         $apm_id=BlogTag::apm_id;
-        $this->middleware('access:'.$apm_id.''); 
+        $this->middleware('access:'.$apm_id.'')->except('Front_Tag_Index'); 
     }
 
     public function create()

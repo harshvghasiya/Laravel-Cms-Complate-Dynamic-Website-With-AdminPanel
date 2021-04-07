@@ -14,8 +14,8 @@ $author_desc=\App\setting::find(1);
            
             <p>
              @php echo $author_desc->address; @endphp <br><br>
-              <strong>Phone:</strong> +91 {{$author_desc->first_mobile}}<br>
-              <strong>Email:</strong> {{$author_desc->first_email}}<br>
+              <strong>Phone:</strong> <a href="tel:+91{{$author_desc->first_mobile}}">+91 {{$author_desc->first_mobile}}</a><br>
+              <strong>Email:</strong> <a href="mailto:{{$author_desc->first_email}}">{{$author_desc->first_email}}</a><br>
             </p>
            
           </div>
@@ -54,7 +54,7 @@ $author_desc=\App\setting::find(1);
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            
             <form action="{{route('newsletter_store')}}" class="newsletter" method="post">
               @csrf
               <input type="email" name="email" class="email" aria-invalid="false" >
@@ -85,24 +85,5 @@ $author_desc=\App\setting::find(1);
       </div>
     </div>
   </footer>
-@section('script')
-<script type="text/javascript">
-  $(document).ready(function(){
-    $(".newsletter").validate({
-        rules: { 
-           email: { required: true,email:true },
-        },
-        messages:{
-           email: { required: 'Please enter email',email:'Please enter valid Email' },
-        },
-        highlight: function (element) {
-                $(element).parent().addClass('text-danger')
-            },
-        unhighlight: function (element) {
-                $(element).parent().removeClass('text-danger')
-            }
 
-    });
-});
-</script>
-@endsection
+

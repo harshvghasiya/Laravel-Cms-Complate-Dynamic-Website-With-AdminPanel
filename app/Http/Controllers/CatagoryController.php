@@ -15,7 +15,7 @@ class CatagoryController extends Controller
     { 
         $this->Model=new catagory;
         $apm_id=BlogCatagory::apm_id;
-        $this->middleware('access:'.$apm_id.''); 
+        $this->middleware('access:'.$apm_id.'')->except('Front_Catagory_Index'); 
     }
    
     public function create()

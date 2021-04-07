@@ -13,8 +13,7 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="{{ asset('public/front_asset/assets/img/favicon.png' ) }}" rel="icon">
   <link href="{{ asset('public/front_asset/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-    <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/toster.css') }}" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/vendor/bootstrap/css/bootstrap.min.css' ) }}" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/vendor/icofont/icofont.min.css' ) }}" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/vendor/boxicons/css/boxicons.min.css' ) }}" rel="stylesheet">
@@ -23,6 +22,7 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
   <link href="{{ asset('public/front_asset/assets/vendor/venobox/venobox.css' ) }}" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/vendor/aos/aos.css' ) }}" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/css/style.css' ) }}" rel="stylesheet"> 
+  <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/toster.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <header id="header" class="fixed-top">
@@ -126,7 +126,7 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
   </div>
 </div>
 
-@include('admin.Z_include.flashmsg')
+
 @include('front.footer')
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
@@ -149,6 +149,27 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
 " type="text/javascript" charset="utf-8" async defer></script>
   <script src="{{ asset('public/front_asset/assets/js/main.js' ) }}"></script>
   <script src="{{ asset('public/admin_asset/logincommon.js') }}"></script>
+@include('admin.Z_include.flashmsg')
 </body>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".newsletter").validate({
+        rules: { 
+           email: { required: true,email:true },
+        },
+        messages:{
+           email: { required: 'Please enter email',email:'Please enter valid Email' },
+        },
+        highlight: function (element) {
+                $(element).parent().addClass('text-danger')
+            },
+        unhighlight: function (element) {
+                $(element).parent().removeClass('text-danger')
+            }
+
+    });
+});
+</script>
+
 @yield('script')
 </html>

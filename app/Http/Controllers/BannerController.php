@@ -15,7 +15,6 @@ class BannerController extends Controller
     { 
         $this->Model = new banner;
         $apm_id=banner::apm_id;
-        
         $this->middleware('access:'.$apm_id.'');      
     }
    

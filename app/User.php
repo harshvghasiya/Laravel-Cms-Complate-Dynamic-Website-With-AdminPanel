@@ -63,7 +63,7 @@ class User extends Authenticatable
 
         $errors="Cant Login";
         $msg ="Enter Valid Password Or Email.";
-        
+        flashMessage('danger',$msg);
         return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
     }
 }

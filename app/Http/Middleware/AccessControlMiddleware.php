@@ -16,9 +16,8 @@ class AccessControlMiddleware
      */
     public function handle($request, Closure $next,$apm_id)
     {
-        // dd(Auth::guard('adminlogin')->user()->name);
-         // dd($apm_id);
-        $user_id=Auth::guard('adminlogin')->user()->id;
+        
+      $user_id=Auth::guard('adminlogin')->user()->id;
       $apm_user=\App\apm_user::where('user_id',$user_id)->pluck('apm_id')->toArray();
 
 

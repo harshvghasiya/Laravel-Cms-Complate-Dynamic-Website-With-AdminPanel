@@ -17,7 +17,7 @@ class BlogController extends Controller
     { 
         $this->Model=new blog;
         $apm_id=blog::apm_id;
-        $this->middleware('access:'.$apm_id.''); 
+        $this->middleware('access:'.$apm_id.'')->except(['indexFrontBlog','showFrontBlog','post_show','search']); 
     }
 
     public function create()

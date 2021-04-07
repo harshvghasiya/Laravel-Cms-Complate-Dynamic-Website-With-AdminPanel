@@ -199,7 +199,7 @@ class blog extends Model
         $res->save();
 
 
-         $catagory=$request->input('catagory');
+        $catagory=$request->input('catagory');
          $tag=$request->input('tag');
         if ($catagory != null) {
 
@@ -216,8 +216,7 @@ class blog extends Model
                         }
                     }
                 }else{
-                    $resu=new BlogCatagory;
-               
+                    $resu=new BlogCatagory;               
                     $resu->blogs_id=$id;
                     $resu->catagory_id=$key;
                     $resu->save(); 
