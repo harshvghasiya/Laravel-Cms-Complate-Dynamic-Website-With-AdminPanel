@@ -11,9 +11,14 @@ class BlogTag extends Model
 	
     const apm_id ='7';
 
-    public function tag_rel()
+    public function tag()
     {
         return $this->belongsTo(Tag::class,'tag_id','id');
+    }
+
+     public function blog()
+    {
+    	return $this->belongsTo(blog::class,'blog_id','id');
     }
 
      

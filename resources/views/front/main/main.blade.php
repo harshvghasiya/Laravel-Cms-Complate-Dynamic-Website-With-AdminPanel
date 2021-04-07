@@ -1,7 +1,9 @@
 @php
 $author_desc=\App\setting::find(1);
 $banner=\App\banner::where('status','Active')->where('name','client')->get();
+
 $cms=\App\cms::where('status','Active')->get();
+
 $portfolio=\App\portfolio::where('status','Active')->get();
 $portfolio_name=\App\portfolio::where('status','Active')->select('name')->distinct()->get();
 $testimonials=\App\testimonial::where('status','Active')->get();
@@ -162,8 +164,7 @@ $qna=\App\qna::where('status','Active')->get();
               @if(!$portfolio_name->isEmpty())
                
               @foreach($portfolio_name as $key)
-              <li data-filter=".filter-{{$key->name}}">{{$key->name}}</li>
-              
+              <li data-filter=".filter-{{$key->name}}">{{$key->name}}</li>         
               @endforeach
               @endif
 

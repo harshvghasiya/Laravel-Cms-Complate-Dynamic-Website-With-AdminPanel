@@ -1,9 +1,19 @@
 @php 
-$catagory=\App\catagory::with(['blog_catagory'])->where('status','Active')->get();
+$catagory=\App\catagory::whereHas('blog_catagory', function($q){
+    $q->whereHas('blog',function($query)
+    {
+      $query->where('status','Active');
+    });
+})->get();
 
-$tag=\App\Tag::with(['tag_rel'])->where('status','Active')->get();
+$tag=\App\Tag::whereHas('tag_rel', function($q){
+    $q->whereHas('blog',function($query)
+    {
+      $query->where('status','Active');
+    });
+})->get();
 
-$recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
+$recent_post=\App\Blog::where('status','Active')->orderBy('created_at','desc')->limit(5)->get();
 @endphp
  <div class="col-lg-4">
 
@@ -19,13 +29,12 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
 
               <h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
-                <ul>
-                  
+                <ul> 
                   @if(!$catagory->isEmpty())
                   @foreach($catagory as $result)
-                   @if(!$result->blog_catagory->isEmpty())
-                   <li><a href="{{route('catagory_detail_show',[$result->catagory])}}">{{$result->catagory}} <span class="catagory_count">({{\App\catagory::CatagoryCount($result->id)}})</span></a></li>
-                   @endif
+                    
+                    <li><a href="{{route('catagory_detail_show',[$result->catagory])}}">{{$result->catagory}} <span class="catagory_count">({{\App\catagory::CatagoryCount($result->id)}})</span></a></li>
+                    
                   @endforeach
                   @endif
                 </ul>
@@ -48,10 +57,10 @@ $recent_post=\App\Blog::orderBy('created_at','desc')->limit(5)->get();
                 <ul>
                   @if(!$tag->isEmpty())
                     @foreach($tag as $result)
-                      @if(!$result->tag_rel->isEmpty())
-                       <li><a href="{{route('tag_detail_show',[$result->tag])}}">{{$result->tag}}</a></li>
-                      @endif
+                      <li><a href="{{route('tag_detail_show',[$result->tag])}}">{{$result->tag}}</a></li> 
                     @endforeach
+                  @else
+                  <h3>No Active Tag!!</h3>
                   @endif
                 </ul>
               </div>

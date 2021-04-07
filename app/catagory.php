@@ -18,9 +18,17 @@ class catagory extends Model
     	return $this->hasmany(BlogCatagory::class,'catagory_id','id');
     }
 
+    public function blog()
+    {
+        return $this->hasMany(\App\Blog::class,'blogs_id','id');
+    }
+
     public static function CatagoryCount($id)
     {
-    	$sql=BlogCatagory::where('catagory_id',$id)->count();
+    	$sql=BlogCatagory::whereHas('blog',function($q) 
+        {
+          $q->where('status','Active');
+        })->where('catagory_id',$id)->count();         
     	return $sql;
     }
 

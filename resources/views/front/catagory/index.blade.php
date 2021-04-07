@@ -1,4 +1,6 @@
-
+@php
+$author_desc=\App\setting::find(1);  
+@endphp
 @extends('front.layout')
 @section('title',$catagory.'  Category')
 @section('container')
@@ -17,7 +19,7 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Blog Section ======= -->
+   
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -34,14 +36,14 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">{{$result->title}}</a>
+                <a href="{{route('blog_detail',[Crypt::encrypt($result->id)])}}">{{$result->title}}</a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="javascript:void()">{{$author_desc->author_name}}</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="javascript:void()"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time></a></li>
+                  
                 </ul>
               </div>
 

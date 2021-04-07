@@ -4,9 +4,10 @@ namespace App;
 use App\AdminLogin;
 use App\BlogCatagory;
 use App\BlogTag;
+use App\blog;
 use App\catagory;
-use Illuminate\Database\Eloquent\Model;
 use Crypt;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
 
@@ -207,8 +208,6 @@ class blog extends Model
                 $del=BlogCatagory::where('blogs_id',$id)->pluck('id')->toArray();
                 
                 if ($ids != null){
-
-
                   if (in_array($ids->id,$del)) {
                         foreach ($del as $k) {
                           if ($k != $ids->id) {
@@ -218,10 +217,11 @@ class blog extends Model
                     }
                 }else{
                     $resu=new BlogCatagory;
+               
                     $resu->blogs_id=$id;
                     $resu->catagory_id=$key;
                     $resu->save(); 
-                         
+
                 }  
             }
         }
@@ -341,12 +341,15 @@ class blog extends Model
     public function singleBlog($title)
     {
          $id=Crypt::decrypt($title);
-        $all=Blog::where('status','Active')->where('id',$id)->first();
-
+        $all=blog::where('status','Active')->where('id',$id)->first();
+        
         $author_desc=\App\setting::find(1);   
         $social_media=\App\SocialMedia::where('status','Active')->get();
+        
         $tag=\App\BlogTag::where('blog_id',$all->id)->get();
-        return view('front.blog.post',compact('all','tag','social_media','author_desc'));  
+        return view('front.blog.post',compact('all','tag','social_media','author_desc'));    
+        
+       
     }
 
     public function indexFrontBlog()

@@ -39,8 +39,8 @@ $author_desc=\App\setting::find(1);
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{$author_desc->author_name}}</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time></a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="javascript:void()">{{$author_desc->author_name}}</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="javascript:void()"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time></a></li>
                  
                 </ul>
               </div>

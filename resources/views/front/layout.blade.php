@@ -118,14 +118,9 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" name="password" id="LoginPassword" placeholder="Password">
-          </div>          
-        </div>
-
-        <div class="modal-footer">
-          <div class="form-group">
-            <button type="submit"  class="btn btn-secondary">Submit</button>
-          </div>
-        </div>
+          </div> 
+        <button type="submit"  class="btn btn-secondary">Submit</button>         
+      </div>
       </form>
     </div>
   </div>
