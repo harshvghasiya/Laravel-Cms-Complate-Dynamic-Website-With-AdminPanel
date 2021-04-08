@@ -18,8 +18,12 @@ $qna=\App\qna::where('status','Active')->get();
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
         <div class="col-xl-6">
-          <h1>Bettter digital experience with Presento</h1>
-          <h2>We are team of talanted designers making websites with Bootstrap</h2>
+          @foreach($cms as $result)
+          @if($result->module_id==header_module_id)
+          <h1>{{$result->secondary_title}}</h1>
+          <h2>{{$result->seo_description}}</h2>
+          @endif
+          @endforeach
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
         </div>
       </div>
