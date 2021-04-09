@@ -80,8 +80,9 @@
                 </li>
                
  
-                    @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\SocialMedia::apm_id))
-                        <li>
+                    @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\SocialMedia::apm_id)  )
+
+                        <li @if(Request::url() == route('someListMain')|| Request::url()==  route('create_some')) class="start active" @endif>
                             <a href="{{route('someListMain')}}">
                                 <i class="fa fa-share-alt-square"></i>
                             Social Media </a>
@@ -91,7 +92,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\contactus::apm_id))
-                        <li>
+                        <li  @if(Request::url() == route('contactListMain')) class="start active" @endif>
                             <a href="{{route('contactListMain')}}">
                                 <i class="fa fa-phone-square"></i>
                             Contact Us</a>
@@ -100,7 +101,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\blog::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('blogListMain')|| Request::url()==  route('create')) class="start active" @endif>
                             <a href="{{route('blogListMain')}}">
                                 <i class="icon-speech"></i>
                             Blog  </a>
@@ -109,7 +110,7 @@
 
 
                      @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\BlogCatagory::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('catagoryListMain')|| Request::url()==  route('addcatagory')) class="start active" @endif>
                             <a href="{{route('catagoryListMain')}}">
                                 <i class="icon-speech"></i>
                             Catagory </a>
@@ -118,7 +119,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\BlogTag::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('tagListMain')|| Request::url()==  route('create_tag')) class="start active" @endif>
                             <a href="{{route('tagListMain')}}">
                                 <i class="icon-link"></i>
                             Tag </a>
@@ -128,7 +129,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\setting::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('setting_create')) class="start active" @endif>
                             <a href="{{route('setting_create')}}">
                                 <i class="fa fa-gear"></i>
                             Setting </a>
@@ -137,7 +138,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\qna::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('qnaListMain')|| Request::url()==  route('qna_create')) class="start active" @endif>
                             <a href="{{route('qnaListMain')}}">
                                 <i class="icon-rocket"></i>
                             Qna </a>
@@ -145,7 +146,7 @@
                     @endif
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\testimonial::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('testimonialListMain') || Request::url()==  route('Testimonial_create')) class="start active" @endif>
                             <a href="{{route('testimonialListMain')}}">
                                 <i class="fa fa-database"></i>
                             TestiMonial </a>
@@ -153,7 +154,7 @@
                     @endif
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\portfolio::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('portListMain')|| Request::url()==  route('port_create')) class="start active" @endif>
                             <a href="{{route('portListMain')}}">
                                 <i class="icon-puzzle"></i>
                             Portfolio </a>
@@ -162,7 +163,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\newsletter::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('newListMain')) class="start active" @endif>
                             <a href="{{route('newListMain')}}">
                                 <i class="icon-envelope-open"></i>
                             NewsLetter </a>
@@ -171,7 +172,7 @@
 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\AdminLogin::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('userListMain')|| Request::url()==  route('registerform')) class="start active" @endif>
                             <a href="{{route('userListMain')}}">
                                 <i class="icon-user"></i>
                             Users </a>
@@ -179,7 +180,7 @@
                     @endif 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\apmodule::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('apmoduleListMain')|| Request::url()==  route('create_apmodule')) class="start active" @endif>
                             <a href="{{route('apmoduleListMain')}}">
                                 <i class="icon-folder"></i>
                             Access Modules </a>
@@ -187,7 +188,7 @@
                     @endif 
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\module::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('moduleListMain')|| Request::url()==  route('module_create')) class="start active" @endif>
                             <a href="{{route('moduleListMain')}}">
                                 <i class="icon-wallet"></i>
                              Modules </a>
@@ -195,7 +196,7 @@
                     @endif
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\banner::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('bannerListMain')|| Request::url()==  route('banner_create')) class="start active" @endif>
                             <a href="{{route('bannerListMain')}}">
                                 <i class="icon-docs"></i>
                              Banner </a>
@@ -203,7 +204,7 @@
                     @endif
 
                     @if(Acceess(Auth::guard('adminlogin')->user()->id,\App\cms::apm_id))
-                        <li>
+                        <li @if(Request::url() == route('cmsListMain')|| Request::url()==  route('cms_create')) class="start active" @endif>
                             <a href="{{route('cmsListMain')}}">
                                 <i class="icon-hourglass"></i>
                              Cms </a>

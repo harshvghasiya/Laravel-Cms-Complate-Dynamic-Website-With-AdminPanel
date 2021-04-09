@@ -278,7 +278,7 @@ class blog extends Model
     public function searchBlog($request)
     {
         $search_val=$request->input('search');
-        $search=blog::where('title','like','%'.$search_val.'%')->get();
+        $search=blog::where('title','like','%'.$search_val.'%')->where('status','Active')->get();
         if ($search_val != null) {
               return view('front.search.index',compact('search','search_val'));
         }else{
