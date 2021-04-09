@@ -6,17 +6,13 @@
     <div class="alert alert-success" role="alert">
         {{session('msg')}} </div>
     @endif
-    <!-- BEGIN PAGE HEAD -->
-    <div class="page-head">
-        <!-- BEGIN PAGE TITLE -->
+   
+    <div class="page-head">       
         <div class="page-title">
             <h1>Manage Banners <small>Post List</small></h1>
         </div>
-        <!-- END PAGE TITLE -->
-
     </div>
 
-    <!-- BEGIN PAGE CONTENT-->
     <div class="row ">
 
         <!-- BEGIN SAMPLE TABLE PORTLET-->
@@ -29,12 +25,7 @@
 
                     <a href="javascript:;" class="collapse">
                     </a>
-                    <a href="#portlet-config" data-toggle="modal" class="config">
-                    </a>
-                    <a href="javascript:;" class="reload">
-                    </a>
-                    <a href="javascript:;" class="remove">
-                    </a>
+                   
                 </div>
             </div>
             <div class="portlet-body">
@@ -88,13 +79,10 @@
 @endsection
 @section('script')
 
- {{--    <link href="https://cdn.datatables.net/1.10.24/css/dataTables.min.css" rel="stylesheet"
-    type="text/css" /> --}}
  <script src="http://code.jquery.com/jquery.js"></script>
         <!-- DataTables -->
         <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-        <!-- Bootstrap JavaScript -->
-        {{-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> --}}
+        
 <script>
   
 $(document).ready(function() {

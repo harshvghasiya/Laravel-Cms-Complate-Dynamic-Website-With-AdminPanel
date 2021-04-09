@@ -33,7 +33,7 @@ class setting extends Model
     	if($image != null)
         {
             foreach ($image as $author_image) {
-            $image_name=UploadImage($author_image,Auther_Image_Path());
+            $image_name=UploadImage($author_image,Auther_Setting_Image_Path());
            }
             $res->image=$image_name;
         }
@@ -41,19 +41,17 @@ class setting extends Model
         if($favicon != null)
         {
             foreach ($favicon as $favicon_image) {
-            $image_name=UploadImage($favicon_image,Auther_Image_Path());
+            $image_name=UploadImage($favicon_image,Favicon_Setting_Image_Path());
            }
             $res->favicon=$image_name;
         }
         if($logo_image != null)
         {
             foreach ($logo_image as $logo) {
-            $image_name=UploadImage($logo,Auther_Image_Path());
+            $image_name=UploadImage($logo,Logo_Setting_Image_Path());
             }
             $res->logo_image=$image_name;
         }
-
-
        
          $res->first_email=$request->input('first_email');
          $res->second_email=$request->input('second_email');
@@ -69,6 +67,41 @@ class setting extends Model
          $errors="";
           $msg ="saved success.";
         return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
+    }
+
+    public function getAuthorImageUrl()
+    {
+        $imgname=$this->image;
+        $imagePath=Author_Setting_Image_Exist().'/'.$imgname;
+        $imageUrl=Author_Setting_Image_Url().'/'.$imgname;
+        if (file_exists($imagePath)) {
+            return $imageUrl;
+        }else{
+            return No_Image_Url();
+        }
+    }
+    public function getLogoImageUrl()
+    {
+        $imgname=$this->logo_image;
+        $imagePath=Logo_Setting_Image_Exist().'/'.$imgname;
+        $imageUrl=Logo_Setting_Image_Url().'/'.$imgname;
+        if (file_exists($imagePath)) {
+            return $imageUrl;
+        }else{
+            return No_Image_Url();
+        }
+    }
+
+    public function getFaviconImageUrl()
+    {
+        $imgname=$this->favicon;
+        $imagePath=Favicon_Setting_Image_Exist().'/'.$imgname;
+        $imageUrl=Favicon_Setting_Image_Url().'/'.$imgname;
+        if (file_exists($imagePath)) {
+            return $imageUrl;
+        }else{
+            return No_Image_Url();
+        }
     }
     
 }

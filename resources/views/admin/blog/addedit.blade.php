@@ -111,30 +111,22 @@
                     </div>
                    
                        <hr>
-                      @if(isset($edit))
+                     
                      
                        <div class="form-group">
                             <label for="exampleInputFile1">Cover Image</label>
                             {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
                        </div>
                         <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/blogimage/$edit->image")}}" width="150px" ; height="150px" ; />
+                            <img id="output"  @if(isset($edit)) 
+                                              src="{{$edit->getBlogImageUrl()}}"
+                                              @else
+                                              src="{{No_Image_Url()}}"
+                                              @endif 
+                                              width="150px" ; height="150px" ; />
                         </p>
-                         
-                         
-
-                      @else
-                       <div class="form-group">
-                      <label for="exampleInputFile1">Cover Image</label>
-                       {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
-                        <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
-                        </p>
-                          </div>
-                      @endif
-                     
                   
-                    <script>
+                      <script>
                         var loadFile = function(event) {
                             var output = document.getElementById('output');
                             output.src = URL.createObjectURL(event.target.files[0]);
@@ -143,7 +135,7 @@
                                 URL.revokeObjectURL(output.src) // free memory
                             }
                         };
-                        </script>
+                      </script>
                      <hr>
                    <div class="form-group">
                        <label class="control-label">Tag</label>
@@ -189,22 +181,10 @@
 
 @endsection
 @section('script')
-
     <script>
         var editor = CKEDITOR.replace( 'description', {
             
         });
         CKEDITOR.config.allowedContent = true;
-    </script>
-    <script type="text/javascript">
-      $(document).on('click', '#tag_btn', function(event) {
-        event.preventDefault();
-         $('#more').append('<tr><td> {{ Form::text('tag[]',old('tag'),['class' => 'form-control','id'=>'tag']) }}</td><td><button type="button" class="btn red" id="tag_remove">X</button></td></tr>');
-      });
-
-      $(document).on('click', '#tag_remove', function(event) {
-        event.preventDefault();
-        $(this).closest('tr').remove();
-      });
     </script>
 @endsection

@@ -85,39 +85,31 @@
                 {{ Form::text('url',old('url') ,['class' => 'form-control'])
                  }}   
                  
+                </div>                 
+                <div class="form-group">
+                  <label for="exampleInputFile1">Chose icon</label>
+                  {{Form::file('icon',['class'=>'','onchange'=>"loadFile(event)"])}}
                 </div>
-                  @if(isset($edit))
-                     
-                       <div class="form-group">
-                            <label for="exampleInputFile1">Chose icon</label>
-                            {{Form::file('icon',['class'=>'','onchange'=>"loadFile(event)"])}}
-                       </div>
-                        <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/socialmediaicon/$edit->icon")}}" width="150px" ; height="150px" ; />
-                        </p>
-                         
-                         
 
-                      @else
-                       <div class="form-group">
-                      <label for="exampleInputFile1">Cover icon</label>
-                       {{Form::file('icon',['class'=>'','onchange'=>"loadFile(event)"])}}
-                        <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
-                        </p>
-                          </div>
-                      @endif
-                        <script>
-                              var loadFile = function(event) {
-                            var output = document.getElementById('output');
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                            console.log(output.src);
-                            output.onload = function() {
-                                URL.revokeObjectURL(output.src) // free memory
-                            }
-                          };
-                        </script>
-                    
+                <p class="help-block">
+                  <img id="output" @if(isset($edit))
+                                   src="{{$edit->getSocialMediaImageUrl()}}"
+                                   @else
+                                   src="{{No_Image_Url()}}"
+                                   @endif
+                                    width="150px" ; height="150px" ; />
+                </p>
+                <script>
+                  var loadFile = function(event) {
+                  var output = document.getElementById('output');
+                  output.src = URL.createObjectURL(event.target.files[0]);
+                  console.log(output.src);
+                  output.onload = function() {
+                  URL.revokeObjectURL(output.src) // free memory
+                  }
+                  };
+                </script>
+
 
                     <div class="form-group">
                         <label>Status</label>

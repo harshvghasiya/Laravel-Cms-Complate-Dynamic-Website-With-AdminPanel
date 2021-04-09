@@ -16,15 +16,13 @@ const header_module_id=4;
 // For Admin Home View Access
 function Acceess($user_id,$apm_id)
 { 
-   $apm_user=\App\apm_user::where('user_id',$user_id)->pluck('apm_id')->toArray();
+   $apm_user=\App\apm_user::where('user_id',$user_id)->where('apm_id',$apm_id)->first();
+  if ($apm_user != null) {   	 	
+    return true;
+  }else{
+    return false;
+  } 
 
-   if ($apm_user != null) {
-   	 	 if (in_array($apm_id,$apm_user)) {
-   	 	 	 return true;
-   	 	 }else{
-   	 	 	return false;
-   	 	 } 
-   }	
 }
 
 // For All Access (Edit,Delte,Update Etc)
@@ -88,9 +86,18 @@ function Admin_Image_Path()
   return 'public/userimage';
 }
 
-function Auther_Image_Path()
+function Auther_Setting_Image_Path()
 {
-  return 'public/authorimage';
+  return 'public/setting/authorimage';
+}
+function Favicon_Setting_Image_Path()
+{
+  return 'public/setting/faviconimage';
+}
+
+function Logo_Setting_Image_Path()
+{
+  return 'public/setting/logoimage';
 }
 
 function No_Image_Url()
@@ -172,6 +179,36 @@ function Admin_Login_Image_Check_Exist_Path()
 function Admin_Login_Image_Url()
 {
   return url('public/storage/userimage');
+}
+
+function Author_Setting_Image_Exist()
+{
+  return 'public/storage/setting/authorimage';
+}
+
+function Author_Setting_Image_Url()
+{
+  return url('public/storage/setting/authorimage');
+}
+
+function Logo_Setting_Image_Exist()
+{
+  return 'public/storage/setting/logoimage';
+}
+
+function Logo_Setting_Image_Url()
+{
+  return url('public/storage/setting/logoimage');
+}
+
+function Favicon_Setting_Image_Exist()
+{
+  return 'public/storage/setting/faviconimage';
+}
+
+function Favicon_Setting_Image_Url()
+{
+  return url('public/storage/setting/faviconimage');
 }
 	 
 ?>

@@ -12,12 +12,7 @@
       <div class="tools">
         <a href="javascript:;" class="collapse">
         </a>
-        <a href="#portlet-config" data-toggle="modal" class="config">
-        </a>
-        <a href="javascript:;" class="reload">
-        </a>
-        <a href="javascript:;" class="remove">
-        </a>
+
       </div>
     </div>
     <div class="portlet-body form">
@@ -133,7 +128,7 @@
                 <div class="col-md-9">
                   {{Form::file('logo_image',['class'=>'','onchange'=>"loadFile3(event)",'id'=>'filer_input2','data-jfiler-showThumbs'=>'true'])}}     
                   <div class="help-block col-sm-6">
-                    <img id="output3" src="{{asset("public/storage/authorimage/$edit->logo_image")}}" width="200px" ; height="200px" ; />
+                    <img id="output3" src="{{$edit->getLogoImageUrl()}}" width="200px" ; height="200px" ; />
                   </div>
                </div>
               </div>
@@ -145,7 +140,7 @@
                 <div class="col-md-9">
                   {{Form::file('favicon',['class'=>'','onchange'=>"loadFile2(event)",'id'=>'filer_input3','data-jfiler-showThumbs'=>'true'])}}     
                   <div class="help-block col-sm-6">
-                    <img id="output2" src="{{asset("public/storage/authorimage/$edit->favicon")}}" width="200px" ; height="200px" ; />
+                    <img id="output2" src="{{$edit->getFaviconImageUrl()}}" width="200px" ; height="200px" ; />
                   </div>
                </div>
               </div>
@@ -159,7 +154,7 @@
                 <div class="col-md-9">
                   {{Form::file('image',['class'=>'','onchange'=>"loadFile1(event)",'id'=>'filer_input','data-jfiler-showThumbs'=>'true'])}}     
                   <div class="help-block col-sm-6">
-                    <img id="output1" src="{{asset("public/storage/authorimage/$edit->image")}}" width="200px" ; height="200px" ; />
+                    <img id="output1" src="{{$edit->getAuthorImageUrl()}}" width="200px" ; height="200px" ; />
                   </div>
                 </div>
               </div>
@@ -173,7 +168,7 @@
               <div class="row">
                 <div class="col-md-offset-3 col-md-9">
                   <button type="submit" class="btn green">Submit</button>
-                  <button type="button" class="btn default">Cancel</button>
+                  <a href="{{url('/admin')}}" class="btn default">Cancel</a>
                 </div>
               </div>
             </div>

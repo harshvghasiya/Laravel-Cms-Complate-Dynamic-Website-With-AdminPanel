@@ -49,12 +49,6 @@
             <div class="tools">
                 <a href="" class="collapse">
                 </a>
-                <a href="#portlet-config" data-toggle="modal" class="config">
-                </a>
-                <a href="" class="reload">
-                </a>
-                <a href="" class="remove">
-                </a>
             </div>
         </div>
         <div class="portlet-body form">
@@ -139,27 +133,20 @@
                  </div>
 
                    <h3 class="form-section">Upload Image</h3>
-                      @if(isset($edit))
+                    
                      
                        <div class="form-group">
                             <label for="exampleInputFile1">Cover Image</label>
                             {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
                        </div>
                         <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/cmsimage/$edit->image")}}" width="150px" ; height="150px" ; />
+                            <img id="output"  @if(isset($edit)) 
+                                              src="{{$edit->getCmsImageUrl()}}"
+                                              @else
+                                              src="{{No_Image_Url()}}"
+                                              @endif
+                                              width="150px" ; height="150px" ; />
                         </p>     
-
-                      @else
-                       <div class="form-group">
-                      <label for="exampleInputFile1">Cover Image</label>
-                       {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
-                        <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
-                        </p>
-                          </div>
-                      @endif
-                     
-                  
                     <script>
                         var loadFile = function(event) {
                             var output = document.getElementById('output');

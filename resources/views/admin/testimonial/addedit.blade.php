@@ -92,12 +92,7 @@
                   <label class="control-label"> About</label>
                 {{ Form::textarea('about',old('About') ,['id'=>'About','class' => 'form-control','placeholder'=>' About'])
                  }}      
-                </div>
-
-     
-
-         
-
+                </div>     
                      <div class="form-group col-md-6">
                         <label>Status</label>
                         <div class="radio-list">
@@ -113,43 +108,32 @@
                  </div>
 
                    <h3 class="form-section">Upload Image</h3>
-                      @if(isset($edit))
-                     
+                                         
                        <div class="form-group">
                             <label for="exampleInputFile1">Cover Image</label>
                             {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
                        </div>
                         <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/testimonialimage/$edit->image")}}" width="150px" ; height="150px" ; />
-                        </p>     
-
-                      @else
-                       <div class="form-group">
-                      <label for="exampleInputFile1">Cover Image</label>
-                       {{Form::file('image',['class'=>'','onchange'=>"loadFile(event)"])}}
-                        <p class="help-block">
-                            <img id="output" src="{{asset("/public/storage/blogimage/noimage.png")}}" width="150px" ; height="150px" ; />
-                        </p>
-                          </div>
-                      @endif
-                     
-                  
-                    <script>
-                        var loadFile = function(event) {
-                            var output = document.getElementById('output');
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                            console.log(output.src);
-                            output.onload = function() {
-                                URL.revokeObjectURL(output.src) // free memory
-                            }
-                        };
+                            <img id="output"  @if(isset($edit)) 
+                                              src="{{$edit->getTestimonialImageUrl()}}"
+                                              @else
+                                              src="{{No_Image_Url()}}"
+                                              @endif
+                                               width="150px"; height="150px"; />
+                        </p>                
+                        <script>
+                          var loadFile = function(event) {
+                              var output = document.getElementById('output');
+                              output.src = URL.createObjectURL(event.target.files[0]);
+                              console.log(output.src);
+                              output.onload = function() {
+                                  URL.revokeObjectURL(output.src) // free memory
+                              }
+                          };
                         </script>
-       
-                   
-
                 <div class="form-actions">
                   <button type="submit" class="btn blue">Submit</button>
-                    <a href="{{url('admin/testimoniallist')}}" type="button" class="btn default">Cancel</a>
+                    <a href="{{route('testimonialListMain')}}" type="button" class="btn default">Cancel</a>
                 </div>
                     {!! Form::close() !!}
         </div>

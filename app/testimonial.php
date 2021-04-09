@@ -10,11 +10,10 @@ use Yajra\Datatables\Datatables;
 class testimonial extends Model
 {
     const apm_id ='28';
-     public function created_email()
+    public function created_email()
     {
     	return $this->belongsTo(AdminLogin::class,'created_by','id');
     }
-
 
     public function createTestimonial()
     {
