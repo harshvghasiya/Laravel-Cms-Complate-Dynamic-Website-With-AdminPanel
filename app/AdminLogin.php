@@ -96,7 +96,8 @@ class AdminLogin extends Authenticatable
     }
 
     public function saveAdmin($request)
-    {             
+    {   
+
         $res=new AdminLogin;
         $image=$request->file('image');
         if ($image != null) {
