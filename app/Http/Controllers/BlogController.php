@@ -25,7 +25,7 @@ class BlogController extends Controller
        return $this->Model->createBlog();
     }
 
-    public function store(BlogValidationRequest $request)
+    public function store_update(BlogValidationRequest $request)
     {
         return $this->Model->saveBlog($request);
       
@@ -44,11 +44,6 @@ class BlogController extends Controller
     public function edit(blog $blog,$id)
     {
         return $this->Model->editBlog($id);
-    }
-
-    public function update(BlogUpdValidationRequest $request, blog $blog)
-    {
-       return $this->Model->updateBlog($request);
     }
 
     public function status_blog(Request $request)

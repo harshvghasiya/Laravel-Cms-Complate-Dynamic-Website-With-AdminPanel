@@ -55,12 +55,15 @@
                   <ul class="cats">
                     <li>
                      @php $x=\App\catagory::getPostCatagory($all->id) @endphp
+                     @if($x != null)
                       @foreach($x as $result)
                       <a href="{{route('catagory_detail_show',[$result])}}">
                       {{$result}}</a>,
 
                       @endforeach
-
+                      @else
+                       <p>NoCatagory</p>
+                      @endif
                        
                       </li>
                   </ul>

@@ -13,7 +13,7 @@ class catagory extends Model
     const apm_id ='6';
 
     
-      public function blog_catagory()
+    public function blog_catagory()
     {
     	return $this->hasmany(BlogCatagory::class,'catagory_id','id');
     }
@@ -37,10 +37,13 @@ class catagory extends Model
       {
 
         $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$id)->get();
+        if(!$blogCategory->isEmpty()){
         foreach ($blogCategory as $key => $value) {
             $y[]= $value->catagory->catagory;
         }
         return $y;
+        }
+        return null;
     }
 
     public function created_email()
@@ -63,7 +66,13 @@ class catagory extends Model
     // Store Category
     public function storeCatagory($request)
     {
-        $res=new catagory;
+        $id=$request->input('id');
+        if(isset($id) && $id != null){
+          $res=catagory::find($id);
+        }else{
+          $res=new catagory;
+        }
+        
         $res->catagory=$request->input('catagory');
         $res->created_by=Auth::guard('adminlogin')->user()->id;
         $res->status=$request->input('status');
@@ -126,21 +135,6 @@ class catagory extends Model
             flashMessage('danger','Access Denied');
             return redirect()->route('catagoryListMain');
         }
-    }
-
-    // Update Category
-    public function updateCatagory($request)
-    {
-        $id=$request->input('id');
-        $res=catagory::find($id);
-        $res->catagory=$request->input('catagory');
-        $res->status=$request->input('status');
-        $res->save();
-          $errors="";
-          $msg ="saved success.";
-          flashMessage('success',$msg);
-
-        return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
     }
 
     // Status Category

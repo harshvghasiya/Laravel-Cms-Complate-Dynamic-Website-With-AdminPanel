@@ -62,9 +62,8 @@ class blog extends Model
 
      public function createBlog()
      {
-           if (Allacceess(Auth::guard('adminlogin')->user()->id,'add_blog')) {
-         $tag_list=Tag::where('status','Active')->get();
- 
+        if (Allacceess(Auth::guard('adminlogin')->user()->id,'add_blog')) {
+           $tag_list=Tag::where('status','Active')->get();
            return view('admin.blog.addedit',compact('tag_list')); 
         }else{
             flashMessage('danger','Access Denied');
@@ -74,53 +73,12 @@ class blog extends Model
          
      }
 
-     // Store Blogs
-     public function saveBlog($request)
-     {
-        $res=new Blog;
-        $input=$request->all();
-
-        $image=$request->file('image');
-        if ($image != null) {
-          $image_name=UploadImage($image,Blog_Image_Path()); 
-          $res->image=$image_name;
-        }
-          
-        $res->title=$input['title'];
-        $res->description=$input['description'];
-        
-        $res->created_by=Auth::guard('adminlogin')->user()->id;
-        $res->status=$input['status'];
-        $res->save();
-        
-
-        $catagory=$input['catagory'];
-        foreach ($catagory as $result) {
-             $cat=new BlogCatagory;
-             $cat->catagory_id=$result;
-             $cat->blogs_id=$res->id;
-             $cat->save();
-        }
-
-        $tag=$input['tag'];
-        foreach ($tag as $result) {
-             $teg=new BlogTag;
-             $teg->tag_id=$result;
-             $teg->blog_id=$res->id;
-             $teg->save();
-        }
-        
-          $errors="";
-          $msg ="saved success.";
-          flashMessage('success',$msg);
-        return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
-     }
-
+    
      // Blog AllData
 
      public function BlogDatable()
      {
-          $sql=blog::with(['created_email']);
+          $sql=blog::with(['created_email','blog_id']);
           return Datatables::of($sql)
                 ->editColumn('status',   function($data){
                         if($data->status == "Active"){
@@ -149,8 +107,20 @@ class blog extends Model
                       }
                         }) 
                  ->editColumn('catagory', function($data){
-                            return \App\blog::getBlogCatagory($data->id);
+                        if (!$data->blog_id->isEmpty()) {
+                            foreach ($data->blog_id as $key => $value) {
+                              $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$value->blogs_id)->get();
+                              foreach ($blogCategory as $key => $value) {
+                                $y[]= $value->catagory->catagory;
+                              }
+                              return $y;
+                            }                                  
+                        }else{
+                            return 'None';
+                        }
+                            
                         })
+                        
                 
                 ->rawColumns(['status','handle','image','id','created_by'])
             
@@ -181,10 +151,18 @@ class blog extends Model
 
      // Update Blog
 
-     public function updateBlog($request)
-     {
+     public function saveBlog($request)
+     {        
         $id=$request->input('id');
-        $res=Blog::find($id);
+        if (isset($id) && $id != null) {
+            $res=Blog::find($id);             
+            BlogCatagory::where('blogs_id',$res->id)->delete();
+            BlogTag::where('blog_id',$res->id)->delete();
+        }else{
+            $res=new Blog;
+            $res->created_by=Auth::guard('adminlogin')->user()->id;
+        }
+       
 
         $image=$request->file('image');
         if ($image!= null) { 
@@ -200,53 +178,24 @@ class blog extends Model
 
 
         $catagory=$request->input('catagory');
-         $tag=$request->input('tag');
-        if ($catagory != null) {
+        $tag=$request->input('tag');
 
-          foreach ($catagory as $key) {
-                $ids=BlogCatagory::where('blogs_id',$id)->where('catagory_id',$key)->first();
-                $del=BlogCatagory::where('blogs_id',$id)->pluck('id')->toArray();
-                
-                if ($ids != null){
-                  if (in_array($ids->id,$del)) {
-                        foreach ($del as $k) {
-                          if ($k != $ids->id) {
-                            BlogCatagory::destroy($k);
-                            }
-                        }
-                    }
-                }else{
-                    $resu=new BlogCatagory;               
-                    $resu->blogs_id=$id;
-                    $resu->catagory_id=$key;
-                    $resu->save(); 
-
-                }  
+        if (!empty($catagory)) {                
+            foreach ($catagory as $key => $value) {                    
+                $resu=new BlogCatagory;            
+                $resu->blogs_id=$res->id;
+                $resu->catagory_id=$value;
+                $resu->save();
             }
         }
 
-        if ($tag != null) {     
-            foreach ($tag as $key) {
-                $ids=BlogTag::where('blog_id',$id)->where('tag_id',$key)->first();
-                $del=BlogTag::where('blog_id',$id)->pluck('id')->toArray();
-                
-                if ($ids != null){
-                  if (in_array($ids->id,$del)) {
-                        foreach ($del as $k) {
-                          if ($k != $ids->id) {
-
-                            BlogTag::destroy($k);
-                            }
-                        }
-                    }
-                }else{
-                    $resu=new BlogTag;
-                    $resu->blog_id=$id;
-                    $resu->tag_id=$key;
-                    $resu->save();
-                              
-                 }  
-            }
+        if (!empty($tag)) {
+          foreach ($tag as $key => $value) {    
+                $resu=new BlogTag;
+                $resu->blog_id=$res->id;
+                $resu->tag_id=$value;
+                $resu->save(); 
+            }                            
         }
        
          $errors="";

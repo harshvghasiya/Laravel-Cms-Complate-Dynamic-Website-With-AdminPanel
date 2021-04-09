@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class ApmoduleValidationRequest extends FormRequest
 {
@@ -19,6 +20,7 @@ class ApmoduleValidationRequest extends FormRequest
     {
         return [
             'name.required'=> 'Name not be null.',
+            'name.check_admin_panle_module_upd_already_exit' => "This ModuleName NameIs Taken.",
         ];
     }
 
@@ -27,10 +29,13 @@ class ApmoduleValidationRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
+        $input=$request->all();
+        $id= !empty($input['id']) ? $input['id'] : "";
+
         return [
-            'name'=>'required',
+            'name'=>'required|CheckAdminPanleModuleUpdAlreadyExit:'.$id.'',
         ];
     }
 }

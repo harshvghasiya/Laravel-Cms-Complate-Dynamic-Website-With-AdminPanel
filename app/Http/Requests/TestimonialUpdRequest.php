@@ -24,8 +24,7 @@ class TestimonialUpdRequest extends FormRequest
             'name.check_test_upd_already_exit' => "Please Add Unique Name.",
             'role.required' => "Please Add Role.",
             'about.required' => "Please Add About.",
-            'status.required' => "Please Add status.",
-         
+            'status.required' => "Please Add status.",         
             'image.mimes'=>'Please Select Valid Image'
              
         ];

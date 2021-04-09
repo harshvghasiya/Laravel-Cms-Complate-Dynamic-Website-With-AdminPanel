@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CmsUpdValidationRequest;
+
 use App\Http\Requests\CmsValidationRequest;
 use App\cms;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class CmsController extends Controller
       return $this->Model->createCms();
     }
 
-    public function store(CmsValidationRequest $request)
+    public function store_update(CmsValidationRequest $request)
     {
        return $this->Model->storeCms($request);
     }
@@ -50,11 +50,6 @@ class CmsController extends Controller
     public function status_all(Request $request)
     {
         return $this->Model->statusAllCms($request);
-    }
-   
-    public function update(CmsUpdValidationRequest $request, cms $cms)
-    {
-       return $this->Model->updateCms($request);
     }
 
     public function destroy(cms $cms,Request $request)

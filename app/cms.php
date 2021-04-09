@@ -48,7 +48,12 @@ class cms extends Model
     // Store Cms
     public function storeCms($request)
     {
-        $res=new cms;
+        $id=$request->input('id');
+        if (isset($id) && $id != null) {
+            $res= cms::find($id);
+        }else{
+            $res=new cms; 
+        } 
         $input=$request->all();
        
         $image=$request->file('image');
@@ -133,43 +138,6 @@ class cms extends Model
           flashMessage('danger','Acceess Denied');
           return redirect()->route('cmsListMain');
         }
-    }
-
-    // Update Cms
-    public function updateCms($request)
-    {
-       $input=$request->all();
-        $id=$input['id'];
-        $res=cms::find($id);
-
-        $image=$request->file('image');
-        
-        if ($image!=null) {
-        $image_name=UploadImage($image,Cms_Image_Path());
-        $res->image=$image_name;
-        }       
-       
-        $res->name=$input['name'];
-        $res->secondary_title=$input['secondary_title'];
-        $res->display_on_header=$input['display_on_header'];
-        $res->display_on_footer=$input['display_on_footer'];
-        $res->status=$input['status'];
-        
-        $res->parent_id=$input['parent_id'];
-        $res->module_id=$input['module'];
-        $res->seo_title=$input['seo_title'];
-        $res->seo_keyword=$input['seo_keyword'];
-        $res->seo_description=$input['seo_description'];
-          if (isset($input['parent_id'])) {
-             $res->parent_id=$input['parent_id'];
-        }
-        $res->short_description=$input['short_description'];
-        $res->long_description=$input['long_description'];
-        $res->save();
-
-        $errors="";
-        $msg ="saved success.";
-        return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
     }
 
     // Status Cms

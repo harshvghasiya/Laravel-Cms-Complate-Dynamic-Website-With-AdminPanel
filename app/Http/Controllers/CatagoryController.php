@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CatagoryUpdValidationRequest;
-use App\Http\Requests\CatagoryValidationRequest;
 use App\BlogCatagory;
 use App\catagory;
 use Illuminate\Http\Request;
@@ -23,7 +22,7 @@ class CatagoryController extends Controller
        return $this->Model->createCatagory();
     }
 
-    public function store(CatagoryValidationRequest $request)
+    public function store_update(CatagoryUpdValidationRequest $request)
     {
         return $this->Model->storeCatagory($request);
     }
@@ -43,11 +42,6 @@ class CatagoryController extends Controller
         return $this->Model->editCategory($id);
     }
 
-    public function update(CatagoryUpdValidationRequest $request, catagory $catagory)
-    {
-       return $this->Model->updateCatagory($request);
-
-    }
 
     public function status_catagory(Request $request)
     {

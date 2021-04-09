@@ -28,19 +28,19 @@ Route::group(['middleware'=>['login']], function(){
 
 Route::any('/admin/addblog',[App\Http\Controllers\BlogController::class, 'create'])->name('create');
 Route::any('/admin/bloglist',[App\Http\Controllers\BlogController::class, 'show'])->name('blogListMain');
-Route::any('/admin/blogstore',[App\Http\Controllers\BlogController::class, 'store'])->name('blogstore');
+Route::any('/admin/blogstore',[App\Http\Controllers\BlogController::class, 'store_update'])->name('blogstore');
 Route::any('/admin/blog_datable',[App\Http\Controllers\BlogController::class, 'blog_datable'])->name('blog_datable');
 Route::any('/admin/del_blog',[App\Http\Controllers\BlogController::class, 'destroy'])->name('del_blog');
 Route::any('/admin/status_blog',[App\Http\Controllers\BlogController::class, 'status_blog'])->name('status_blog');
 Route::any('/admin/edit_blog/admin/{id}',[App\Http\Controllers\BlogController::class, 'edit'])->name('edit_blog');
-Route::any('/admin/upd_blog',[App\Http\Controllers\BlogController::class, 'update'])->name('upd_blog');
+Route::any('/admin/upd_blog',[App\Http\Controllers\BlogController::class, 'store_update'])->name('upd_blog');
 Route::any('/admin/blogdellall',[App\Http\Controllers\BlogController::class, 'del_all'])->name('blog_del_all');
 Route::any('/admin/blogstatusall',[App\Http\Controllers\BlogController::class, 'status_all'])->name('blog_status_all');
 
 
-Route::any('/admin/catagorystore',[App\Http\Controllers\CatagoryController::class, 'store'])->name('catagorystore');
+Route::any('/admin/catagorystore',[App\Http\Controllers\CatagoryController::class, 'store_update'])->name('catagorystore');
 Route::any('/admin/catagorylist',[App\Http\Controllers\CatagoryController::class, 'show'])->name('catagoryListMain');
-Route::any('/admin/upd_catagory',[App\Http\Controllers\CatagoryController::class, 'update'])->name('upd_catagory');
+Route::any('/admin/upd_catagory',[App\Http\Controllers\CatagoryController::class, 'store_update'])->name('upd_catagory');
 Route::any('/admin/edit_catagory/{id}',[App\Http\Controllers\CatagoryController::class, 'edit'])->name('edit_catagory');
 Route::any('/admin/del_catagory',[App\Http\Controllers\CatagoryController::class, 'destroy'])->name('del_catagory');
 Route::any('/admin/status_catagory',[App\Http\Controllers\CatagoryController::class, 'status_catagory'])->name('status_catagory');
@@ -73,11 +73,11 @@ Route::any('/admin/contactus',[App\Http\Controllers\ContactusController::class,'
 Route::any('/admin/contact_del_all',[App\Http\Controllers\ContactusController::class,'del_all'])->name('contact_del_all');
 
 
-Route::any('/admin/modulestore',[App\Http\Controllers\ModuleController::class,'store'])->name('modulestore');
+Route::any('/admin/modulestore',[App\Http\Controllers\ModuleController::class,'store_update'])->name('modulestore');
 Route::any('/admin/modulelist',[App\Http\Controllers\ModuleController::class,'show'])->name('moduleListMain');
 Route::any('/admin/addmodule',[App\Http\Controllers\ModuleController::class,'create'])->name('module_create');
 Route::any('/admin/editmodule/{id}',[App\Http\Controllers\ModuleController::class,'edit'])->name('edit_module');
-Route::any('/admin/upd_module',[App\Http\Controllers\ModuleController::class,'update'])->name('upd_module');
+Route::any('/admin/upd_module',[App\Http\Controllers\ModuleController::class,'store_update'])->name('upd_module');
 Route::any('/admin/del_module',[App\Http\Controllers\ModuleController::class,'destroy'])->name('del_module');
 Route::any('/admin/module_datable',[App\Http\Controllers\ModuleController::class,'module_datable'])->name('module_datable');
 Route::any('/admin/status_module',[App\Http\Controllers\ModuleController::class,'status_module'])->name('status_module');
@@ -100,18 +100,18 @@ Route::any('/admin/apmodule_status_all',[App\Http\Controllers\ApmoduleController
 
 Route::any('/admin/tag_datable',[App\Http\Controllers\TagController::class,'tag_datable'])->name('tag_datable');
 Route::any('/admin/createtag',[App\Http\Controllers\TagController::class,'create'])->name('create_tag');
-Route::any('/admin/tagstore',[App\Http\Controllers\TagController::class,'store'])->name('tagstore');
+Route::any('/admin/tagstore',[App\Http\Controllers\TagController::class,'store_update'])->name('tagstore');
 Route::any('/admin/taglist',[App\Http\Controllers\TagController::class,'show'])->name('tagListMain');
 Route::any('/admin/del_tag',[App\Http\Controllers\TagController::class,'destroy'])->name('del_tag');
 Route::any('/admin/status_tag',[App\Http\Controllers\TagController::class,'status_tag'])->name('status_tag');
 Route::any('/admin/edit_tag/{id}',[App\Http\Controllers\TagController::class,'edit'])->name('edit_tag');
-Route::any('/admin/upd_tag',[App\Http\Controllers\TagController::class,'store'])->name('upd_tag');
+Route::any('/admin/upd_tag',[App\Http\Controllers\TagController::class,'store_update'])->name('upd_tag');
 Route::any('/admin/tag_status_all',[App\Http\Controllers\TagController::class,'status_all'])->name('tag_status_all');
 Route::any('/admin/tag_del_all',[App\Http\Controllers\TagController::class,'del_all'])->name('tag_del_all');
 
 
-Route::any('/admin/cmsstore',[App\Http\Controllers\CmsController::class,'store'])->name('cmsstore');
-Route::any('/admin/upd_cms',[App\Http\Controllers\CmsController::class,'update'])->name('upd_cms');
+Route::any('/admin/cmsstore',[App\Http\Controllers\CmsController::class,'store_update'])->name('cmsstore');
+Route::any('/admin/upd_cms',[App\Http\Controllers\CmsController::class,'store_update'])->name('upd_cms');
 Route::any('/admin/edit_cms/{id}',[App\Http\Controllers\CmsController::class,'edit'])->name('edit_cms');
 Route::any('/admin/cmslist',[App\Http\Controllers\CmsController::class,'show'])->name('cmsListMain');
 Route::any('/admin/addcms',[App\Http\Controllers\CmsController::class,'create'])->name('cms_create');
@@ -171,10 +171,10 @@ Route::any('/admin/qna_datable',[App\Http\Controllers\qnaController::class,'qna_
 
 
 
-Route::any('/admin/testimonialstore',[App\Http\Controllers\testimonialController::class,'store'])->name('testimonialstore');
+Route::any('/admin/testimonialstore',[App\Http\Controllers\testimonialController::class,'store_update'])->name('testimonialstore');
 Route::any('/admin/addtestimonial',[App\Http\Controllers\testimonialController::class,'create'])->name('Testimonial_create');
 Route::any('/admin/testimonialListMain',[App\Http\Controllers\testimonialController::class,'show'])->name('testimonialListMain');
-Route::any('/admin/testimonialupdate',[App\Http\Controllers\testimonialController::class,'update'])->name('upd_testimonial');
+Route::any('/admin/testimonialupdate',[App\Http\Controllers\testimonialController::class,'store_update'])->name('upd_testimonial');
 Route::any('/admin/testimonial_edit/{id}',[App\Http\Controllers\testimonialController::class,'edit'])->name('edit_Testimonial');
 Route::any('/admin/testimonial_del_all',[App\Http\Controllers\testimonialController::class,'del_all'])->name('Testimonial_del_all');
 Route::any('/admin/testimonial_status_all',[App\Http\Controllers\testimonialController::class,'status_all'])->name('Testimonial_status_all');

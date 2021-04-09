@@ -21,9 +21,9 @@ class ModuleUpdValidationRequest extends FormRequest
     {
         return [
             'name.required' => "Please Add ModuleName.",
-            'name.check_module_upd_already_exit' => "This ModuleName Name Is Already In Use.",
+            'name.check_module_name_upd_already_exit' => "This ModuleName Name Is Already In Use.",
             'slug.required' => "Please Add ModuleSlug.",
-            'slug.check_module_upd_already_exit' => "This SlugName Name Is Already In Use.",
+            'slug.check_module_slug_upd_already_exit' => "This SlugName Name Is Already In Use.",
             
 
         ];
@@ -41,8 +41,8 @@ class ModuleUpdValidationRequest extends FormRequest
         $id= !empty($input['id']) ? $input['id'] : "";
 
           return [
-            'name' => 'required|CheckModuleUpdAlreadyExit:'.$id.'',
-            'slug' =>'required|CheckModuleUpdAlreadyExit:'.$id.''
+            'name' => 'required|CheckModuleNameUpdAlreadyExit:'.$id.'',
+            'slug' =>'required|CheckModuleSlugUpdAlreadyExit:'.$id.''
                         
 
         ];

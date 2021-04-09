@@ -33,7 +33,13 @@ class module extends Model
 
     public function storeModule($request)
     {
-    	$res=new module;
+        $id=$request->input('id');
+        if(isset($id) && $id != null) {
+           $res=module::find($id);
+        }else{
+           $res=new module; 
+        }
+    	
         $res->name=$request->input('name');
         $res->slug=$request->input('slug');
         $res->status=$request->input('status');
@@ -84,19 +90,6 @@ class module extends Model
             flashMessage('danger','Access Denied');
             return redirect()->route('moduleListMain');
         }
-    }
-
-    public function updateModule($request)
-    {
-    	$id=$request->input('id');
-        $res=module::find($id);
-        $res->name=$request->input('name');
-        $res->slug=$request->input('slug');
-        $res->status=$request->input('status');
-        $res->save();
-         $errors="";
-          $msg ="saved success.";
-        return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);
     }
 
     public function statusModule($request)

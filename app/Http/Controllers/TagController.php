@@ -23,7 +23,7 @@ class TagController extends Controller
         return $this->Model->createTag();
     }
 
-    public function store(TagValidationRequest $request)
+    public function store_update(TagValidationRequest $request)
     {
         return $this->Model->saveTag($request);
     }

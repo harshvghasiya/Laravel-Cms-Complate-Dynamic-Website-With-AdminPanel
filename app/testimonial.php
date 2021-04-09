@@ -28,8 +28,14 @@ class testimonial extends Model
 
     public function saveTestimonial($request)
     {
-    	 $res=new testimonial;
-         $image=$request->file('image');
+        $id=$request->input('id');
+        if (isset($id) && $id != null) {
+            $res=testimonial::find($id);
+        }else{
+            $res=new testimonial;
+        }
+    	 
+        $image=$request->file('image');
         if ($image != null) {
             $image_name=UploadImage($image,Testimonial_Image_Path());
             $res->image=$image_name;
@@ -97,30 +103,6 @@ class testimonial extends Model
             return redirect()->route('testimonialListMain');
 
         }
-    }
-
-    public function updateTestimonial($request)
-    {
-    	$id=$request->input('id');
-        $res=testimonial::find($id);
-        $image=$request->image;
-        if ($image != null) {
-            $image_name=UploadImage($image,Testimonial_Image_Path());
-            $res->image=$image_name;
-        }
-
-
-        $res->name=$request->input('name');
-        $res->role=$request->input('role');
-        $res->about=$request->input('about');
-        $res->status=$request->input('status');
-        $res->about=$request->input('about');
-       
-        $res->save();
-
-        $errors="";
-        $msg ="saved success.";
-        return response()->json(['success' => true,'msg'=>$msg, 'status'=>1,'errors' => $errors]);
     }
 
     public function statusTestimonial($request)

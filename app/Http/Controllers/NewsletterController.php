@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\newsRequest;
+use App\Http\Requests\NewsletterValidationRequest;
 use App\newsletter;
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class NewsletterController extends Controller
     }
     
    
-    public function store(newsRequest $request)
+    public function store(NewsletterValidationRequest $request)
     {
       return $this->Model->storeNewsletter($request);
     }

@@ -130,11 +130,9 @@ class AdminLogin extends Authenticatable
                           $r->user_id=$res->id;
                           $r->access_slug=$k;
                           $r->save();
-                      }
+                        }
                     }
-
                 }
-
             }
         }
    
@@ -325,36 +323,18 @@ class AdminLogin extends Authenticatable
         }
 
         $res->save();
+       Apm_user::where('user_id',$res->id)->delete();
+       $apm_list=$request->input('apm_list');
 
-       $catagory=$request->input('apm_list');
-       if ($catagory != null) {
-            
-          foreach ($catagory as $key) {
-            $ids=apm_user::where('user_id',$id)->where('apm_id',$key)->first();
-            $del=apm_user::where('user_id',$id)->pluck('id')->toArray();
-           
-            if ($ids != null){
-
-              if (in_array($ids->id,$del)) {
-                    foreach ($del as $k) {
-
-
-                      if ($k != $ids->id) {
-
-                        apm_user::destroy($k);
-                      
-                        }
-                    }
-                     
-                }
-            }else{
-                $resu=new apm_user;
-                $resu->user_id=$id;
-                $resu->apm_id=$key;
-                $resu->save();
-             }  
-        }
-     }
+       if (!empty($apm_list)) {
+         foreach ($apm_list as $key => $value) {
+            $resu=new apm_user;
+            $resu->user_id=$res->id;
+            $resu->apm_id=$value;
+            $resu->save(); 
+         }
+       }
+    
         $errors="";
         $msg ="saved success.";
         return response()->json(['success' => true,'msgs'=> $msg, 'status'=>1,'errors' => $errors]);

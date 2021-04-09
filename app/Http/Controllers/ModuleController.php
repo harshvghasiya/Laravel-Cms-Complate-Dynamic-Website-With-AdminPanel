@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ModuleUpdValidationRequest;
-use App\Http\Requests\ModuleValidationRequest;
 use App\module;
 use Illuminate\Http\Request;
 
@@ -21,7 +20,7 @@ class ModuleController extends Controller
        return $this->Model->createModule();
     }
 
-    public function store(ModuleValidationRequest $request)
+    public function store_update(ModuleUpdValidationRequest $request)
     {
        return $this->Model->storeModule($request);
     }
@@ -41,16 +40,12 @@ class ModuleController extends Controller
         return $this->Model->editModule($id);
     }
 
-    public function update(ModuleUpdValidationRequest $request, module $module)
-    {
-       return $this->Model->updateModule($request);
-    }
-
     public function status_module(Request $request)
     {
        return $this->Model->statusModule($request); 
     }
-   public function status_all(Request $request)
+    
+    public function status_all(Request $request)
     {
        return $this->Model->statusAllModule($request);
     }

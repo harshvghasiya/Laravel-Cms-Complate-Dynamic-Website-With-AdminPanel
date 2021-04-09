@@ -9,6 +9,7 @@ class BlogCatagory extends Model
 {
     
     const apm_id ='6';
+   
 
     public function blog()
     {

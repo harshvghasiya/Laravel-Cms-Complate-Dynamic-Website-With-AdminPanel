@@ -21,11 +21,7 @@ class CatagoryUpdValidationRequest extends FormRequest
     {
         return [
             'catagory.required' => "Please Add Catagory.",
-            'catagory.check_catagory_upd_already_exit' => "This Catagory Already Exist.",
-            
-            
-            
-
+            'catagory.check_catagory_upd_already_exit' => "This Catagory Already Exist.",        
         ];
     }
 
@@ -37,7 +33,7 @@ class CatagoryUpdValidationRequest extends FormRequest
     public function rules(Request $request)
 
     {
-               $input=$request->all();
+        $input=$request->all();
         $id= !empty($input['id']) ? $input['id'] : "";
 
         

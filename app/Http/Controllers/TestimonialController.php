@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TestimonialRequest;
 use App\Http\Requests\TestimonialUpdRequest;
 use App\testimonial;
 use Illuminate\Http\Request;
@@ -22,7 +21,7 @@ class TestimonialController extends Controller
         return $this->Model->createTestimonial();
     }
 
-    public function store(TestimonialRequest $request)
+    public function store_update(TestimonialUpdRequest $request)
     {
        return $this->Model->saveTestimonial($request);        
     }
@@ -42,12 +41,7 @@ class TestimonialController extends Controller
        return $this->Model->editTestimonial($id);
     }
 
-    public function update(TestimonialUpdRequest $request, testimonial $testimonial)
-    {
-      return $this->Model->updateTestimonial($request);
-    }
-
-     public function status_test(testimonial $testimonial,Request $request)
+    public function status_test(testimonial $testimonial,Request $request)
     {
        return $this->Model->statusTestimonial($request);
     }
