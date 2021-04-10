@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 26, 2021 at 02:30 AM
+-- Generation Time: Apr 10, 2021 at 05:43 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.12
 
@@ -193,7 +193,191 @@ INSERT INTO `accessusers` (`id`, `user_id`, `module_id`, `access_slug`, `created
 (188, 31, 29, 'status_all_qna', '2021-03-11 04:40:03', '2021-03-11 04:40:03'),
 (189, 31, 29, 'status_qna', '2021-03-11 04:40:03', '2021-03-11 04:40:03'),
 (190, 31, 29, 'del_all_qna', '2021-03-11 04:40:03', '2021-03-11 04:40:03'),
-(191, 31, 30, 'edit_setting', '2021-03-11 04:40:03', '2021-03-11 04:40:03');
+(191, 31, 30, 'edit_setting', '2021-03-11 04:40:03', '2021-03-11 04:40:03'),
+(192, 32, 4, 'add_banner', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(193, 32, 4, 'edit_banner', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(194, 32, 4, 'del_banner', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(195, 32, 4, 'status_banner', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(196, 32, 4, 'del_all_banner', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(197, 32, 4, 'status_all_banner', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(198, 32, 5, 'add_blog', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(199, 32, 5, 'edit_blog', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(200, 32, 5, 'del_blog', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(201, 32, 5, 'del_all_blog', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(202, 32, 5, 'status_blog', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(203, 32, 5, 'status_all_blog', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(204, 32, 6, 'add_catagory', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(205, 32, 6, 'edit_catagory', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(206, 32, 6, 'del_catagory', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(207, 32, 6, 'del_all_catagory', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(208, 32, 6, 'status_all_catagory', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(209, 32, 6, 'status_catagory', '2021-03-26 10:53:25', '2021-03-26 10:53:25'),
+(210, 32, 7, 'add_tag', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(211, 32, 7, 'edit_tag', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(212, 32, 7, 'del_tag', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(213, 32, 7, 'status_tag', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(214, 32, 7, 'status_all_tag', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(215, 32, 7, 'del_all_tag', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(216, 32, 8, 'add_cms', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(217, 32, 8, 'edit_cms', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(218, 32, 8, 'del_cms', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(219, 32, 8, 'status_cms', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(220, 32, 8, 'status_all_cms', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(221, 32, 8, 'del_all_cms', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(222, 32, 9, 'del_contact', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(223, 32, 9, 'del_all_contact', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(224, 32, 10, 'add_module', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(225, 32, 10, 'edit_module', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(226, 32, 10, 'del_module', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(227, 32, 10, 'status_all_module', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(228, 32, 10, 'status_module', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(229, 32, 10, 'del_all_module', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(230, 32, 11, 'del_news', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(231, 32, 11, 'del_all_news', '2021-03-26 10:53:26', '2021-03-26 10:53:26'),
+(232, 32, 12, 'add_port', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(233, 32, 12, 'edit_port', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(234, 32, 12, 'del_port', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(235, 32, 12, 'status_all_port', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(236, 32, 12, 'status_port', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(237, 32, 12, 'del_all_port', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(238, 32, 15, 'add_some', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(239, 32, 15, 'edit_some', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(240, 32, 15, 'del_some', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(241, 32, 15, 'status_all_some', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(242, 32, 15, 'status_some', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(243, 32, 15, 'del_all_some', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(244, 32, 17, 'add_user', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(245, 32, 17, 'edit_user', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(246, 32, 17, 'del_user', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(247, 32, 17, 'status_all_user', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(248, 32, 17, 'status_user', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(249, 32, 17, 'del_all_user', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(250, 32, 27, 'add_apmodule', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(251, 32, 27, 'edit_apmodule', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(252, 32, 27, 'del_apmodule', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(253, 32, 27, 'status_all_apmodule', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(254, 32, 27, 'status_apmodule', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(255, 32, 27, 'del_all_apmodule', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(256, 32, 28, 'add_test', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(257, 32, 28, 'edit_test', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(258, 32, 28, 'del_test', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(259, 32, 28, 'status_all_test', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(260, 32, 28, 'status_test', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(261, 32, 28, 'del_all_test', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(262, 32, 29, 'add_qna', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(263, 32, 29, 'edit_qna', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(264, 32, 29, 'del_qna', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(265, 32, 29, 'status_all_qna', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(266, 32, 29, 'status_qna', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(267, 32, 29, 'del_all_qna', '2021-03-26 10:53:27', '2021-03-26 10:53:27'),
+(268, 32, 30, 'edit_setting', '2021-03-26 10:53:28', '2021-03-26 10:53:28'),
+(269, 32, 7, 'edit_tag', '2021-03-26 22:44:18', '2021-03-26 22:44:18'),
+(270, 34, 4, 'add_banner', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(271, 34, 4, 'edit_banner', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(272, 34, 4, 'del_banner', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(273, 34, 4, 'status_banner', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(274, 34, 4, 'del_all_banner', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(275, 34, 4, 'status_all_banner', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(276, 34, 5, 'add_blog', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(277, 34, 5, 'edit_blog', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(278, 34, 5, 'del_blog', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(279, 34, 5, 'del_all_blog', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(280, 34, 5, 'status_blog', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(281, 34, 5, 'status_all_blog', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(282, 34, 6, 'add_catagory', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(283, 34, 6, 'edit_catagory', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(284, 34, 6, 'del_catagory', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(285, 34, 6, 'del_all_catagory', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(286, 34, 6, 'status_all_catagory', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(287, 34, 6, 'status_catagory', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(288, 34, 7, 'add_tag', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(289, 34, 7, 'edit_tag', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(290, 34, 7, 'del_tag', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(291, 34, 7, 'status_tag', '2021-03-27 00:32:00', '2021-03-27 00:32:00'),
+(292, 34, 7, 'status_all_tag', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(293, 34, 7, 'del_all_tag', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(294, 34, 8, 'add_cms', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(295, 34, 8, 'edit_cms', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(296, 34, 8, 'del_cms', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(297, 34, 8, 'status_cms', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(298, 34, 8, 'status_all_cms', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(299, 34, 8, 'del_all_cms', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(300, 34, 9, 'del_contact', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(301, 34, 9, 'del_all_contact', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(302, 34, 10, 'add_module', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(303, 34, 10, 'edit_module', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(304, 34, 10, 'del_module', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(305, 34, 10, 'status_all_module', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(306, 34, 10, 'status_module', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(307, 34, 10, 'del_all_module', '2021-03-27 00:32:01', '2021-03-27 00:32:01'),
+(308, 34, 11, 'del_news', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(309, 34, 11, 'del_all_news', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(310, 34, 12, 'add_port', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(311, 34, 12, 'edit_port', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(312, 34, 12, 'del_port', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(313, 34, 12, 'status_all_port', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(314, 34, 12, 'status_port', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(315, 34, 12, 'del_all_port', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(316, 34, 15, 'add_some', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(317, 34, 15, 'edit_some', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(318, 34, 15, 'del_some', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(319, 34, 15, 'status_all_some', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(320, 34, 15, 'status_some', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(321, 34, 15, 'del_all_some', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(322, 34, 17, 'add_user', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(323, 34, 17, 'edit_user', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(324, 34, 17, 'del_user', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(325, 34, 17, 'status_all_user', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(326, 34, 17, 'status_user', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(327, 34, 17, 'del_all_user', '2021-03-27 00:32:02', '2021-03-27 00:32:02'),
+(328, 34, 27, 'add_apmodule', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(329, 34, 27, 'edit_apmodule', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(330, 34, 27, 'del_apmodule', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(331, 34, 27, 'status_all_apmodule', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(332, 34, 27, 'status_apmodule', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(333, 34, 27, 'del_all_apmodule', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(334, 34, 28, 'add_test', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(335, 34, 28, 'edit_test', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(336, 34, 28, 'del_test', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(337, 34, 28, 'status_all_test', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(338, 34, 28, 'status_test', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(339, 34, 28, 'del_all_test', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(340, 34, 29, 'add_qna', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(341, 34, 29, 'edit_qna', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(342, 34, 29, 'del_qna', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(343, 34, 29, 'status_all_qna', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(344, 34, 29, 'status_qna', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(345, 34, 29, 'del_all_qna', '2021-03-27 00:32:03', '2021-03-27 00:32:03'),
+(346, 34, 30, 'edit_setting', '2021-03-27 00:32:04', '2021-03-27 00:32:04'),
+(347, 35, 4, 'add_banner', '2021-03-27 00:33:40', '2021-03-27 00:33:40'),
+(348, 35, 4, 'edit_banner', '2021-03-27 00:33:40', '2021-03-27 00:33:40'),
+(349, 35, 4, 'del_all_banner', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(350, 35, 5, 'add_blog', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(351, 35, 5, 'del_all_blog', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(352, 35, 5, 'status_blog', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(353, 35, 6, 'add_catagory', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(354, 35, 6, 'del_all_catagory', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(355, 35, 7, 'edit_tag', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(356, 35, 7, 'del_tag', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(357, 35, 7, 'status_all_tag', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(358, 35, 8, 'del_all_cms', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(359, 35, 9, 'del_contact', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(360, 35, 9, 'del_all_contact', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(361, 35, 10, 'add_module', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(362, 35, 10, 'edit_module', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(363, 35, 10, 'del_module', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(364, 35, 10, 'status_module', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(365, 35, 12, 'add_port', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(366, 35, 12, 'edit_port', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(367, 35, 12, 'del_port', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(368, 35, 12, 'status_all_port', '2021-03-27 00:33:41', '2021-03-27 00:33:41'),
+(369, 35, 12, 'status_port', '2021-03-27 00:33:42', '2021-03-27 00:33:42'),
+(370, 35, 12, 'del_all_port', '2021-03-27 00:33:42', '2021-03-27 00:33:42'),
+(371, 35, 15, 'add_some', '2021-03-27 00:33:42', '2021-03-27 00:33:42'),
+(372, 35, 15, 'status_some', '2021-03-27 00:33:42', '2021-03-27 00:33:42'),
+(373, 35, 27, 'edit_apmodule', '2021-03-27 00:33:42', '2021-03-27 00:33:42'),
+(374, 35, 27, 'status_all_apmodule', '2021-03-27 00:33:42', '2021-03-27 00:33:42'),
+(375, 35, 28, 'status_test', '2021-03-27 00:33:42', '2021-03-27 00:33:42');
 
 -- --------------------------------------------------------
 
@@ -210,7 +394,7 @@ CREATE TABLE `admin_logins` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'noimage.png',
   `acount_privacy` int(3) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -225,9 +409,10 @@ INSERT INTO `admin_logins` (`id`, `email`, `password`, `name`, `status`, `rememb
 (19, 'harshvghasiyuiiya@gmail.com', '$2y$10$J5vHVWmf3QQYLjNAumYymeEDiXTY2tbRIzXon63DHwHSmrKB.alvC', 'harsh vaghasiya', 'Active', NULL, '2021-03-10 22:21:35', '2021-03-10 22:21:35', '1615434695.jpg', 0),
 (27, 'h22@gmail.com', '$2y$10$r3cyzY6V9iey5Br8CxpqK.tYZYlNfeLj7/qaD.onETv2kYYrXAVUy', 'harsh vaghasiya', 'Active', NULL, '2021-03-10 22:53:27', '2021-03-10 22:53:27', '1615436607.jpg', 0),
 (28, 'h33@gmail.com', '$2y$10$pxefHDECOa4xSDxw0y7b2Oo4kzZsghkvVJVZBifZLtecJaZZ2ohtm', 'harsh vaghasiya', 'Active', 'BjUHySrH1MU0DyzHiiSAVfNoc7WpROKQXz54eCEOvslIh4HokylMUYPR6vUU', '2021-03-10 22:54:23', '2021-03-10 22:54:23', '1615436663.jpg', 0),
-(29, 'h45@gmail.com', '$2y$10$V2h5Oq.Ajri1ONdy9LUHL.epqo/zr6y2OdO7nSGatkh0cE4cz/kl2', 'harsh vaghasiya', 'Active', 'hsjqeBf7TSuxFVjUXYFlWbWUj8LmVoF3A1mHv5cHRhN7sPkjygmo0PcCKlfx', '2021-03-10 23:54:26', '2021-03-10 23:54:26', '1615440266.jpg', 0),
-(30, 's@gmail.com', '$2y$10$x28JK2nje1Xo3HPI2RWL8OGVUXhvAR/M7R55YKmfdPPcGCnzghNzO', 'Harsh Vaghasiya (s)', 'Active', 'ZkEZ7H1uHAMF4LmCjkHPxkimVhcYd2eguhwb4LpPOI8ncqHaHXHdn8gCtVmp', '2021-03-11 03:33:24', '2021-03-11 03:33:24', '1615453404.jpg', 0),
-(31, 'all@gmail.com', '$2y$10$i46rpHqdfoShNoxoedJFCeRF7v31U/acUw1AAZLjQ/vqVxKV8xM.2', 'harsh (All)', 'Active', 'WLSgslVSDMiHitDqJVgE4XXW00ZPWML5NRqRCmkrOZkQ9maDJsgWd76xxAa8', '2021-03-11 04:40:00', '2021-03-13 21:39:52', 'noimage.png', 0);
+(29, 'h45@gmail.com', '$2y$10$V2h5Oq.Ajri1ONdy9LUHL.epqo/zr6y2OdO7nSGatkh0cE4cz/kl2', 'harsh vaghasiya', 'Active', 'R3iIq3cp41Lz3Zp6UYK3CaM3tvS5jDmTr7la85PrFfNCBCbTfbvT2xyP5G2m', '2021-03-10 23:54:26', '2021-03-10 23:54:26', '1615440266.jpg', 0),
+(30, 's@gmail.com', '$2y$10$x28JK2nje1Xo3HPI2RWL8OGVUXhvAR/M7R55YKmfdPPcGCnzghNzO', 'Harsh Vaghasiya (s)', 'Active', 'r41d1NpTZ4LcVcpRcKvCYzsRKsL4Kx27Hj961SohA9evRFJBKlrkBke4npuX', '2021-03-11 03:33:24', '2021-03-11 03:33:24', '1615453404.jpg', 0),
+(31, 'all@gmail.com', '$2y$10$i46rpHqdfoShNoxoedJFCeRF7v31U/acUw1AAZLjQ/vqVxKV8xM.2', 'harsh (All)', 'Active', 'NGJpvPxTKI8hbpH3YRMe9ODmKHDWvErlC1XvpJKS0EhRcuDkJlSCN6z0Qr1a', '2021-03-11 04:40:00', '2021-03-27 00:36:30', '1616825190.jpg', 0),
+(33, 'guest2@gmail.com', '$2y$10$rZ7ZgpQeJyEdkL3EUS54GO474uxrxt/VnsYvW4r8ySCMCoBaaIw42', 'harsh vaghasiya', 'Active', 'SR6XofkwJoYUFqVDI8aKdvzeULBglysl9OHYvHHU3dxkQW5ZHWEwL6uVFsAP', '2021-03-26 22:51:03', '2021-03-26 22:51:03', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -397,10 +582,6 @@ INSERT INTO `apm_users` (`id`, `created_at`, `updated_at`, `apm_id`, `user_id`) 
 (39, '2021-03-09 01:22:24', '2021-03-09 01:22:24', 28, 16),
 (40, '2021-03-09 01:22:24', '2021-03-09 01:22:24', 29, 16),
 (41, '2021-03-09 01:22:24', '2021-03-09 01:22:24', 30, 16),
-(174, '2021-03-09 06:28:26', '2021-03-09 06:28:26', 4, 8),
-(181, '2021-03-09 06:28:51', '2021-03-09 06:28:51', 12, 8),
-(182, '2021-03-09 06:28:51', '2021-03-09 06:28:51', 27, 8),
-(183, '2021-03-09 06:28:51', '2021-03-09 06:28:51', 30, 8),
 (391, '2021-03-09 21:31:30', '2021-03-09 21:31:30', 6, 15),
 (410, '2021-03-09 21:42:03', '2021-03-09 21:42:03', 7, 15),
 (411, '2021-03-09 21:42:03', '2021-03-09 21:42:03', 8, 15),
@@ -450,7 +631,24 @@ INSERT INTO `apm_users` (`id`, `created_at`, `updated_at`, `apm_id`, `user_id`) 
 (507, '2021-03-13 21:39:53', '2021-03-13 21:39:53', 27, 31),
 (508, '2021-03-13 21:39:53', '2021-03-13 21:39:53', 28, 31),
 (509, '2021-03-13 21:39:53', '2021-03-13 21:39:53', 29, 31),
-(510, '2021-03-13 21:39:53', '2021-03-13 21:39:53', 30, 31);
+(510, '2021-03-13 21:39:53', '2021-03-13 21:39:53', 30, 31),
+(526, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 4, 33),
+(527, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 5, 33),
+(528, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 6, 33),
+(529, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 7, 33),
+(530, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 8, 33),
+(531, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 9, 33),
+(532, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 10, 33),
+(533, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 11, 33),
+(534, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 12, 33),
+(535, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 15, 33),
+(536, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 17, 33),
+(537, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 27, 33),
+(538, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 28, 33),
+(539, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 29, 33),
+(540, '2021-03-26 22:51:03', '2021-03-26 22:51:03', 30, 33),
+(554, '2021-04-09 00:43:25', '2021-04-09 00:43:25', 4, 8),
+(555, '2021-04-09 00:43:25', '2021-04-09 00:43:25', 7, 8);
 
 -- --------------------------------------------------------
 
@@ -463,7 +661,7 @@ CREATE TABLE `banners` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'noimage.png',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_by` bigint(11) UNSIGNED DEFAULT NULL
@@ -474,10 +672,16 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `name`, `url`, `status`, `image`, `created_at`, `updated_at`, `created_by`) VALUES
-(5, 'client', 'http://localhost/blog_web/public', 'Active', '1609303545.png', '2020-12-29 23:03:33', '2021-03-09 22:01:03', NULL),
-(6, 'client', 'http://localhost/blog_web/public', 'Active', '1609303556.png', '2020-12-29 23:06:19', '2021-03-04 22:28:35', NULL),
+(5, 'client', 'http://localhost/blog_web/public', 'Active', '1609303545.png', '2020-12-29 23:03:33', '2021-03-31 22:57:46', NULL),
+(6, 'client', 'http://localhost/blog_web/public', 'Active', '1609303556.png', '2020-12-29 23:06:19', '2021-03-31 22:57:48', NULL),
 (17, 'harsh vaghasiya', 'http://localhost/blog_web/public/addsocialmedia', 'Active', '1615281753.jpg', '2021-03-09 03:52:33', '2021-03-09 03:52:33', 16),
-(18, 'tyutyu', 'http://localhost/blog_web/public', 'Active', '1615282025.jpg', '2021-03-09 03:57:05', '2021-03-09 03:57:05', 16);
+(20, 'erwer', 'https://www.instagram.com/direct/inbox/', 'InActive', '1616742037.jpg', '2021-03-26 01:30:37', '2021-03-26 01:31:24', 31),
+(21, 'jghj', 'http://localhost//public', 'InActive', '1616742313.jpg', '2021-03-26 01:33:38', '2021-03-26 01:35:13', 31),
+(22, 'rt', 'http://localhost/blog_web/public', 'Active', '1616742593.jpg', '2021-03-26 01:39:53', '2021-03-26 01:39:53', 31),
+(23, 'rty', 'http://localhost/blog_web/public', 'Active', '1616822709.jpg', '2021-03-26 23:43:41', '2021-03-26 23:55:09', 31),
+(24, 'rty', 'http://localhost/blog_web/public', 'Active', 'noimage.png', '2021-03-26 23:44:57', '2021-03-26 23:45:11', 31),
+(25, 'harsh vaghasiya', 'http://localhost/blog_web/public', 'Active', 'noimage.png', '2021-03-26 23:54:31', '2021-03-26 23:54:31', 31),
+(26, 'erwer', 'https://www.instagram.com/direct/inbox/', 'Active', 'noimage.png', '2021-03-27 00:02:03', '2021-03-27 00:02:03', 31);
 
 -- --------------------------------------------------------
 
@@ -489,7 +693,7 @@ CREATE TABLE `blogs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'noimage.png',
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -501,15 +705,14 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`, `created_by`) VALUES
-(20, 'Google inks pact for new 35-storey office', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Where does it come from?</h2>\r\n\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>', '1609160452.jpg', 'InActive', '2020-12-28 06:47:13', '2021-03-20 05:09:08', 0),
-(26, 'sad', '<p>jfgj</p>', '1615291349.jpg', 'Active', '2021-03-09 06:32:29', '2021-03-09 06:32:29', 16),
-(27, 'Google inks pact for new 35-storey office', '<p>yuiy</p>', '1615691947.jpg', 'Active', '2021-03-13 21:49:07', '2021-03-13 21:49:07', 31),
-(28, 'sad', '<p>f</p>', '1615692123.jpg', 'Active', '2021-03-13 21:52:03', '2021-03-13 21:52:03', 31),
-(29, 'Google inks pact for new 35-storey office', '<p>yry</p>', '1615715882.png', 'Active', '2021-03-14 04:28:02', '2021-03-14 04:28:02', 31),
-(30, 'yui', '<p>ui</p>', '1615716564.jpg', 'Active', '2021-03-14 04:39:24', '2021-03-14 04:39:24', 31),
-(31, 'hgfh', '<p>ghfgh</p>', '1616219716.jpg', 'Active', '2021-03-20 00:25:16', '2021-03-20 00:25:16', 31),
-(32, 'sad', '<p>ytutyutyu</p>', '1616219858.png', 'Active', '2021-03-20 00:27:38', '2021-03-20 00:27:38', 31),
-(33, 'tryrtyr', '<p>tyrt</p>', '1616220126.jpg', 'Active', '2021-03-20 00:32:06', '2021-03-20 00:32:06', 31);
+(20, 'Google inks pact for new 35-storey office', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Where does it come from?</h2>\r\n\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.</p>', '1609160452.jpg', 'Active', '2020-12-28 06:47:13', '2021-04-06 23:15:01', 0),
+(26, 'sad', '<p>jfgj</p>', '1615291349.jpg', 'Active', '2021-03-09 06:32:29', '2021-04-06 23:14:53', 16),
+(27, 'Google inks pact for new 35-storey office', '<p>yuiy</p>', '1615691947.jpg', 'Active', '2021-03-13 21:49:07', '2021-04-10 00:00:43', 31),
+(28, 'sad', '<p>f</p>', '1615692123.jpg', 'InActive', '2021-03-13 21:52:03', '2021-04-07 05:18:39', 31),
+(29, 'Google inks pact for new 35-storey office', '<p>yry</p>', '1615715882.png', 'InActive', '2021-03-14 04:28:02', '2021-04-07 05:18:36', 31),
+(30, 'yui', '<p>ui</p>', '1615716564.jpg', 'Active', '2021-03-14 04:39:24', '2021-04-10 00:00:34', 31),
+(37, 'yui', '<p>hjj</p>', '1617855193.png', 'InActive', '2021-04-07 22:43:13', '2021-04-10 00:00:39', 31),
+(39, 'hgjj', '<p>ghjghjghj</p>', '1617949239.png', 'InActive', '2021-04-09 00:50:39', '2021-04-10 00:00:37', 31);
 
 -- --------------------------------------------------------
 
@@ -530,22 +733,32 @@ CREATE TABLE `blog_catagories` (
 --
 
 INSERT INTO `blog_catagories` (`id`, `catagory_id`, `blogs_id`, `created_at`, `updated_at`) VALUES
-(31, 7, 26, '2021-03-09 06:32:29', '2021-03-09 06:32:29'),
-(32, 16, 26, '2021-03-09 06:32:29', '2021-03-09 06:32:29'),
-(62, 15, 20, '2021-03-09 07:23:53', '2021-03-09 07:23:53'),
-(88, 7, 27, '2021-03-13 21:49:07', '2021-03-13 21:49:07'),
-(89, 16, 27, '2021-03-13 21:49:07', '2021-03-13 21:49:07'),
-(90, 5, 28, '2021-03-13 21:52:03', '2021-03-13 21:52:03'),
-(91, 16, 20, '2021-03-13 21:56:38', '2021-03-13 21:56:38'),
-(92, 18, 20, '2021-03-13 21:56:38', '2021-03-13 21:56:38'),
-(93, 7, 29, '2021-03-14 04:28:02', '2021-03-14 04:28:02'),
-(95, 7, 30, '2021-03-14 04:39:24', '2021-03-14 04:39:24'),
-(112, 15, 29, '2021-03-14 04:50:05', '2021-03-14 04:50:05'),
-(113, 7, 31, '2021-03-20 00:25:16', '2021-03-20 00:25:16'),
-(114, 5, 32, '2021-03-20 00:27:38', '2021-03-20 00:27:38'),
-(115, 15, 32, '2021-03-20 00:27:38', '2021-03-20 00:27:38'),
-(116, 7, 33, '2021-03-20 00:32:06', '2021-03-20 00:32:06'),
-(117, 15, 33, '2021-03-20 00:32:06', '2021-03-20 00:32:06');
+(319, 5, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10'),
+(320, 16, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10'),
+(321, 22, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10'),
+(322, 5, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(323, 7, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(324, 15, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(325, 16, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(326, 18, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(327, 19, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(328, 22, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
+(329, 5, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(330, 7, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(331, 15, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(332, 16, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(333, 18, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(334, 19, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(335, 22, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
+(336, 5, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(337, 7, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(338, 15, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(339, 16, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(340, 18, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(341, 19, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(342, 22, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
+(358, 5, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50'),
+(359, 16, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50');
 
 -- --------------------------------------------------------
 
@@ -569,12 +782,23 @@ INSERT INTO `blog_tags` (`id`, `blog_id`, `created_at`, `updated_at`, `tag_id`) 
 (21, 30, '2021-03-14 04:39:24', '2021-03-14 04:39:24', 1),
 (22, 30, '2021-03-14 04:39:24', '2021-03-14 04:39:24', 3),
 (36, 29, '2021-03-14 04:49:18', '2021-03-14 04:49:18', 1),
-(37, 31, '2021-03-20 00:25:16', '2021-03-20 00:25:16', 1),
-(38, 31, '2021-03-20 00:25:16', '2021-03-20 00:25:16', 2),
-(39, 32, '2021-03-20 00:27:38', '2021-03-20 00:27:38', 1),
-(40, 32, '2021-03-20 00:27:38', '2021-03-20 00:27:38', 2),
-(41, 33, '2021-03-20 00:32:06', '2021-03-20 00:32:06', 1),
-(42, 33, '2021-03-20 00:32:06', '2021-03-20 00:32:06', 2);
+(54, 37, '2021-04-07 22:43:13', '2021-04-07 22:43:13', 1),
+(55, 37, '2021-04-07 22:43:13', '2021-04-07 22:43:13', 9),
+(96, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10', 1),
+(97, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10', 9),
+(98, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10', 10),
+(99, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02', 1),
+(100, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02', 2),
+(101, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02', 9),
+(102, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12', 1),
+(103, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12', 9),
+(104, NULL, '2021-04-09 00:47:58', '2021-04-09 00:47:58', 1),
+(105, NULL, '2021-04-09 00:47:58', '2021-04-09 00:47:58', 9),
+(106, NULL, '2021-04-09 00:47:58', '2021-04-09 00:47:58', 10),
+(115, NULL, '2021-04-09 00:50:39', '2021-04-09 00:50:39', 1),
+(116, NULL, '2021-04-09 00:50:39', '2021-04-09 00:50:39', 10),
+(117, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50', 1),
+(118, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50', 9);
 
 -- --------------------------------------------------------
 
@@ -603,7 +827,12 @@ INSERT INTO `catagories` (`id`, `catagory`, `status`, `created_at`, `updated_at`
 (16, 'gdfgfd', 'Active', '2020-12-25 04:36:53', '2020-12-25 04:39:58', 0),
 (18, 'fgdg', 'Active', '2021-03-05 09:06:52', '2021-03-05 09:06:52', 8),
 (19, 'fgdfg8', 'Active', '2021-03-09 03:59:52', '2021-03-09 03:59:52', 16),
-(20, 'yuytu', 'Active', '2021-03-20 01:07:02', '2021-03-20 01:07:02', 31);
+(20, 'yuytu', 'InActive', '2021-03-20 01:07:02', '2021-03-27 05:17:49', 31),
+(21, 'yhjh', 'InActive', '2021-03-27 05:17:53', '2021-03-27 05:18:08', 31),
+(22, 'yui', 'Active', '2021-03-31 04:53:53', '2021-03-31 04:53:53', 31),
+(23, 'yhyuytuty', 'Active', '2021-04-08 23:24:11', '2021-04-08 23:24:11', 31),
+(24, 'df', 'Active', '2021-04-08 23:24:30', '2021-04-08 23:24:30', 31),
+(25, 'rtyrtyrtyrty', 'Active', '2021-04-08 23:25:58', '2021-04-08 23:26:10', 31);
 
 -- --------------------------------------------------------
 
@@ -618,7 +847,7 @@ CREATE TABLE `cms` (
   `display_on_header` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `display_on_footer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'noimage.png',
   `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `seo_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `seo_description` longtext COLLATE utf8mb4_unicode_ci,
@@ -636,15 +865,18 @@ CREATE TABLE `cms` (
 --
 
 INSERT INTO `cms` (`id`, `name`, `secondary_title`, `display_on_header`, `display_on_footer`, `status`, `image`, `seo_title`, `seo_keyword`, `seo_description`, `short_description`, `long_description`, `created_at`, `updated_at`, `module_id`, `parent_id`, `created_by`) VALUES
-(10, 'fsf', 'fsdfsdf', 'Yes', 'Yes', 'Active', '1609321673.png', 'sdf', 'sdf', 'dsf', NULL, NULL, '2020-12-30 04:17:53', '2021-03-07 00:53:29', 3, NULL, 8),
-(11, 'harsh', 'We are team of talanted designers making websites with Bootstrap', 'Yes', 'Yes', 'Active', '1609321855.png', 'gk', 'jkl', 'jl', NULL, NULL, '2020-12-30 04:20:55', '2020-12-30 04:20:55', 3, 10, 8),
 (12, 'PHP', 'PHP', 'No', 'No', 'Active', '1614743332.png', 'PHP', 'PHP', 'Based on the Pearl language, PHP is used for developing light-weight web applications.', '<p>Based on the Pearl language, PHP is used for developing light-weight web applications.</p>', '<p>Based on the Pearl language, PHP is used for developing light-weight web applications.</p>', '2021-03-02 21:53:55', '2021-03-02 22:18:52', 6, 10, 8),
 (13, 'Laravel', 'Laravel', 'No', 'No', 'Active', '1614741945.png', 'Laravel', 'laravel', 'One of the latest trending frameworks for PHP-MVC web applications.', NULL, NULL, '2021-03-02 21:55:45', '2021-03-02 21:55:45', 6, 10, 8),
 (14, 'Responsive Web Design', 'Responsive Web Design', 'No', 'No', 'Active', '1614742055.jpg', 'Responsive Web Design', 'Responsive Web Design', 'The craze nowadays. All our web apps are built in this fashion as they support multiple devices.', NULL, NULL, '2021-03-02 21:57:35', '2021-03-02 21:57:35', 6, 10, 8),
 (15, 'Web Design & Web Development', 'Web Design & Web Development', 'No', 'No', 'Active', '1614742152.jpg', 'Web Design & Web Development', 'Web Design & Web Development', 'We provide for both the web-design as well as web-development for a web-site. In our team we have separate specialists for each of the jobs.', '<p>We provide for both the web-design as well as web-development for a web-site. In our team we have separate specialists for each of the jobs.</p>', '<p>We provide for both the web-design as well as web-development for a web-site. In our team we have separate specialists for each of the jobs.</p>', '2021-03-02 21:59:12', '2021-03-02 21:59:12', 6, 10, 8),
-(16, 'Developing Website Solutions with Laravel', 'Developing Website Solutions with Laravel', 'No', 'No', 'Active', '1614744799.png', 'Developing Website Solutions with Laravel', 'Developing Website Solutions with Laravel', 'We, at Softtechover, are one the rapidly growing ​Laravel development company who offer ​Laravel website Development in India for our customers. Our clients are based all over the globe and we provide web solutions to them using the Laravel Software platform. Through our efficiency, protection and well-documented code we believe in providing our clients with the best services', NULL, NULL, '2021-03-02 22:43:19', '2021-03-07 00:52:49', 5, 10, 8),
-(17, 'Lightweight PHP Website Solution Development', 'Lightweight PHP Website Solution Development', 'No', 'No', 'Active', '1614744904.png', 'Lightweight PHP Website Solution Development', 'Lightweight PHP Website Solution Development', 'We, at Softtechover, are the best ​PHP application development company known for developing PHP websites for interactive, database-driven, and high-performance enterprise. Online PHP business applications, e-commerce systems, back-end data management systems are also our expertise. Besides PHP, we specialize in e-Commerce solutions, Web development with Laravel, and website designing', NULL, NULL, '2021-03-02 22:45:04', '2021-03-02 22:45:04', 5, 10, 8),
-(21, 'Corporis voluptates sit', 'Corporis voluptates sit', 'Yes', 'Yes', 'Active', '1616581921.png', 'f', 'df', 'Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip', '<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>', '<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>', '2021-03-24 05:02:02', '2021-03-24 05:02:02', 10, 10, 31);
+(16, 'Developing Website Solutions with Laravel', 'Developing Website Solutions with Laravel', 'Yes', 'Yes', 'InActive', '1614744799.png', 'Developing Website Solutions with Laravel', 'Developing Website Solutions with Laravel', 'We, at Softtechover, are one the rapidly growing ​Laravel development company who offer ​Laravel website Development in India for our customers. Our clients are based all over the globe and we provide web solutions to them using the Laravel Software platform. Through our efficiency, protection and well-documented code we believe in providing our clients with the best services', NULL, NULL, '2021-03-02 22:43:19', '2021-04-05 01:38:35', 5, 12, 8),
+(17, 'php-development', 'PHP Development', 'Yes', 'Yes', 'Active', '1614744904.png', 'Lightweight PHP Website Solution Development', 'Lightweight PHP Website Solution Development', 'We, at Softtechover, are the best ​PHP application development company known for developing PHP websites for interactive, database-driven, and high-performance enterprise. Online PHP business applications, e-commerce systems, back-end data management systems are also our expertise. Besides PHP, we specialize in e-Commerce solutions, Web development with Laravel, and website designing', '<p>We, at Softtechover, are the best ​<strong>PHP application development company</strong>&nbsp;known for developing PHP websites for interactive, database-driven, and high-performance enterprise. Online PHP business applications, e-commerce systems, back-end data management systems are also our expertise. Besides PHP, we specialize in e-Commerce solutions, Web development with Laravel, and website designing. Being a trusted name for website developme...</p>', '<h2>Lightweight PHP Website Solution Development</h2>\r\n\r\n<p>We, at Softtechover, are the best ​<strong>PHP application development company</strong><img alt=\"\" height=\"397\" src=\"https://softtechover.com/public/upload/tinymce/post__4aa2c42dca6b50e2fdc2118a43feb478.png\" width=\"438\" /></p>\r\n\r\n<p>known for developing PHP websites for interactive, database-driven, and high-performance enterprise. Online PHP business applications, e-commerce systems, back-end data management systems are also our expertise. Besides PHP, we specialize in e-Commerce solutions, Web development with Laravel, and website designing. Being a trusted name for website development services, we have received great reactions from here based businesses. We &#39;re working with you to ensure we understand exactly what your particular needs are. We are following a phase wise approach to ensure the right deliverable is sent on time. The process is completely coordinated with design requirements to achieve customer objectives.&nbsp;<strong>As a ​PHP development company in India</strong>​ , we provide lightweight ​&nbsp;<strong>web development using PHP</strong>​ . Such websites open up faster and are liked by the end-user as well.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Web Development Using PHP</p>\r\n\r\n<p>Our ​ PHP Web Development Services</p>\r\n\r\n<p>We provide secure, scalable, and advanced PHP based solutions. Our experienced developers rely on frameworks such as Laravel, Symphony, CakePHP etc. Our experienced PHP development team has been providing countless ​<strong>responsive website design services</strong>&nbsp;with varied complexities with success. Our ​&nbsp;<strong>PHP Web Development Services</strong>​ include:</p>\r\n\r\n<ol type=\"i\">\r\n	<li>\r\n	<ol>\r\n		<li>\r\n		<p align=\"justify\"><strong>CMS Development Solutions</strong>: We as a&nbsp;<strong>PHP development company&nbsp;</strong>develop scalable,&nbsp;fast &amp; feature packed CMS solutions based on PHP. We also have CMS&nbsp;development&nbsp;services&nbsp;on&nbsp;platforms&nbsp;such&nbsp;as&nbsp;WordPress&nbsp;and&nbsp;Drupal,&nbsp;based&nbsp;on&nbsp;PHP.</p>\r\n		</li>\r\n		<li>\r\n		<p align=\"justify\"><strong>Customized</strong>&nbsp;<strong>Project</strong>&nbsp;<strong>Development</strong>:&nbsp;Get&nbsp;complete&nbsp;web&nbsp;development&nbsp;services&nbsp;beginning with&nbsp;the&nbsp;analysis&nbsp;of&nbsp;the&nbsp;project&nbsp;to&nbsp;the&nbsp;final&nbsp;creation&nbsp;&amp;&nbsp;support&nbsp;of&nbsp;PHP&nbsp;web&nbsp;services.&nbsp;We customize&nbsp;your&nbsp;web&nbsp;applications&nbsp;from&nbsp;start&nbsp;to&nbsp;finish.</p>\r\n		</li>\r\n		<li>\r\n		<p align=\"justify\"><strong>Developing Application Interfaces</strong>: We actively research all kinds of APIs to provide&nbsp;seamless&nbsp;integration&nbsp;and&nbsp;third&nbsp;party&nbsp;experience.&nbsp;We&nbsp;have&nbsp;rich&nbsp;domain&nbsp;experience&nbsp;in&nbsp;the&nbsp;creation&nbsp;of&nbsp;not&nbsp;only&nbsp;APIs&nbsp;but&nbsp;also&nbsp;in&nbsp;the&nbsp;integration&nbsp;of&nbsp;APIs&nbsp;with&nbsp;different&nbsp;applications.</p>\r\n		</li>\r\n		<li>\r\n		<p align=\"justify\"><strong>Adding New Features/ Migrating</strong>: Our&nbsp;<strong>PHP web development company in India&nbsp;</strong>is specialized in adding new functionality to your website and optimizing it to boost performance.&nbsp;If&nbsp;you&nbsp;want&nbsp;to&nbsp;migrate&nbsp;to&nbsp;PHP&nbsp;from&nbsp;some&nbsp;other&nbsp;platform,&nbsp;our&nbsp;developers will&nbsp;happily&nbsp;do&nbsp;so&nbsp;for&nbsp;you.</p>\r\n		</li>\r\n		<li>\r\n		<p align=\"justify\"><strong>Web</strong>&nbsp;<strong>Portal</strong>&nbsp;<strong>Development</strong>:&nbsp;Though&nbsp;our&nbsp;main&nbsp;objective&nbsp;at&nbsp;XYZ&nbsp;Company&nbsp;is&nbsp;<strong>PHP</strong>&nbsp;<strong>Website Development</strong>,&nbsp;we&nbsp;are&nbsp;also&nbsp;a&nbsp;<strong>web</strong>&nbsp;<strong>portal</strong>&nbsp;<strong>development</strong>&nbsp;<strong>company</strong>&nbsp;in&nbsp;India&nbsp;as&nbsp;we&nbsp;provide e-Commerce solutions using&nbsp;PHP.</p>\r\n		</li>\r\n		<li>\r\n		<p align=\"justify\"><strong>Provide</strong>&nbsp;<strong>Consulting</strong>:&nbsp;If&nbsp;you&nbsp;need&nbsp;any&nbsp;help&nbsp;with&nbsp;developing&nbsp;PHP&nbsp;projects,&nbsp;please&nbsp;feel&nbsp;free&nbsp;to&nbsp;contact&nbsp;us.&nbsp;The&nbsp;experts&nbsp;are&nbsp;also&nbsp;able&nbsp;to&nbsp;help&nbsp;you&nbsp;pick&nbsp;the&nbsp;right&nbsp;tools&nbsp;to&nbsp;do&nbsp;so.&nbsp;You&nbsp;can also hi<strong>re PHP developers in India&nbsp;</strong>to do the development work for your startup or enterprise.</p>\r\n		</li>\r\n		<li>\r\n		<p align=\"justify\"><strong>Support</strong>: Our web development business PHP not only provides web&nbsp;development services&nbsp;but&nbsp;also&nbsp;gives&nbsp;our&nbsp;customers&nbsp;full&nbsp;support&nbsp;and&nbsp;maintenance&nbsp;services.</p>\r\n		</li>\r\n	</ol>\r\n	</li>\r\n</ol>\r\n\r\n<p>We Serve</p>\r\n\r\n<p>The Vast Range of Our Clientele Industries</p>\r\n\r\n<p>The various industries who come to us for getting their projects developed include the<br />\r\nfollowing:</p>\r\n\r\n<ul>\r\n	<li><strong>Online Shopping Apps</strong></li>\r\n	<li><strong>Accounting Apps</strong></li>\r\n	<li><strong>Custom Business Apps</strong></li>\r\n	<li><strong>E-Commerce Websites</strong></li>\r\n	<li><strong>Social Networking Apps</strong></li>\r\n	<li><strong>CRM Systems</strong></li>\r\n</ul>\r\n\r\n<p>We develop apps at Softtechover as per the needs of our customers. The customer experiences<br />\r\ntransparency in all our processes from the beginning to end. We are a cost-effective solutionand always ready to serve our clients with any kind of PHP application desired by the clients. Being a ​<strong>web portal development company</strong>&nbsp;we ensure the safety and security of our clients&rsquo; data much above anything.</p>\r\n\r\n<p>&nbsp;</p>', '2021-03-02 22:45:04', '2021-04-05 04:47:46', 5, 17, 8),
+(26, 'PortFolio', 'PortFolio', 'Yes', 'Yes', 'Active', 'noimage.png', 'PortFolio', 'PortFolio', NULL, NULL, NULL, '2021-04-05 00:01:06', '2021-04-05 00:01:06', 11, NULL, 31),
+(27, 'about-us', 'AboutUs', 'Yes', 'Yes', 'Active', 'noimage.png', 'AboutUs', 'AboutUs', 'Your online business has been the core of our business for over 30 years.', '<h4>Who we are</h4>\r\n\r\n<p>IONOS is the web hosting and cloud partner for small and medium-sized businesses. We are experts in IaaS and offer a portfolio of solutions for the digital space. As the largest hosting company in Europe, we manage more than 8 million customer contracts and host over 12 million domains in our own regional data centers in the US and Europe.</p>\r\n\r\n<p>We help entrepreneurs taking their first steps online, business owners scaling up, large companies and the partners who help them succeed. Whether building an online presence by securing a domain, building a website, moving back-office processes to the cloud, or orchestrating a container cluster, our comprehensive product range offers a best-in-class app, server or service.</p>\r\n\r\n<p>Reliability and security are engineered into the core of our products. Our data center network delivers optimal performance and georedundancy. With headquarters in Germany, we rely on a solid mix of state-of-the-art technology, strong privacy policies and airtight data security.</p>\r\n\r\n<p>&nbsp;</p>', '<h4>Who we are</h4>\r\n\r\n<p>IONOS is the web hosting and cloud partner for small and medium-sized businesses. We are experts in IaaS and offer a portfolio of solutions for the digital space. As the largest hosting company in Europe, we manage more than 8 million customer contracts and host over 12 million domains in our own regional data centers in the US and Europe.</p>\r\n\r\n<p>We help entrepreneurs taking their first steps online, business owners scaling up, large companies and the partners who help them succeed. Whether building an online presence by securing a domain, building a website, moving back-office processes to the cloud, or orchestrating a container cluster, our comprehensive product range offers a best-in-class app, server or service.</p>\r\n\r\n<p>Reliability and security are engineered into the core of our products. Our data center network delivers optimal performance and georedundancy. With headquarters in Germany, we rely on a solid mix of state-of-the-art technology, strong privacy policies and airtight data security.</p>\r\n\r\n<p>Unique to the industry, we offer a dedicated customer service agent to every customer. Your own personal consultant will take the time to get to know you and your business, helping you make the most of your online presence. World-class customer support through a single point of contact is yours at no extra cost.</p>\r\n\r\n<p>You deserve nothing less than the latest technologies at a great price and in terms that are easy to understand. The best contract is flexible and doesn&rsquo;t require a team of legal experts, so we&rsquo;ve tried to make our product offerings and prices as transparent as possible. Helping to make you a success online is our gain &mdash; ensuring that you&rsquo;ve got time for other more important things is our goal.</p>', '2021-04-05 00:01:44', '2021-04-05 05:36:11', 10, 12, 31),
+(28, 'Contact', 'Contact', 'Yes', 'Yes', 'Active', 'noimage.png', 'Contact', 'Contact', NULL, NULL, NULL, '2021-04-05 00:02:18', '2021-04-05 00:02:18', 13, 12, 31),
+(29, 'laravel-developemt', 'Laravel Developemt', 'Yes', 'Yes', 'Active', '1617606411.png', 'Laravel Developemt', 'Laravel Developemt', 'Developing Website Solutions with Laravel', '<p>We, at Softtechover, are one the rapidly growing ​<strong>Laravel development company</strong>&nbsp;who offer ​<strong>Laravel&nbsp;</strong><strong>website Development in India</strong>&nbsp;for our customers. Our clients are based all over the globe and we provide web solutions to them using the Laravel Software platform. Through our efficiency, protection and well-documented code we believe in providing our clients with the best services. Usi...</p>', '<p>The world is changing fast and so are the ways of coding.&nbsp;<img alt=\"\" height=\"307\" src=\"https://softtechover.com/public/upload/tinymce/post__0626e79dc33294c717668b9d8bc3f23e.png\" width=\"410\" />From developing programs using a top-bottom approach we are now developing websites using MVC. Laravel is an MVC framework that goes hand-in-hand with PHP to offer some very good customized solutions. We, at Softtechover, are one the rapidly growing ​&nbsp;<strong>Laravel development company</strong>&nbsp;who offer ​&nbsp;<strong>Laravel website Development in India</strong>&nbsp;for our customers. Our clients are based all over the globe and we provide web solutions to them using the Laravel Software platform. Through our efficiency, protection and well-documented code we believe in providing our clients with the best services. Using the development of Laravel applications we deliver cutting-edge solutions.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>What Makes ​&nbsp;<strong>Laravel Web Development</strong>&nbsp;​ Choice of the Customers​ ?</p>\r\n\r\n<p>Why Choose Laravel Web Development Services for Your Project ?</p>\r\n\r\n<p>Laravel is the most popular open source MVC framework that is in use today. The built-in tools in the Laravel framework help a developer at a ​<strong>Laravel web development company</strong>&nbsp;to develop&nbsp;<strong>Laravel web development services</strong>&nbsp;and Laravel web applications. A big Laravel community on the world wide web provides a number of solutions to the developer for any problems he/she might encounter. Laravel also has a number of blogs and forums that can help the users to learn the framework and its use very easily. Laravel strives to make the development process as painless as possible without losing any features for the application or getting away from the approach to coding. Nowadays development companies ​<strong>hire Laravel developers in India</strong>&nbsp;or elsewhere to finish the project in time as also develop quality web sites.</p>\r\n\r\n<p>Expertise with Tools for Laravel</p>\r\n\r\n<p>Tools to Use with ​&nbsp;<strong>Laravel Web Development Services</strong></p>\r\n\r\n<p>Laravel has a number of built-in tools that can be used for various purposes. Let&rsquo;s have a look at<br />\r\nsome of them:</p>', '2021-04-05 01:36:51', '2021-04-05 04:10:03', 5, 29, 31),
+(30, 'ecommerce-development', 'Ecommerce: Bringing Business on Your Fingertips', 'Yes', 'Yes', 'Active', '1617618174.png', 'Ecommerce: Bringing Business on Your Fingertips', 'Ecommerce: Bringing Business on Your Fingertips', 'The activity performed to buy or sell some products electronically is called e-Commerce​ .Contemporary e-commerce can be categorized into two groups. The first category is based on the type of products sold. The second is based on the participant\'s nature (B2B, B2C, C2B and C2C).', '<p>The activity performed to buy or sell some products electronically is called e-Commerce​ .Contemporary e-commerce can be categorized into two groups. The first category is based on the type of products sold. The second is based on the participant&#39;s nature (B2B, B2C, C2B and C2C).</p>', '<p align=\"justify\">he activity performed to buy or sell some products</p>\r\n\r\n<p align=\"justify\">electronically is called e-Commerce​ .<img alt=\"\" height=\"344\" src=\"https://softtechover.com/public/upload/tinymce/post__51204994659745f3a5888129cad3d63b.png\" width=\"459\" />Contemporary e-commerce can be categorized into two groups. The first category is based on the type of products sold. The second is based on the participant&#39;s nature (B2B, B2C, C2B and C2C). We, Softtechover, are the ​&nbsp;<strong>best e-commerce website development company</strong>&nbsp;in this location. Customers in today&rsquo;s age want to buy the best branded products at reasonable prices and without having to go anywhere. As the best in this business we provide&nbsp;<strong>e-commerce</strong><br />\r\n<strong>development solutions</strong>​ to our customers as per the needs of their businesses.<br />\r\n<strong>Want to get our services? Call Us On</strong>:&nbsp;<a href=\"tel:+919825326562\"><strong>+919825326562</strong></a></p>\r\n\r\n<p align=\"justify\">&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Custom e-Commerce Solution Development</p>\r\n\r\n<p align=\"justify\">By pooling our IT and ecommerce growth expertise, we help retailers, distributors, suppliers, and wholesalers increase their customers &#39; loyalty, raise sales, and grow their audiences. In<br />\r\norder to make your company stand out in the ecommerce industry, we aim to make ecommerce solutions technologically impeccable and catchy. We also provide ​ customized ecommerce solutions as desired by our clients. It is in fact cu​ stom ecommerce development solutions for which our clients generally come to us. We also design our plans in such a manner so as to get your product delivered. We create your pages in an order that the customers can navigate easily through your product selections and finally end at the checkout to make a purchase. A great looking website is important but what is more important is how well the site works. As ​ ecommerce website designers​ , we take into consideration a number of facts to build up a lightweight UI for your website so that it loads faster. In ecommerce development solutions, trust is the key when it comes to online retailers. When a customer does not feel comfortable and assured about the operation or buying capabilities of your websites then you have lost a transaction.</p>\r\n\r\n<p>Our e-Commerce Web Development Services</p>\r\n\r\n<p align=\"justify\">As the best ​&nbsp;<strong>E-commerce website development company</strong>&nbsp;we offer a number of services related to your e-commerce website. The website itself has a lot to offer such as a product catalog to choose from, a shopping cart, customer account and address management, order tracking status (in-line and delivered) etc. Some of the ​&nbsp;<strong>ecommerce website design services</strong>&nbsp;that we provide to our clients include:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p align=\"left\">Payment&nbsp;Gateways</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Product&nbsp;Catalogs</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Order&nbsp;Tracking</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Social Media&nbsp;Marketing</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">SEO Friendly&nbsp;Website</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Build Product&nbsp;Reviews</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Content &amp;&nbsp;Photography</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Responsive&nbsp;Website</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Inventory&nbsp;management</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Account&nbsp;Management</p>\r\n	</li>\r\n	<li>\r\n	<p align=\"left\">Product&nbsp;Management</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>At any point of time if the client wishes to remove an existing project from the catalog, or add a new one, or even make changes (such as in the price of the product) it can be very easily done through the intuitive interface provided by our ​&nbsp;<strong>ecommerce web developers</strong>.</p>\r\n\r\n<p>Benefits of Working with an e-Commerce Development Company</p>\r\n\r\n<p>Our developers are highly qualified and have the latest certifications in their respective fields. They design and develop the ecommerce website using platforms which support the desktop, mobile, and tabs. These websites are also responsive in nature. So if you use them on any device, you will not miss out on anything. We are affordable and provide cost-effective solutions. If at any point you want to have these solutions developed, you can ​&nbsp;<strong>hire ecommerce&nbsp;</strong><strong>developer</strong>​ s from our web development company.</p>\r\n\r\n<p><strong>Want to get our services? Call Us On</strong>:&nbsp;<a href=\"tel:+919825326562\">+919825326562</a><br />\r\n<strong>Or email us at</strong>: ​&nbsp;<a href=\"mailto:info@softtechover.com\">info@softtechover.com</a>&nbsp;,&nbsp;<a href=\"mailto:gcb1196@gmail.com\">gcb1196@gmail.com</a></p>', '2021-04-05 04:52:54', '2021-04-05 04:52:54', 5, NULL, 31),
+(31, 'header', 'Bettter digital with Exprince Presento', 'No', 'No', 'Active', 'noimage.png', 'Bettter digital experience with Presento', 'Bettter digital experience with Presento', 'We are team of talanted designers making websites with Bootstrap', NULL, NULL, '2021-04-07 22:49:46', '2021-04-07 22:55:01', 4, 12, 31);
 
 -- --------------------------------------------------------
 
@@ -667,7 +899,11 @@ CREATE TABLE `contactuses` (
 --
 
 INSERT INTO `contactuses` (`id`, `name`, `message`, `email`, `created_at`, `updated_at`, `subject`) VALUES
-(37, 'harsh vaghasiya', 'fdgfdgfd', 'harshvghasiya@gmail.com', '2021-03-04 22:33:02', '2021-03-04 22:33:02', 'About bussines');
+(33, 'harsh vaghasiya', 'jhkkkjhkjh', 'harshvghasiya@gmail.com', '2021-04-01 03:51:53', '2021-04-01 03:51:53', 'hjkkjhkjhkjhk'),
+(35, 'harsh vaghasiya', 'jkljkljkl', 'kl@gmail.com', '2021-04-01 03:57:40', '2021-04-01 03:57:40', 'About bussines'),
+(40, 'harsh vaghasiya', 'tuytuyt', 'ytu@gmail.com', '2021-04-01 04:20:33', '2021-04-01 04:20:33', 'About bussines'),
+(41, 'harsh vaghasiya', 'tuytuyt', 'ytu@gmail.com', '2021-04-01 04:20:33', '2021-04-01 04:20:33', 'About bussines'),
+(42, 'harsh vaghasiya', 'tyuytu', 'ytu@gmail.com', '2021-04-01 04:21:11', '2021-04-01 04:21:11', 'About bussines');
 
 -- --------------------------------------------------------
 
@@ -760,11 +996,15 @@ CREATE TABLE `modules` (
 --
 
 INSERT INTO `modules` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`, `created_by`) VALUES
-(3, 'harsh vaghasiya222', 'ty', 'Active', '2020-12-22 23:22:54', '2021-03-07 00:57:48', 8),
 (4, 'header', 'header', 'Active', '2020-12-29 23:19:03', '2020-12-29 23:41:16', 8),
 (5, 'Services', 'services', 'Active', '2021-03-02 21:25:08', '2021-03-02 21:25:08', 8),
 (6, 'OUR TOP WEB DEVELOPMENT SOLUTIONS', 'ourtopwebdevelopmentsolutions', 'Active', '2021-03-02 21:27:45', '2021-03-02 21:27:45', 8),
-(10, 'AboutUs', 'aboutus', 'Active', '2021-03-24 04:52:35', '2021-03-24 04:52:35', 8);
+(10, 'AboutUs', 'about', 'Active', '2021-03-24 04:52:35', '2021-04-05 00:03:26', 8),
+(11, 'PortFolio', 'portfolio', 'Active', '2021-04-04 23:27:00', '2021-04-04 23:27:00', 8),
+(12, 'Blog', 'blog', 'Active', '2021-04-04 23:27:16', '2021-04-04 23:27:16', 8),
+(13, 'Contact', 'contact', 'Active', '2021-04-04 23:27:40', '2021-04-08 23:54:41', 8),
+(17, 'erwer', 'fdgfdg', 'Active', '2021-04-09 01:09:20', '2021-04-09 01:09:20', 8),
+(18, 'fdfd', 'fdfdfg', 'Active', '2021-04-09 01:09:27', '2021-04-09 01:09:35', 8);
 
 -- --------------------------------------------------------
 
@@ -785,7 +1025,12 @@ CREATE TABLE `newsletters` (
 --
 
 INSERT INTO `newsletters` (`id`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'harshvghasiya@gmail.com', 'Active', '2021-03-04 23:01:16', '2021-03-04 23:33:04');
+(1, 'fghf#@3213', 'Active', '2021-04-01 03:57:58', '2021-04-01 03:57:58'),
+(2, 'front@gmail.com', 'Active', '2021-04-01 03:59:00', '2021-04-01 03:59:00'),
+(3, 's@gmail.com', 'Active', '2021-04-01 04:00:36', '2021-04-01 04:00:36'),
+(4, 'guest@gmail.com', 'Active', '2021-04-01 04:07:33', '2021-04-01 04:07:33'),
+(5, 'harshvghasiya@gmail.com', 'Active', '2021-04-01 04:10:32', '2021-04-01 04:10:32'),
+(6, 'fdf@fdf.ghjghj', 'Active', '2021-04-01 04:11:37', '2021-04-01 04:11:37');
 
 -- --------------------------------------------------------
 
@@ -830,8 +1075,7 @@ INSERT INTO `portfolios` (`id`, `name`, `url`, `image`, `status`, `created_at`, 
 (9, 'Card', 'http://localhost/blog_web/public/addsocialmedia', '1614746059.jpg', 'Active', '2021-03-02 23:04:19', '2021-03-02 23:04:19', 8),
 (10, 'Web', 'http://localhost/blog_web/public/addsocialmedia', '1614746073.jpg', 'Active', '2021-03-02 23:04:33', '2021-03-02 23:04:33', 8),
 (11, 'Web', 'http://localhost/blog_web/public/addsocialmedia', '1614746100.jpg', 'Active', '2021-03-02 23:05:00', '2021-03-02 23:05:00', 8),
-(12, 'Draw', 'http://localhost/blog_web/public/addsocialmedia', '1614914419.jpg', 'Active', '2021-03-04 21:50:20', '2021-03-04 21:50:20', 8),
-(13, '789', 'http://localhost/blog_web/public/addsocialmedia', '1615090062.jpg', 'InActive', '2021-03-06 22:37:24', '2021-03-06 22:37:51', 8);
+(12, 'Draw', 'http://localhost/blog_web/public/addsocialmedia', '1614914419.jpg', 'Active', '2021-03-04 21:50:20', '2021-03-04 21:50:20', 8);
 
 -- --------------------------------------------------------
 
@@ -859,8 +1103,7 @@ INSERT INTO `qnas` (`id`, `question`, `answer`, `status`, `created_at`, `updated
 (5, 'Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?', 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.', 'Active', '2021-03-04 22:12:40', '2021-03-04 22:20:29', 8),
 (6, 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?', 'Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis', 'Active', '2021-03-04 22:12:59', '2021-03-04 22:20:29', 8),
 (7, 'Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?', 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.', 'Active', '2021-03-04 22:13:14', '2021-03-04 22:20:29', 8),
-(8, 'Tempus quam pellentesque nec nam aliquam sem et tortor consequat?', 'Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in', 'Active', '2021-03-04 22:13:28', '2021-03-04 22:20:29', 8),
-(9, 'll', 'kk', 'Active', '2021-03-06 22:50:50', '2021-03-06 22:52:32', 8);
+(8, 'Tempus quam pellentesque nec nam aliquam sem et tortor consequat?', 'Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in', 'Active', '2021-03-04 22:13:28', '2021-03-04 22:20:29', 8);
 
 -- --------------------------------------------------------
 
@@ -881,15 +1124,17 @@ CREATE TABLE `settings` (
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'noimage.png',
+  `logo_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `favicon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `first_email`, `second_email`, `first_mobile`, `second_mobile`, `web_url`, `author_name`, `author_decription_footer`, `author_decription_sidebar`, `address`, `created_at`, `updated_at`, `image`) VALUES
-(1, 'vghasiyaharsh@gmail.com', 'admin@xyz.com', '9724434838', '9874561231', 'http://localhost/blog_web/public/admin/setting', 'harsh', '<p>Harsh Vaghasiya Intern and developer at softtechover,Studing in Goverment Engniring Collage Bhavnagar.</p>', '<p>Harsh Vaghasiya Intern and developer at softtechover,Studing in Goverment Engniring Collage Bhavnagar.</p>', '<p>Plote No.-233, Nari,Navapara,</p>\r\n\r\n<p>Bavnagagar,Gujarat,India,</p>\r\n\r\n<p>PinNo - 364004</p>\r\n\r\n<p> </p>', '2020-12-21 13:54:10', '2020-12-30 10:37:00', '1609344420.jpg');
+INSERT INTO `settings` (`id`, `first_email`, `second_email`, `first_mobile`, `second_mobile`, `web_url`, `author_name`, `author_decription_footer`, `author_decription_sidebar`, `address`, `created_at`, `updated_at`, `image`, `logo_image`, `favicon`) VALUES
+(1, 'gcb1196@gmail.com', 'info@softtechover.com', '9825326562', '9724434838', 'http://localhost/blog_web/public/admin/setting', 'Chirag Ghevariya', '<p>My name is Chirag Ghevariya Developer at softtechover having 5 + years of experience and I have good knowledge of VueJs | ReactJs | Laravel | Codeigniter | PHP | MySQL | Ajax | Jquery | Javascript | API | Social Media Login API | CMS system | Socket Programming | Pusher Js .</p>', '<p>My name is Chirag Ghevariya Developer at softtechover having 5 + years of experience and I have good knowledge of VueJs | ReactJs | Laravel | Codeigniter | PHP | MySQL | Ajax | Jquery | Javascript | API | Social Media Login API | CMS system | Socket Programming | Pusher Js .</p>', '<p>A/218 Vaikunth park</p>\r\n\r\n<p>near cadila under bridge,</p>\r\n\r\n<p>ghodasar, ahmedabad -</p>\r\n\r\n<p>380050, gujarat, india</p>', '2020-12-21 13:54:10', '2021-04-09 23:54:42', '1618032282.jpg', '1618032243.svg', '1617963455.png');
 
 -- --------------------------------------------------------
 
@@ -900,7 +1145,7 @@ INSERT INTO `settings` (`id`, `first_email`, `second_email`, `first_mobile`, `se
 CREATE TABLE `social_media` (
   `id` int(11) NOT NULL,
   `title` varchar(20000) NOT NULL,
-  `icon` varchar(20000) NOT NULL,
+  `icon` varchar(20000) NOT NULL DEFAULT 'noimage.png',
   `status` varchar(20) NOT NULL,
   `url` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL,
@@ -913,11 +1158,9 @@ CREATE TABLE `social_media` (
 --
 
 INSERT INTO `social_media` (`id`, `title`, `icon`, `status`, `url`, `created_at`, `updated_at`, `created_by`) VALUES
-(2, 'facebook', '1609319226.png', 'Active', 'http://localhost/blog_web/public/addsocialmedia', '2020-12-28 08:08:57', '2020-12-30 03:37:06', 8),
-(3, 'instagram', '1609319148.jpg', 'Active', 'https://www.instagram.com/', '2020-12-30 03:29:15', '2020-12-30 03:35:48', 8),
-(4, 'linkedin', '1609318847.png', 'Active', 'https://www.linkedin.com/in/harsh-vaghasiya-b03180202/', '2020-12-30 03:30:47', '2020-12-30 03:30:47', 8),
-(6, 'yty', '1615110932.jpg', 'InActive', 'http://localhost/blog_web/public/addsocialmedia', '2021-03-07 04:25:32', '2021-03-14 05:42:52', 8),
-(7, 'sad', '1615110953.jpg', 'InActive', 'http://localhost/blog_web/public/addsocialmedia', '2021-03-07 04:25:53', '2021-03-14 05:42:47', 8);
+(2, 'facebook', '1609319226.png', 'Active', 'https://www.facebook.com/Softtechover-104756577948958', '2020-12-28 08:08:57', '2021-04-10 00:08:14', 8),
+(3, 'instagram', '1609319148.jpg', 'Active', 'https://www.instagram.com/softtechover', '2020-12-30 03:29:15', '2021-04-10 00:09:06', 8),
+(4, 'linkedin', '1609318847.png', 'Active', 'https://www.linkedin.com/company/softtechover', '2020-12-30 03:30:47', '2021-04-10 00:09:26', 8);
 
 -- --------------------------------------------------------
 
@@ -942,8 +1185,9 @@ INSERT INTO `tags` (`id`, `tag`, `created_at`, `updated_at`, `status`, `created_
 (1, 'ewr', '2021-03-14 04:06:43', '2021-03-14 04:06:43', 'Active', 8),
 (2, 'yuytu', '2021-03-14 04:07:06', '2021-03-14 04:07:06', 'Active', 8),
 (3, 'Harsh4', '2021-03-14 04:07:58', '2021-03-14 04:19:04', 'Active', 8),
-(5, 'jhkjhkjhkhk', '2021-03-14 04:08:08', '2021-03-14 04:14:56', 'InActive', 8),
-(8, 'retretret', '2021-03-14 04:54:24', '2021-03-14 05:04:12', 'InActive', 8);
+(9, 'fghfh', '2021-03-26 09:54:17', '2021-03-26 09:54:17', 'Active', 8),
+(10, 'fgh', '2021-03-26 09:55:28', '2021-03-26 09:55:28', 'Active', 31),
+(11, 'df', '2021-03-29 03:33:11', '2021-03-29 03:33:11', 'Active', 31);
 
 -- --------------------------------------------------------
 
@@ -958,7 +1202,7 @@ CREATE TABLE `testimonials` (
   `about` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'noimage.png',
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_by` bigint(11) UNSIGNED NOT NULL DEFAULT '8'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -972,7 +1216,7 @@ INSERT INTO `testimonials` (`id`, `name`, `role`, `about`, `created_at`, `update
 (2, 'Jena Karlis', 'Store Owner', 'Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.', '2021-03-04 21:55:13', '2021-03-04 21:55:13', '1614914713.jpg', 'Active', 8),
 (3, 'Matt Brandon', 'Freelancer', 'Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.', '2021-03-04 21:55:54', '2021-03-04 21:55:54', '1614914754.jpg', 'Active', 8),
 (4, 'John Larson', 'Entrepreneur', 'Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa fore nisi cillum quid.', '2021-03-04 21:56:42', '2021-03-04 21:56:42', '1614914802.jpg', 'Active', 8),
-(5, 'harsh vaghasiya', 'xyz', 'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit', '2021-03-04 22:02:46', '2021-03-07 01:02:14', '1614915166.jpg', 'InActive', 8);
+(5, 'u', 'tu', 'yu', '2021-03-27 00:18:05', '2021-04-05 08:11:53', 'noimage.png', 'InActive', 8);
 
 -- --------------------------------------------------------
 
@@ -1024,7 +1268,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (12, 'harsh vaghasiya', 'a@gmail.com', NULL, '$2y$10$QuyeLQXPTewOuTESFmMNq.887uKFz6axyqHA.AoMgYv91Hx6WhK3K', NULL, '2021-03-11 23:23:37', '2021-03-11 23:23:37'),
 (13, 'harsh vaghasiya', 'tryharshvghasiya@gmail.com', NULL, '$2y$10$eWew3DIVA46lmDfOv1wTWeOlEqlcP.JcMKNRJG.VdJnqo25OhIafK', NULL, '2021-03-11 23:39:02', '2021-03-11 23:39:02'),
 (14, 'harsh vaghasiya', 'harshvghasiya14@gmail.com', NULL, '$2y$10$JiTNh8iFXLr/qVkJN2y2DeDh8szLB8/I4dLHqNyLI74uuok4HADVy', NULL, '2021-03-12 04:40:01', '2021-03-12 04:40:01'),
-(15, 'harsh vaghasiya', 'e@gmail.com', NULL, '$2y$10$KTVmkd5INDu0B9gPOJzNquPb.8DoU0WS3A4D0k8IhTMkHq8MFT1wO', NULL, '2021-03-24 05:14:11', '2021-03-24 05:14:11');
+(15, 'harsh vaghasiya', 'e@gmail.com', NULL, '$2y$10$KTVmkd5INDu0B9gPOJzNquPb.8DoU0WS3A4D0k8IhTMkHq8MFT1wO', NULL, '2021-03-24 05:14:11', '2021-03-24 05:14:11'),
+(16, 'erwer', 'harshvghasiya1234@gmail.com', NULL, '$2y$10$F7Wm5EgE8uw2gQSyI9QC3.v25JlmUdpZxgy10ztuEf9FJw6L4ihzC', NULL, '2021-03-26 08:25:46', '2021-03-26 08:25:46'),
+(17, 'try', 'harshvghastyiya@gmail.com', NULL, '$2y$10$71k2KKU4Nwq5MfojUPeymeSw9oa45dw6DEfvCrR3z90tJNoBfJOsO', NULL, '2021-03-26 10:16:06', '2021-03-26 10:16:06'),
+(18, 'harsh vaghasiya', 'front@gmail.com', NULL, '$2y$10$VlATvpFNtKx3dXa/qMts1OGE9Va2hBR9mJq/MvAcLFp7QsMf5qSu6', NULL, '2021-04-01 00:28:35', '2021-04-01 00:28:35'),
+(19, 'harsh vaghasiya', '123@gmail.com', NULL, '$2y$10$o8ceCOCjl.sb4Qiy02gpBeOVD63Of7wXbhSqvJ.6VU9GD8Bqq4cHW', NULL, '2021-04-05 22:45:50', '2021-04-05 22:45:50'),
+(20, 'harsh vaghasiya', 'h@gmail.com', NULL, '$2y$10$AtAuhYxFQIHYmzeFoxZxO.51l8Rf.PAK9.w6UtG7R1qNWQmPnA7Ja', NULL, '2021-04-10 00:05:25', '2021-04-10 00:05:25');
 
 --
 -- Indexes for dumped tables
@@ -1083,8 +1332,8 @@ ALTER TABLE `blogs`
 --
 ALTER TABLE `blog_catagories`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `test` (`blogs_id`),
-  ADD KEY `test3` (`catagory_id`);
+  ADD KEY `fgfdgsa` (`blogs_id`),
+  ADD KEY `rtyrtyryfgh` (`catagory_id`);
 
 --
 -- Indexes for table `blog_tags`
@@ -1214,13 +1463,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accessusers`
 --
 ALTER TABLE `accessusers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=376;
 
 --
 -- AUTO_INCREMENT for table `admin_logins`
 --
 ALTER TABLE `admin_logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `apdeledits`
@@ -1238,49 +1487,49 @@ ALTER TABLE `apmodules`
 -- AUTO_INCREMENT for table `apm_users`
 --
 ALTER TABLE `apm_users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=511;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=556;
 
 --
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `blog_catagories`
 --
 ALTER TABLE `blog_catagories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=360;
 
 --
 -- AUTO_INCREMENT for table `blog_tags`
 --
 ALTER TABLE `blog_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT for table `catagories`
 --
 ALTER TABLE `catagories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `cms`
 --
 ALTER TABLE `cms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `contactuses`
 --
 ALTER TABLE `contactuses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1304,25 +1553,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `newsletters`
 --
 ALTER TABLE `newsletters`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `qnas`
 --
 ALTER TABLE `qnas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -1334,19 +1583,19 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `social_media`
 --
 ALTER TABLE `social_media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `userfollows`
@@ -1358,7 +1607,7 @@ ALTER TABLE `userfollows`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
@@ -1393,8 +1642,8 @@ ALTER TABLE `banners`
 -- Constraints for table `blog_catagories`
 --
 ALTER TABLE `blog_catagories`
-  ADD CONSTRAINT `test` FOREIGN KEY (`blogs_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `test3` FOREIGN KEY (`catagory_id`) REFERENCES `catagories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fgfdgsa` FOREIGN KEY (`blogs_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rtyrtyryfgh` FOREIGN KEY (`catagory_id`) REFERENCES `catagories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `blog_tags`
