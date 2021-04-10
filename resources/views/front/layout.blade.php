@@ -12,7 +12,7 @@ $author_desc=\App\setting::find(1);
   <meta content="" name="description">
   <meta content="" name="keywords">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="{{ asset('public/front_asset/assets/img/favicon.png' ) }}" rel="icon">
+  <link href="{{$author_desc->getFaviconImageUrl()}}" rel="icon">
   <link href="{{ asset('public/front_asset/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/vendor/bootstrap/css/bootstrap.min.css' ) }}" rel="stylesheet">

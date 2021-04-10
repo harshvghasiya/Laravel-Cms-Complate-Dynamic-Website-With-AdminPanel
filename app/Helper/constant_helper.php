@@ -8,9 +8,9 @@ const header_module_id=4;
 
 
  function flashMessage($type,$message)
-	 {
+	{
 	 	\Session::flash($type,$message);
-	 }
+	}
 
 
 // For Admin Home View Access
