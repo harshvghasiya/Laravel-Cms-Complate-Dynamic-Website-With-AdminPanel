@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 10, 2021 at 05:43 AM
+-- Generation Time: Apr 10, 2021 at 08:59 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.12
 
@@ -1134,7 +1134,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `first_email`, `second_email`, `first_mobile`, `second_mobile`, `web_url`, `author_name`, `author_decription_footer`, `author_decription_sidebar`, `address`, `created_at`, `updated_at`, `image`, `logo_image`, `favicon`) VALUES
-(1, 'gcb1196@gmail.com', 'info@softtechover.com', '9825326562', '9724434838', 'http://localhost/blog_web/public/admin/setting', 'Chirag Ghevariya', '<p>My name is Chirag Ghevariya Developer at softtechover having 5 + years of experience and I have good knowledge of VueJs | ReactJs | Laravel | Codeigniter | PHP | MySQL | Ajax | Jquery | Javascript | API | Social Media Login API | CMS system | Socket Programming | Pusher Js .</p>', '<p>My name is Chirag Ghevariya Developer at softtechover having 5 + years of experience and I have good knowledge of VueJs | ReactJs | Laravel | Codeigniter | PHP | MySQL | Ajax | Jquery | Javascript | API | Social Media Login API | CMS system | Socket Programming | Pusher Js .</p>', '<p>A/218 Vaikunth park</p>\r\n\r\n<p>near cadila under bridge,</p>\r\n\r\n<p>ghodasar, ahmedabad -</p>\r\n\r\n<p>380050, gujarat, india</p>', '2020-12-21 13:54:10', '2021-04-09 23:54:42', '1618032282.jpg', '1618032243.svg', '1617963455.png');
+(1, 'gcb1196@gmail.com', 'info@softtechover.com', '9825326562', '9724434838', 'http://localhost/blog_web/public/admin/setting', 'Chirag Ghevariya', '<p>My name is Chirag Ghevariya Developer at softtechover having 5 + years of experience and I have good knowledge of VueJs | ReactJs | Laravel | Codeigniter | PHP | MySQL | Ajax | Jquery | Javascript | API | Social Media Login API | CMS system | Socket Programming | Pusher Js .</p>', '<p>My name is Chirag Ghevariya Developer at softtechover having 5 + years of experience and I have good knowledge of VueJs | ReactJs | Laravel | Codeigniter | PHP | MySQL | Ajax | Jquery | Javascript | API | Social Media Login API | CMS system | Socket Programming | Pusher Js .</p>', '<p>A/218 Vaikunth park</p>\r\n\r\n<p>near cadila under bridge,</p>\r\n\r\n<p>ghodasar, ahmedabad -</p>\r\n\r\n<p>380050, gujarat, india</p>', '2020-12-21 13:54:10', '2021-04-10 03:19:47', '1618032282.jpg', '1618032243.svg', '1618044587.png');
 
 -- --------------------------------------------------------
 
@@ -1523,7 +1523,7 @@ ALTER TABLE `catagories`
 -- AUTO_INCREMENT for table `cms`
 --
 ALTER TABLE `cms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `contactuses`
