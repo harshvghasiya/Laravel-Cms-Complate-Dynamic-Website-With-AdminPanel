@@ -14,7 +14,7 @@ class CmsController extends Controller
     { 
        $this->Model=new cms;
         $apm_id=cms::apm_id;
-        $this->middleware('access:'.$apm_id.''); 
+        $this->middleware('access:'.$apm_id.'')->except('cms_content'); 
     }
   
     public function create()
