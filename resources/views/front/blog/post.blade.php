@@ -79,7 +79,7 @@
             </article>
 
             <div class="blog-author clearfix">
-              <img src="{{url('public/storage/authorimage/'.$author_desc->image)}}" width="120px" height="120px" class="rounded-circle float-left" alt="">
+              <img src="{{$author_desc->getAuthorImageUrl()}}" width="120px" height="120px" class="rounded-circle float-left" alt="">
               <h4>{{$author_desc->author_name}}</h4>
               <div class="social-links">
                 @if(!$social_media->isEmpty())

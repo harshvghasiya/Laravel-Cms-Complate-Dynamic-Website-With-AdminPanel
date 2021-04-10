@@ -3,7 +3,7 @@
 @section('title',$search_val)
 @section('container')
   <main id="main" class="search_append">
-    <!-- ======= Breadcrumbs ======= -->
+   
     <section class="breadcrumbs">
       <div class="container">
 
@@ -15,9 +15,8 @@
         <h2>Search</h2>
 
       </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Blog Section ======= -->
+    </section>
+    
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -29,7 +28,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="{{url('public/storage/blogimage/'.$result->image)}}" alt="" class="img-fluid">
+                <img src="{{$result->getBlogImageUrl()}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -53,32 +52,21 @@
                 </div>
               </div>
 
-            </article><!-- End blog entry -->
+            </article>
 
           @endforeach
           
-     
-
-            <div class="blog-pagination">
-              <ul class="justify-content-center">
-                <li class="disabled"><i class="icofont-rounded-left"></i></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
-              </ul>
-            </div>
-        @else
+            @else
         <h3 class="text-info">No Data Found For '{{$search_val}}' !!</h3>
         @endif
-          </div><!-- End blog entries list -->
+          </div>
 
         @include('front.sidebar')
 
         </div>
 
       </div>
-    </section><!-- End Blog Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
   @endsection

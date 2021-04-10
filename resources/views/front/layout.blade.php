@@ -1,5 +1,6 @@
 @php
 $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_on_footer','Yes')->select('module_id')->distinct()->get();
+$author_desc=\App\setting::find(1);
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +28,9 @@ $quicklink=\App\cms::with(['module'])->where('status','Active')->where('display_
 <body>
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="{{route('home')}}">Presento<span>.</span></a></h1>
-     
-       {{-- <a href="index.html" class="logo me-auto"><img src="{{ asset('public/front_asset/assets/assets/img/logo.png' ) }}" alt=""></a> --}}
+  {{--     <h1 class="logo me-auto"><a href="{{route('home')}}">Presento<span>.</span></a></h1>
+ --}}     
+       <a href="{{route('home')}}" class="logo me-auto"><img src="{{$author_desc->getLogoImageUrl()}}" alt="logo"></a>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
