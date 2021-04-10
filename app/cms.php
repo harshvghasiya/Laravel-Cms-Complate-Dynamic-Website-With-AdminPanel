@@ -3,8 +3,9 @@
 namespace App;
 
 use App\module;
-use Illuminate\Database\Eloquent\Model;
 use Crypt;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\abort;
 use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
 
@@ -260,7 +261,9 @@ class cms extends Model
       $cms_content=cms::where('name',$cms)->first();
       if($cms_content != null){
       return view('front.CmsContent.cms_content',compact('cms_content'));
-    }
+      }else{
+        return abort(404);
+      }
     }
 
 
