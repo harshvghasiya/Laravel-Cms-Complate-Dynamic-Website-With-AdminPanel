@@ -1,3 +1,6 @@
+@php 
+$apm_user=\App\apm_user::where('user_id',Auth::guard('adminlogin')->user()->id)->pluck('apm_id')->toArray();
+@endphp
 @extends('admin.layout')
 @section('title','Home | Dashboard')
 @section('container')
@@ -5,7 +8,7 @@
    
 <div class="row margin-top-10">
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\blog::apm_id))
+@if(in_array(\App\Blog::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('blogListMain')}}">
@@ -22,7 +25,7 @@
 @endif
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\apmodule::apm_id))
+@if(in_array(\App\Apmodule::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('apmoduleListMain')}}">
@@ -39,7 +42,7 @@
 @endif
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\AdminLogin::apm_id))
+@if(in_array(\App\AdminLogin::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('userListMain')}}">
@@ -55,7 +58,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\newsletter::apm_id))
+@if(in_array(\App\Newsletter::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('newListMain')}}">
@@ -73,7 +76,7 @@
 
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\SocialMedia::apm_id))
+@if(in_array(\App\SocialMedia::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('someListMain')}}">
@@ -90,7 +93,7 @@
 @endif
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\portfolio::apm_id))
+@if(in_array(\App\Portfolio::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('portListMain')}}">
@@ -106,7 +109,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\qna::apm_id))
+@if(in_array(\App\Qna::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('qnaListMain')}}">
@@ -122,7 +125,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\testimonial::apm_id))
+@if(in_array(\App\Testimonial::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('testimonialListMain')}}">
@@ -139,7 +142,7 @@
 @endif
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\module::apm_id))
+@if(in_array(\App\Module::apm_id,$apm_user))
    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('moduleListMain')}}">
@@ -155,7 +158,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\cms::apm_id))
+@if(in_array(\App\Cms::apm_id,$apm_user))
      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('cmsListMain')}}">
@@ -171,7 +174,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\catagory::apm_id))
+@if(in_array(\App\Catagory::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('catagoryListMain')}}">
@@ -187,7 +190,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\setting::apm_id))
+@if(in_array(\App\Setting::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('setting_create')}}">
@@ -204,7 +207,7 @@
 @endif
 
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\BlogTag::apm_id))
+@if(in_array(\App\BlogTag::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('tagListMain')}}">
@@ -220,7 +223,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\banner::apm_id))
+@if(in_array(\App\Banner::apm_id,$apm_user))
  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('bannerListMain')}}">
@@ -236,7 +239,7 @@
   </div>
 @endif
 
-@if(Acceess(Auth::guard('adminlogin')->user()->id,\App\contactus::apm_id))
+@if(in_array(\App\Contactus::apm_id,$apm_user))
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
     <div class="dashboard-stat2">
       <a href="{{route('contactListMain')}}">

@@ -2,7 +2,7 @@
 $author_desc=\App\setting::find(1);
 $banner=\App\banner::where('status','Active')->where('name','client')->get();
 
-$cms=\App\cms::where('status','Active')->get();
+$cms=\App\cms::where('status','Active')->where('module_id',header_module_id)->orWhere('module_id',our_top_web_solution_module_id)->orWhere('module_id',about_module_id)->get();
 
 $portfolio=\App\portfolio::where('status','Active')->get();
 $portfolio_name=\App\portfolio::where('status','Active')->select('name')->distinct()->get();

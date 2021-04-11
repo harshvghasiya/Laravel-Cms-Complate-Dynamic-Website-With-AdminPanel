@@ -13,17 +13,6 @@ const header_module_id=4;
 	}
 
 
-// For Admin Home View Access
-function Acceess($user_id,$apm_id)
-{ 
-   $apm_user=\App\apm_user::where('user_id',$user_id)->where('apm_id',$apm_id)->first();
-  if ($apm_user != null) {   	 	
-    return true;
-  }else{
-    return false;
-  } 
-
-}
 
 // For All Access (Edit,Delte,Update Etc)
  function Allacceess($user_id,$slug)
