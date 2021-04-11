@@ -1,3 +1,6 @@
+@php 
+$author_desc=\App\setting::find(1);
+@endphp
 <head>
     <meta charset="utf-8" />
     <title>@yield('title')</title>
@@ -53,7 +56,7 @@
     <link href="{{ asset('public/admin_asset/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('public/admin_asset/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css')}}" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="{{$author_desc->getFaviconImageUrl()}}" rel="icon">
     <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/admin_asset/assets/global/plugins/jquery-migrate.min.js') }}" type="text/javascript">
     </script>
