@@ -108,13 +108,10 @@ class catagory extends Model
                             return '<a class="btn btn-danger del_data" data-route="'.route('del_catagory').'" id="del_catagory" data-del_id='.Crypt::encrypt($data->id).'> <i class="fa fa-trash"></i> </a>  
                               <a  href="'.route('edit_catagory',Crypt::encrypt($data->id)).'" class="btn btn-warning" id="upd_country" > <i class="fa fa-edit"></i> </a> ';
                         })
-                  ->editColumn('id', function($data){
-                           $x=$data->blog_catagory;           
-                           if ($x != null) {                  
-                           foreach ($x as $key => $value) {
-                               $y=$value->catagory_id; 
-
-                                 if($y){
+                  ->editColumn('id', function($data){        
+                           if ($data->blog_catagory  != null) {                  
+                           foreach ($data->blog_catagory as $key => $value) {
+                                 if($value->catagory_id){
                                     return '';
                                  }
                            }
