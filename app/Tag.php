@@ -13,7 +13,7 @@ class Tag extends Model
 {
     public function tag_rel()
     {
-    	return $this->hasMany(BlogTag::class,'tag_id','id');
+    	return $this->belongsToMany(Blog::class);
     }
     public function created_email()
     {
@@ -167,17 +167,11 @@ class Tag extends Model
 
     public function frontTagIndex($tag)
     {
-        $sql=\App\Tag::with(['tag_rel'])->where('tag',$tag)->get();
-        if ($sql != Null) {
-            foreach ($sql as $key => $value) {
-                if($value->tag_rel != null){
-                    foreach ($value->tag_rel as $key) {
-                        $tag_blog[]=\App\blog::where('status','Active')->where('id',$key->blog_id)->get();
-                    }
-                }
-            }
-            
+        $tag_blog=\App\Tag::with(['tag_rel'])->where('tag',$tag)->get();
+        if($tag_blog != null){
             return view('front.tag.index',compact('tag_blog','tag'));
+        }else{
+            return 'No Tag Found';
         }
    
     }

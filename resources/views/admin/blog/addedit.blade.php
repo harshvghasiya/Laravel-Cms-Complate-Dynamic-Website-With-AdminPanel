@@ -49,12 +49,6 @@
             <div class="tools">
                 <a href="" class="collapse">
                 </a>
-                <a href="#portlet-config" data-toggle="modal" class="config">
-                </a>
-                <a href="" class="reload">
-                </a>
-                <a href="" class="remove">
-                </a>
             </div>
         </div>
         <div class="portlet-body form">

@@ -20,7 +20,7 @@ class blog extends Model
 
     public function blog_id()
     {
-    	return $this->hasmany(BlogCatagory::class,'blogs_id','id');
+    	return $this->belongsToMany(Catagory::class);
     }
     public function blog_tag()
     {
@@ -39,7 +39,7 @@ class blog extends Model
 
     public static function getBlogCatagory($id)
       {
-        $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$id)->get();
+        $blogCategory=BlogCatagory::with(['catagory'])->where('blog_id',$id)->get();
         foreach ($blogCategory as $key => $value) {
             $y[]= $value->catagory->catagory;
         }
@@ -79,6 +79,7 @@ class blog extends Model
      public function BlogDatable()
      {
           $sql=blog::with(['created_email','blog_id']);
+        
           return Datatables::of($sql)
                 ->editColumn('status',   function($data){
                         if($data->status == "Active"){
@@ -108,13 +109,11 @@ class blog extends Model
                         }) 
                  ->editColumn('catagory', function($data){
                         if (!$data->blog_id->isEmpty()) {
+                            
                             foreach ($data->blog_id as $key => $value) {
-                              $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$value->blogs_id)->get();
-                              foreach ($blogCategory as $key => $value) {
-                                $y[]= $value->catagory->catagory;
-                              }
-                              return $y;
-                            }                                  
+                                $y[]=$value->catagory;
+                            }
+                         return $y;
                         }else{
                             return 'None';
                         }
@@ -134,7 +133,7 @@ class blog extends Model
             $ids=Crypt::decrypt($id);
             $edit=blog::with(['blog_id','blog_tag'])->find($ids);
 
-            $check_catagory=BlogCatagory::where('blogs_id',$ids)->pluck('catagory_id')->toArray();
+            $check_catagory=BlogCatagory::where('blog_id',$ids)->pluck('catagory_id')->toArray();
             $catagory_list=catagory::where('status','Active')->get();
 
             $check_tag=BlogTag::where('blog_id',$ids)->pluck('tag_id')->toArray();
@@ -156,7 +155,7 @@ class blog extends Model
         $id=$request->input('id');
         if (isset($id) && $id != null) {
             $res=Blog::find($id);             
-            BlogCatagory::where('blogs_id',$res->id)->delete();
+            BlogCatagory::where('blog_id',$res->id)->delete();
             BlogTag::where('blog_id',$res->id)->delete();
         }else{
             $res=new Blog;
@@ -183,7 +182,7 @@ class blog extends Model
         if (!empty($catagory)) {                
             foreach ($catagory as $key => $value) {                    
                 $resu=new BlogCatagory;            
-                $resu->blogs_id=$res->id;
+                $resu->blog_id=$res->id;
                 $resu->catagory_id=$value;
                 $resu->save();
             }
@@ -289,7 +288,7 @@ class blog extends Model
     public function singleBlog($title)
     {
          $id=Crypt::decrypt($title);
-        $all=blog::where('status','Active')->where('id',$id)->first();
+        $all=blog::with(['blog_id'])->where('status','Active')->where('id',$id)->first();
         
         $author_desc=\App\setting::find(1);   
         $social_media=\App\SocialMedia::where('status','Active')->get();

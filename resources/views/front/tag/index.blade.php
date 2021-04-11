@@ -25,36 +25,38 @@
 
           <div class="col-lg-8 entries">
 
-          @foreach($tag_blog as $blog)
-             @foreach($blog as $result)
+          @foreach($tag_blog as $result)
+             @foreach($result->tag_rel as $blog)
+             @if($blog->status == 'Active')
             <article class="entry">
 
               <div class="entry-img">
-                <img src="{{url('public/storage/blogimage/'.$result->image)}}" alt="" class="img-fluid">
+                <img src="{{$blog->getBlogImageUrl()}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">{{$result->title}}</a>
+                <a href="blog-single.html">{{$blog->title}}</a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($result->created_at))}}</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
+              {{--     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li> --}}
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ date("d-m-Y", strtotime($blog->created_at))}}</time></a></li>
+
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p>
-                  @php echo substr($result->description,0,600); @endphp
+                  @php echo substr($blog->description,0,600); @endphp
                 </p>
                 <div class="read-more">
-                  <a href="{{route('blog_detail',[Crypt::encrypt($result->id)])}}">Read More</a>
+                  <a href="{{route('blog_detail',[Crypt::encrypt($blog->id)])}}">Read More</a>
                 </div>
               </div>
 
-            </article><!-- End blog entry -->
+            </article>
+             @endif
             @endforeach
           @endforeach
 

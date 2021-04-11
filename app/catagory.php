@@ -15,7 +15,7 @@ class catagory extends Model
     
     public function blog_catagory()
     {
-    	return $this->hasmany(BlogCatagory::class,'catagory_id','id');
+    	return $this->belongsToMany(Blog::class);
     }
 
     public function blog()
@@ -36,7 +36,7 @@ class catagory extends Model
       public static function getPostCatagory($id)
       {
 
-        $blogCategory=BlogCatagory::with(['catagory'])->where('blogs_id',$id)->get();
+        $blogCategory=BlogCatagory::with(['catagory'])->where('blog_id',$id)->get();
         if(!$blogCategory->isEmpty()){
         foreach ($blogCategory as $key => $value) {
             $y[]= $value->catagory->catagory;
@@ -88,6 +88,7 @@ class catagory extends Model
     public function catagoryDatable()
     {
         $sql=catagory::with(['blog_catagory','created_email']);
+          
           return Datatables::of($sql)
                 ->editColumn('status',   function($data){
                         if($data->status == "Active"){
@@ -110,8 +111,8 @@ class catagory extends Model
                         })
                   ->editColumn('id', function($data){        
                            if ($data->blog_catagory  != null) {                  
-                           foreach ($data->blog_catagory as $key => $value) {
-                                 if($value->catagory_id){
+                             foreach ($data->blog_catagory as $key => $value) {
+                                 if($value->id){
                                     return '';
                                  }
                            }
@@ -216,12 +217,8 @@ class catagory extends Model
 
     public function frontCatagoryIndex($catagory)
     {
-            $sql=\App\catagory::with(['blog_catagory'])->where('catagory',$catagory)->get();
-            foreach ($sql as $key => $value) { 
-                foreach ($value->blog_catagory as $key) {
-                    $catagory_blog[]=\App\blog::where('status','Active')->where('id',$key->blogs_id)->get();
-                }
-            }
+            $catagory_blog=\App\catagory::with(['blog_catagory'])->where('catagory',$catagory)->get();
+           
             if ($catagory_blog != NULL) {
                 return view('front.catagory.index',compact('catagory_blog','catagory'));  
             }

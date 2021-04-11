@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogTag extends Model
 {
-	
+	protected $table='blog_tag';
     const apm_id ='7';
 
     public function tag()

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 10, 2021 at 08:59 AM
+-- Generation Time: Apr 11, 2021 at 12:59 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.12
 
@@ -409,9 +409,9 @@ INSERT INTO `admin_logins` (`id`, `email`, `password`, `name`, `status`, `rememb
 (19, 'harshvghasiyuiiya@gmail.com', '$2y$10$J5vHVWmf3QQYLjNAumYymeEDiXTY2tbRIzXon63DHwHSmrKB.alvC', 'harsh vaghasiya', 'Active', NULL, '2021-03-10 22:21:35', '2021-03-10 22:21:35', '1615434695.jpg', 0),
 (27, 'h22@gmail.com', '$2y$10$r3cyzY6V9iey5Br8CxpqK.tYZYlNfeLj7/qaD.onETv2kYYrXAVUy', 'harsh vaghasiya', 'Active', NULL, '2021-03-10 22:53:27', '2021-03-10 22:53:27', '1615436607.jpg', 0),
 (28, 'h33@gmail.com', '$2y$10$pxefHDECOa4xSDxw0y7b2Oo4kzZsghkvVJVZBifZLtecJaZZ2ohtm', 'harsh vaghasiya', 'Active', 'BjUHySrH1MU0DyzHiiSAVfNoc7WpROKQXz54eCEOvslIh4HokylMUYPR6vUU', '2021-03-10 22:54:23', '2021-03-10 22:54:23', '1615436663.jpg', 0),
-(29, 'h45@gmail.com', '$2y$10$V2h5Oq.Ajri1ONdy9LUHL.epqo/zr6y2OdO7nSGatkh0cE4cz/kl2', 'harsh vaghasiya', 'Active', 'R3iIq3cp41Lz3Zp6UYK3CaM3tvS5jDmTr7la85PrFfNCBCbTfbvT2xyP5G2m', '2021-03-10 23:54:26', '2021-03-10 23:54:26', '1615440266.jpg', 0),
+(29, 'h45@gmail.com', '$2y$10$V2h5Oq.Ajri1ONdy9LUHL.epqo/zr6y2OdO7nSGatkh0cE4cz/kl2', 'harsh vaghasiya', 'Active', 'Bxsbc2ZDTDhXqoeOBAZlnVknWgnMXYyI0l3jnGdAdW4MuzjeL81EisIoIUlJ', '2021-03-10 23:54:26', '2021-03-10 23:54:26', '1615440266.jpg', 0),
 (30, 's@gmail.com', '$2y$10$x28JK2nje1Xo3HPI2RWL8OGVUXhvAR/M7R55YKmfdPPcGCnzghNzO', 'Harsh Vaghasiya (s)', 'Active', 'r41d1NpTZ4LcVcpRcKvCYzsRKsL4Kx27Hj961SohA9evRFJBKlrkBke4npuX', '2021-03-11 03:33:24', '2021-03-11 03:33:24', '1615453404.jpg', 0),
-(31, 'all@gmail.com', '$2y$10$i46rpHqdfoShNoxoedJFCeRF7v31U/acUw1AAZLjQ/vqVxKV8xM.2', 'harsh (All)', 'Active', 'NGJpvPxTKI8hbpH3YRMe9ODmKHDWvErlC1XvpJKS0EhRcuDkJlSCN6z0Qr1a', '2021-03-11 04:40:00', '2021-03-27 00:36:30', '1616825190.jpg', 0),
+(31, 'all@gmail.com', '$2y$10$i46rpHqdfoShNoxoedJFCeRF7v31U/acUw1AAZLjQ/vqVxKV8xM.2', 'harsh (All)', 'Active', 'eHPBOsNBmLja8pBP4aoEGZox3lIb2lEgrzICI6gsSiIZgPZTF9t6HCKEVvfb', '2021-03-11 04:40:00', '2021-03-27 00:36:30', '1616825190.jpg', 0),
 (33, 'guest2@gmail.com', '$2y$10$rZ7ZgpQeJyEdkL3EUS54GO474uxrxt/VnsYvW4r8ySCMCoBaaIw42', 'harsh vaghasiya', 'Active', 'SR6XofkwJoYUFqVDI8aKdvzeULBglysl9OHYvHHU3dxkQW5ZHWEwL6uVFsAP', '2021-03-26 22:51:03', '2021-03-26 22:51:03', NULL, 0);
 
 -- --------------------------------------------------------
@@ -705,68 +705,56 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`, `created_by`) VALUES
-(20, 'Google inks pact for new 35-storey office', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Where does it come from?</h2>\r\n\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.</p>', '1609160452.jpg', 'Active', '2020-12-28 06:47:13', '2021-04-06 23:15:01', 0),
-(26, 'sad', '<p>jfgj</p>', '1615291349.jpg', 'Active', '2021-03-09 06:32:29', '2021-04-06 23:14:53', 16),
-(27, 'Google inks pact for new 35-storey office', '<p>yuiy</p>', '1615691947.jpg', 'Active', '2021-03-13 21:49:07', '2021-04-10 00:00:43', 31),
-(28, 'sad', '<p>f</p>', '1615692123.jpg', 'InActive', '2021-03-13 21:52:03', '2021-04-07 05:18:39', 31),
+(20, 'Google inks pact for new 35-storey office', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Where does it come from?</h2>\r\n\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.</p>', '1609160452.jpg', 'Active', '2020-12-28 06:47:13', '2021-04-11 04:29:14', 0),
+(26, 'sad', '<p>jfgj</p>', '1615291349.jpg', 'Active', '2021-03-09 06:32:29', '2021-04-11 05:13:41', 16),
+(27, 'Google inks pact for new 35-storey office', '<p>yuiy</p>', '1615691947.jpg', 'Active', '2021-03-13 21:49:07', '2021-04-11 04:28:00', 31),
+(28, 'sad', '<p>f</p>', '1615692123.jpg', 'Active', '2021-03-13 21:52:03', '2021-04-11 05:14:56', 31),
 (29, 'Google inks pact for new 35-storey office', '<p>yry</p>', '1615715882.png', 'InActive', '2021-03-14 04:28:02', '2021-04-07 05:18:36', 31),
 (30, 'yui', '<p>ui</p>', '1615716564.jpg', 'Active', '2021-03-14 04:39:24', '2021-04-10 00:00:34', 31),
 (37, 'yui', '<p>hjj</p>', '1617855193.png', 'InActive', '2021-04-07 22:43:13', '2021-04-10 00:00:39', 31),
-(39, 'hgjj', '<p>ghjghjghj</p>', '1617949239.png', 'InActive', '2021-04-09 00:50:39', '2021-04-10 00:00:37', 31);
+(39, 'hgjj', '<p>ghjghjghj</p>', '1617949239.png', 'InActive', '2021-04-09 00:50:39', '2021-04-11 06:01:10', 31);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_catagories`
+-- Table structure for table `blog_catagory`
 --
 
-CREATE TABLE `blog_catagories` (
+CREATE TABLE `blog_catagory` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `catagory_id` bigint(20) UNSIGNED NOT NULL DEFAULT '5',
-  `blogs_id` bigint(20) UNSIGNED NOT NULL DEFAULT '2',
+  `blog_id` bigint(20) UNSIGNED NOT NULL DEFAULT '2',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blog_catagories`
+-- Dumping data for table `blog_catagory`
 --
 
-INSERT INTO `blog_catagories` (`id`, `catagory_id`, `blogs_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `blog_catagory` (`id`, `catagory_id`, `blog_id`, `created_at`, `updated_at`) VALUES
 (319, 5, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10'),
 (320, 16, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10'),
 (321, 22, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10'),
-(322, 5, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(323, 7, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(324, 15, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(325, 16, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(326, 18, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(327, 19, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(328, 22, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02'),
-(329, 5, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(330, 7, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(331, 15, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(332, 16, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(333, 18, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(334, 19, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(335, 22, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12'),
-(336, 5, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(337, 7, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(338, 15, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(339, 16, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(340, 18, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(341, 19, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(342, 22, 28, '2021-04-08 23:02:44', '2021-04-08 23:02:44'),
-(358, 5, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50'),
-(359, 16, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50');
+(360, 25, 43, '2021-04-11 03:55:50', '2021-04-11 03:55:50'),
+(419, 5, 28, '2021-04-11 05:14:50', '2021-04-11 05:14:50'),
+(425, 5, 20, '2021-04-11 05:55:05', '2021-04-11 05:55:05'),
+(426, 16, 20, '2021-04-11 05:55:05', '2021-04-11 05:55:05'),
+(427, 22, 20, '2021-04-11 05:55:05', '2021-04-11 05:55:05'),
+(428, 5, 26, '2021-04-11 05:55:16', '2021-04-11 05:55:16'),
+(429, 16, 26, '2021-04-11 05:55:16', '2021-04-11 05:55:16'),
+(430, 24, 26, '2021-04-11 05:55:16', '2021-04-11 05:55:16'),
+(435, 5, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47'),
+(436, 16, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47'),
+(438, 15, 44, '2021-04-11 07:26:06', '2021-04-11 07:26:06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_tags`
+-- Table structure for table `blog_tag`
 --
 
-CREATE TABLE `blog_tags` (
+CREATE TABLE `blog_tag` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `blog_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -775,30 +763,30 @@ CREATE TABLE `blog_tags` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blog_tags`
+-- Dumping data for table `blog_tag`
 --
 
-INSERT INTO `blog_tags` (`id`, `blog_id`, `created_at`, `updated_at`, `tag_id`) VALUES
-(21, 30, '2021-03-14 04:39:24', '2021-03-14 04:39:24', 1),
-(22, 30, '2021-03-14 04:39:24', '2021-03-14 04:39:24', 3),
+INSERT INTO `blog_tag` (`id`, `blog_id`, `created_at`, `updated_at`, `tag_id`) VALUES
 (36, 29, '2021-03-14 04:49:18', '2021-03-14 04:49:18', 1),
-(54, 37, '2021-04-07 22:43:13', '2021-04-07 22:43:13', 1),
-(55, 37, '2021-04-07 22:43:13', '2021-04-07 22:43:13', 9),
 (96, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10', 1),
 (97, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10', 9),
 (98, 27, '2021-04-08 21:48:10', '2021-04-08 21:48:10', 10),
-(99, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02', 1),
-(100, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02', 2),
-(101, 26, '2021-04-08 22:58:02', '2021-04-08 22:58:02', 9),
-(102, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12', 1),
-(103, 20, '2021-04-08 22:58:12', '2021-04-08 22:58:12', 9),
 (104, NULL, '2021-04-09 00:47:58', '2021-04-09 00:47:58', 1),
 (105, NULL, '2021-04-09 00:47:58', '2021-04-09 00:47:58', 9),
 (106, NULL, '2021-04-09 00:47:58', '2021-04-09 00:47:58', 10),
 (115, NULL, '2021-04-09 00:50:39', '2021-04-09 00:50:39', 1),
 (116, NULL, '2021-04-09 00:50:39', '2021-04-09 00:50:39', 10),
-(117, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50', 1),
-(118, 39, '2021-04-09 00:52:50', '2021-04-09 00:52:50', 9);
+(157, 20, '2021-04-11 05:55:05', '2021-04-11 05:55:05', 9),
+(158, 26, '2021-04-11 05:55:16', '2021-04-11 05:55:16', 2),
+(159, 26, '2021-04-11 05:55:16', '2021-04-11 05:55:16', 9),
+(163, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47', 1),
+(164, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47', 2),
+(165, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47', 3),
+(166, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47', 9),
+(167, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47', 10),
+(168, 39, '2021-04-11 06:00:47', '2021-04-11 06:00:47', 11),
+(169, 37, '2021-04-11 06:01:35', '2021-04-11 06:01:35', 1),
+(170, 30, '2021-04-11 06:01:59', '2021-04-11 06:01:59', 1);
 
 -- --------------------------------------------------------
 
@@ -1328,17 +1316,17 @@ ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blog_catagories`
+-- Indexes for table `blog_catagory`
 --
-ALTER TABLE `blog_catagories`
+ALTER TABLE `blog_catagory`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fgfdgsa` (`blogs_id`),
+  ADD KEY `fgfdgsa` (`blog_id`),
   ADD KEY `rtyrtyryfgh` (`catagory_id`);
 
 --
--- Indexes for table `blog_tags`
+-- Indexes for table `blog_tag`
 --
-ALTER TABLE `blog_tags`
+ALTER TABLE `blog_tag`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fgfdg` (`blog_id`),
   ADD KEY `dsa` (`tag_id`);
@@ -1499,19 +1487,19 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `blog_catagories`
+-- AUTO_INCREMENT for table `blog_catagory`
 --
-ALTER TABLE `blog_catagories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=360;
+ALTER TABLE `blog_catagory`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=439;
 
 --
--- AUTO_INCREMENT for table `blog_tags`
+-- AUTO_INCREMENT for table `blog_tag`
 --
-ALTER TABLE `blog_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+ALTER TABLE `blog_tag`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT for table `catagories`
@@ -1523,7 +1511,7 @@ ALTER TABLE `catagories`
 -- AUTO_INCREMENT for table `cms`
 --
 ALTER TABLE `cms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `contactuses`
@@ -1583,7 +1571,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `social_media`
 --
 ALTER TABLE `social_media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tags`
@@ -1595,7 +1583,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `userfollows`
@@ -1639,16 +1627,9 @@ ALTER TABLE `banners`
   ADD CONSTRAINT `testg` FOREIGN KEY (`created_by`) REFERENCES `admin_logins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `blog_catagories`
+-- Constraints for table `blog_tag`
 --
-ALTER TABLE `blog_catagories`
-  ADD CONSTRAINT `fgfdgsa` FOREIGN KEY (`blogs_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `rtyrtyryfgh` FOREIGN KEY (`catagory_id`) REFERENCES `catagories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `blog_tags`
---
-ALTER TABLE `blog_tags`
+ALTER TABLE `blog_tag`
   ADD CONSTRAINT `dsa` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fgfdg` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 

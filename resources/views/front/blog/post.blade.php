@@ -4,8 +4,7 @@
 @section('container')
   <main id="main" class="search_append">
 
-   
-    <section class="breadcrumbs">
+     <section class="breadcrumbs">
       <div class="container">
 
         <ol>
@@ -54,12 +53,11 @@
                   <i class="icofont-folder"></i>
                   <ul class="cats">
                     <li>
-                     @php $x=\App\catagory::getPostCatagory($all->id) @endphp
-                     @if($x != null)
-                      @foreach($x as $result)
-                      <a href="{{route('catagory_detail_show',[$result])}}">
-                      {{$result}}</a>,
-
+                     
+                     @if($all->blog_id != null)
+                      @foreach($all->blog_id as $result)     
+                          <a href="{{route('catagory_detail_show',[$result->catagory])}}">
+                          {{$result->catagory}}</a>, 
                       @endforeach
                       @else
                        <p>NoCatagory</p>

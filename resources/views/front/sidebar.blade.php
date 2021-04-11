@@ -1,16 +1,11 @@
 @php 
-$catagory=\App\catagory::whereHas('blog_catagory', function($q){
-    $q->whereHas('blog',function($query)
-    {
-      $query->where('status','Active');
-    });
+$catagory=\App\catagory::whereHas('blog_catagory',function($q)
+{
+  $q->where('status','Active');
 })->get();
 
-$tag=\App\Tag::whereHas('tag_rel', function($q){
-    $q->whereHas('blog',function($query)
-    {
-      $query->where('status','Active');
-    });
+$tag=\App\Tag::whereHas('tag_rel', function($q){ 
+  $q->where('status','Active');
 })->get();
 
 $recent_post=\App\Blog::where('status','Active')->orderBy('created_at','desc')->limit(5)->get();
@@ -31,10 +26,9 @@ $recent_post=\App\Blog::where('status','Active')->orderBy('created_at','desc')->
               <div class="sidebar-item categories">
                 <ul> 
                   @if(!$catagory->isEmpty())
-                  @foreach($catagory as $result)
-                    
-                    <li><a href="{{route('catagory_detail_show',[$result->catagory])}}">{{$result->catagory}} <span class="catagory_count">({{\App\catagory::CatagoryCount($result->id)}})</span></a></li>
-                    
+
+                  @foreach($catagory as $result)                  
+                    <li><a href="{{route('catagory_detail_show',[$result->catagory])}}">{{$result->catagory}} <span class="catagory_count">({{\App\catagory::CatagoryCount($result->id)}})</span></a></li>                  
                   @endforeach
                   @endif
                 </ul>

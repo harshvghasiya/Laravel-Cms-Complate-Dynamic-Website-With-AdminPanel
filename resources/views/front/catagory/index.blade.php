@@ -28,7 +28,8 @@ $author_desc=\App\setting::find(1);
           <div class="col-lg-8 entries">
 
           @foreach($catagory_blog as $blog)
-             @foreach($blog as $result)
+             @foreach($blog->blog_catagory as $result)
+             @if($result->status=='Active')
             <article class="entry">
 
               <div class="entry-img">
@@ -57,6 +58,7 @@ $author_desc=\App\setting::find(1);
               </div>
 
             </article><!-- End blog entry -->
+            @endif
             @endforeach
           @endforeach
          
