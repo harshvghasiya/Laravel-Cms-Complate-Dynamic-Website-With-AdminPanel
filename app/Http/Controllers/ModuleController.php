@@ -57,6 +57,6 @@ class ModuleController extends Controller
 
      public function del_all(module $module,Request $request)
     {
-       return $this->Moel->deleteAllModule($request);
+       return $this->Model->deleteAllModule($request);
     }
 }

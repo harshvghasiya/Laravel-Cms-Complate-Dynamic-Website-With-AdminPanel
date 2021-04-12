@@ -91,7 +91,7 @@ class cms extends Model
     // Cms Data Tabale
     public function databaleCms()
     {
-       $sql=cms::with(['module']);
+       $sql=cms::with(['module','created_email']);
           return Datatables::of($sql)
                 ->editColumn('status',   function($data){
                         if($data->status == "Active"){
@@ -112,7 +112,7 @@ class cms extends Model
                                         height="60px";>';
                         }) 
                  ->editColumn('created_by', function($data){
-                      if($data->created_email != null){
+                       if($data->created_email != null){
                             return '<a href="'.route('viewuser',Crypt::encrypt($data->created_email->email)).'" >'.$data->created_email->email.'</a>';
                       }
                         })

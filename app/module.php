@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Crypt;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Yajra\Datatables\Datatables;
 
 class module extends Model
@@ -38,10 +39,11 @@ class module extends Model
            $res=module::find($id);
         }else{
            $res=new module; 
+           $res->created_by=Auth::guard('adminlogin')->user()->id;
         }
     	
         $res->name=$request->input('name');
-        $res->slug=$request->input('slug');
+        $res->slug=Str::slug($request->input('slug'));
         $res->status=$request->input('status');
         $res->save();
           $errors="";
