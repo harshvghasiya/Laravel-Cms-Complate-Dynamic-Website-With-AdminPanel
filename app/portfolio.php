@@ -79,7 +79,9 @@ class portfolio extends Model
                  ->editColumn('created_by', function($data){
                       if($data->created_email != null){
                             return '<a href="'.route('viewuser',Crypt::encrypt($data->created_email->email)).'" >'.$data->created_email->email.'</a>';
-                      }
+                        }else{
+                            return 'None';
+                        }
                         }) 
                  ->editColumn('id', function($data){
                             return '<input type="checkbox" class="check" value="'.$data->id.'" name="check">';

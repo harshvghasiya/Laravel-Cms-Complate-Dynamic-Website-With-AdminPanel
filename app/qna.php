@@ -32,7 +32,9 @@ class qna extends Model
              $res= qna::find($id);
          }else{
            $res=new qna;
+           $res->created_by=Auth::guard('adminlogin')->user()->id;
          }
+
         $res->question=$request->input('question');
         $res->answer=$request->input('answer');
         $res->status=$request->input('status');
@@ -70,7 +72,9 @@ class qna extends Model
                  ->editColumn('created_by', function($data){
                       if($data->created_email != null){
                             return '<a href="'.route('viewuser',Crypt::encrypt($data->created_email->email)).'" >'.$data->created_email->email.'</a>';
-                      }
+                        }else{
+                            return 'None';
+                        }
                         })           
                 
                 ->rawColumns(['status','handle','id','created_by'])

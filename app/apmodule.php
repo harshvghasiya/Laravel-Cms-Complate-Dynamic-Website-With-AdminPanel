@@ -87,7 +87,9 @@ class apmodule extends Model
                 ->editColumn('created_by', function($data){
                       if($data->created_email != null){
                             return '<a href="'.route('viewuser',Crypt::encrypt($data->created_email->email)).'" >'.$data->created_email->email.'</a>';
-                      }
+                      }else{
+                            return 'None';
+                        }
                         })
                 
                 ->rawColumns(['status','handle','id','created_by'])
