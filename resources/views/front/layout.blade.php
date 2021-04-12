@@ -23,13 +23,14 @@ $author_desc=\App\setting::find(1);
   <link href="{{ asset('public/front_asset/assets/vendor/venobox/venobox.css' ) }}" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/vendor/aos/aos.css' ) }}" rel="stylesheet">
   <link href="{{ asset('public/front_asset/assets/css/style.css' ) }}" rel="stylesheet"> 
+  <link href="{{ asset('public/front_asset/assets/css/login.css' ) }}" rel="stylesheet"> 
   <link href="{{ asset('public/admin_asset/assets/admin/layout4/css/toster.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-  {{--     <h1 class="logo me-auto"><a href="{{route('home')}}">Presento<span>.</span></a></h1>
- --}}     
+    
        <a href="{{route('home')}}" class="logo me-auto"><img src="{{$author_desc->getLogoImageUrl()}}" alt="logo"></a>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -52,8 +53,8 @@ $author_desc=\App\setting::find(1);
          
 
           @if(!isset(Auth::user()->id))
-            <li><a href="javascript::void()" data-toggle="modal" data-target="#loginmodal" >Login</a></li>
-            <li><a href="javascript::void()" data-toggle="modal" data-target="#exampleModal" >Register</a></li>
+            <li><a href="javascript::void()" data-toggle="modal" data-target="#myModal" >Login</a></li>
+            <li><a href="javascript::void()" data-toggle="modal" data-target="#registerModal" >Register</a></li>
           @else
           <li class="drop-down"><a href="">{{Auth::user()->name}}</a>
             <ul>             
@@ -68,65 +69,79 @@ $author_desc=\App\setting::find(1);
   
 @yield('container')
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div id="registerModal" class="modal fade">
+  <div class="modal-dialog modal-login">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal-header">        
+        <h4 class="modal-title">Sign Up</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body">
         <form action="{{route('front_user_register')}}" class="FromSubmit" id="userValidation" redirect_url="{{route('home')}}">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name="email" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="email" class="form-control" name="email" placeholder="Email" >
+            </div>
+          </div>   
+           <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" name="name" placeholder="UserName" >
+            </div>
           </div>
           <div class="form-group">
-            <label for="UserName"> UserName</label>
-            <input type="text" class="form-control" name="name" id="UserName" aria-describedby="emailHelp" placeholder="Enter UserName">           
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name="password" id="registerPassword" placeholder="Password">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
           </div>
-          <button type="submit"  class="btn btn-secondary">Submit</button>
-        </div>
-        <div class="modal-footer">      
-        </div>
-      </form>
+       
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
     </div>
   </div>
-</div>
+</div>  
 
-<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-login">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal-header">        
+        <h4 class="modal-title">Sign In</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body">
         <form action="{{route('front_user_login')}}" class="FromSubmit" id="userValidation2" redirect_url="{{route('home')}}">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name="email" id="LoginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="email" class="form-control" name="email" placeholder="Email" >
+            </div>
           </div>
-
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name="password" id="LoginPassword" placeholder="Password">
-          </div> 
-        <button type="submit"  class="btn btn-secondary">Submit</button>         
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+          </div>
+         
+        </form>
       </div>
-      </form>
+      <div class="modal-footer">
+      </div>
     </div>
   </div>
-</div>
-
+</div>  
 
 @include('front.footer')
 

@@ -8,6 +8,8 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Socialite;
+use Exception;
 
 class LoginController extends Controller
 {
