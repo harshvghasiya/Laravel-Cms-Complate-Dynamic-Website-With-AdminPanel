@@ -221,9 +221,9 @@ class AdminLogin extends Authenticatable
         if ($image != null) {
         $image_name=UploadImage($image,Admin_Image_Path());
         $res->image=$image_name;
-        }
-        $res->image=$image_name;
         $res->save();
+        }
+
         
 
         $errors="";

@@ -127,7 +127,7 @@
 											
 											<div class="tab-pane active" id="tab_1_1">
 											 {!! Form::open(['route' => 'upd_user',
-                    								         'id' =>'adminValidation',
+                    								         'id' =>'adminValidation2',
                   								   	         'class'=>'FromSubmit login-form',
                                                              'redirect_url' =>route('userListMain')]) !!}
                                                     <input type="text" name="id" class="form-control userprofile hidden" value="{{$key->id}}" disabled="disabled"/>         
@@ -178,11 +178,9 @@
 													<div class="form-group">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
 															<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-																@if($key->image != null && $key->image != 'noimage.png')
-													 <img id="output" src="{{asset("/public/storage/userimage/$key->image")}}" alt=""/>
-																@else
-													 <img id="output" src="{{asset("/public/storage/blogimage/noimage.png")}}" alt=""/>
-																@endif
+																
+													 <img id="output" src="{{$key->getAdminImageUrl()}}" alt=""/>
+													
 																
 															</div>
 															<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
@@ -228,7 +226,7 @@
 										 @if(Auth::guard('adminlogin')->user()->email ==$key->email)
 											<div class="tab-pane" id="tab_1_3">
 												 {!! Form::open(['route' => 'change_password',
-                    								         'id' =>'adminValidation',
+                    								         'id' =>'adminValidation3',
                   								   	         'class'=>'FromSubmit login-form',
                                                              'redirect_url' =>route('userListMain')]) !!}
 													<div class="form-group">
@@ -252,34 +250,8 @@
 													</div>
 												{{Form::close()}}
 											</div>											
-											<div class="tab-pane" id="tab_1_4">
-											 {!! Form::open(['route' => 'account_private',
-                    								         'id' =>'adminValidation',
-                  								   	         'class'=>'FromSubmit login-form',
-                                                             'redirect_url' =>route('userListMain')]) !!}
-													<input type="text" name="id" class="form-control userprofile hidden" value="{{$key->id}}" disabled="disabled"/>
-													<table class="table table-light table-hover">
-													<tr>
-														<td>
-															 Make Your Account Private
-														</td>
-														<td>
-															<label class="uniform-inline">
-												 {{ Form::radio('acount_privacy', '1', true, ['id'=>'optionsRadios4'])}}
-															Yes </label>
-															<label class="uniform-inline">
-												 {{ Form::radio('acount_privacy', '0', false, ['id'=>'optionsRadios4'])}}
-														
-															No </label>
-														</td>
-													</tr>
-													</table>	
-													<div class="margin-top-10">
-														<button type="submit" class="btn green-haze">
-														Save Changes </button>		
-													</div>
-												{{Form::close()}}
-											</div>	
+											
+											
 											@endif										
 										</div>
 									</div>
